@@ -50,3 +50,4 @@
 | 13 | VALUE_LEDGER | V106; statuses of Thm 11.1 rows reworded | Consistency with Phase 12 | Phase 13 report |
 | 14 | 09_OUTPUTS | FINAL tex/bib, ESM_1/ESM_2, cover letter, submission package, README | Delivery | Phase 14 report |
 | 14 | curated code | docstring/README: Table 1 → Table 2 (no computation changed) | Table renumbering | calibrate_examples rerun |
+| 14 | 08_INTERNAL_QC/tools, evidence | extra independent finite-range check (177,220 comparisons, 0 failures); no manuscript or deliverable change | Audit continuation | VALUE_LEDGER V107 |

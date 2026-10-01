@@ -1,0 +1,11 @@
+time 19
+Lemma 5.1 (q 128-256, m<3000): tested 39668, failures 0, first failure None
+Lemma 5.1 (small q, 5000<m<12000): tested 24345, failures 0, first failure None
+Theorem A (q 128-256, N<1200): tested 15851, failures 0, first failure None
+(6.3) (q 128-256, N<1200): tested 15851, failures 0, first failure None
+Theorem A (small q, 2000<N<3600): tested 5565, failures 0, first failure None
+(6.3) (small q, 2000<N<3600): tested 5565, failures 0, first failure None
+Theorem B (q 128-256, N<8000): tested 53264, failures 0, first failure None
+Theorem B (small q, 20000<N<30000): tested 16484, failures 0, first failure None
+Theorem 11.1(i) (q 129-255 odd, n<400): tested 627, failures 0, first failure None
+TOTAL 177220
