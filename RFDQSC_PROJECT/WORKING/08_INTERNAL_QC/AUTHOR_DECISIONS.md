@@ -39,3 +39,5 @@ Update (Phase 5): a curated code package is prepared in `04_CODE/curated/` (iden
 1. Issue: Novelty of w(N,q) rests on web, zbMATH Open and arXiv searches; MathSciNet/Scopus not accessible.
 2. Why: the manuscript says only "to our knowledge"; a database check by the author would support this.
 3. Options: author runs a search (e.g. "order of a polynomial" + "reciprocal"/"self-reciprocal", "minimal degree" + "prescribed order") or accepts the hedged wording.
+
+(Phase 7 note: no new decision. Whether Table 1's column "d(D) [A]" stays depends on AD-004.)

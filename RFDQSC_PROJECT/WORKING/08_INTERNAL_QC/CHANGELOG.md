@@ -25,3 +25,5 @@
 | 06 | VALUE_LEDGER | Statuses of V003–V016, V029–V057 updated from PENDING to verified/reproduced; V042 split into code half (reproduced) and source half (AD-004) | Closing Phase 2–5 evidence | Phase 2–5 outputs |
 | 06 | evidence | EVIDENCE_SHA256.txt added | Reproducibility record | sha256sum |
 | 06 | manuscript | No change; computational-scope wording prepared for Phase 8/10 | V&V separation of verification and validation | Phase 6 report |
+| 07 | Table 1 caption, header, text (tex) | Caption states which column is quoted from [A]; `\cite{A}` replaces literal "[A]"; `Table~\ref{tab1}` references added; `\resizebox` guard against overflow | Caption inaccurate ("computed values" for a quoted column); no cross-reference; 12-column width risk | Phase 4/5 reproduction; Phase 7 report |
+| 07 | VALUE_LEDGER | Row V094 | — | — |

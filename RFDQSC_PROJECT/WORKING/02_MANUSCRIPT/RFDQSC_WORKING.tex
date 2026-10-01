@@ -901,24 +901,25 @@ Since both summands of (10.1) are non-negative, equality requires \(s\) = 2\(w\)
 
 \subsection{Numerical calibration of the three examples}
 
-The following values are computed: \(d\)(\(D\)) (exact) is the classical minimum distance of the cyclic code \(D\) with generator \(g_D\) = \(g_3\) \(g_4\). It was computed exactly by parity-check rank. The distances printed in \cite{A} are lower bounds from the component distance formula. For Example 3, \cite{A} prints \(g_1\) and \(g_3\) containing the factor \(m_0\) = \(x\) − 1. That factor is self-reciprocal, which is incompatible with dual containment, and it contradicts \cite{A}'s printed dimensions {[}40,32{]} and {[}40,36{]}. The values below use the factor lists without \(m_0\); these reproduce all printed dimensions and the printed \(h\) = \(m_4\) \(m_5\). Examples 1 and 2 belong to Class 1. Example 3 belongs to \cite{A}'s BCH class (Class 2), so for it the values come from direct computation, not from Theorem 11.1.
+Table~\ref{tab1} lists computed values. \(d\)(\(D\)) (exact) is the classical minimum distance of the cyclic code \(D\) with generator \(g_D\) = \(g_3\) \(g_4\). It was computed exactly by parity-check rank. The distances printed in \cite{A} are lower bounds from the component distance formula. For Example 3, \cite{A} prints \(g_1\) and \(g_3\) containing the factor \(m_0\) = \(x\) − 1. That factor is self-reciprocal, which is incompatible with dual containment, and it contradicts \cite{A}'s printed dimensions {[}40,32{]} and {[}40,36{]}. The values below use the factor lists without \(m_0\); these reproduce all printed dimensions and the printed \(h\) = \(m_4\) \(m_5\). Examples 1 and 2 belong to Class 1. Example 3 belongs to \cite{A}'s BCH class (Class 2), so for it the values come from direct computation, not from Theorem 11.1.
 
 \begin{table}[h]
-\caption{Calibration of the three examples of [A] (computed values; in all three cases $\deg g_C = B + s$ and $\mathrm{ord}(h) = N$)}\label{tab1}
+\caption{Calibration of the three examples of \cite{A}. All entries are computed, except the column $d(D)$~\cite{A}, which gives the lower bounds printed in \cite{A}. In all three cases $\deg g_C = B + s$ and $\mathrm{ord}(h) = N$.}\label{tab1}
 \centering\small\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
 \begin{tabular}{@{}lccccccccccc@{}}
 \toprule
- & Class & $(q,N)$ & $w_0=w$ & $B$ & $s$ & $K$ & $d(D)$ [A] & $d(D)$ & $\Delta$ & $2(s-w)$ & $2(B+1-d(D))$\\
+ & Class & $(q,N)$ & $w_0=w$ & $B$ & $s$ & $K$ & $d(D)$~\cite{A} & $d(D)$ & $\Delta$ & $2(s-w)$ & $2(B+1-d(D))$\\
 \midrule
 Ex.~1 & 1 & $(3,26)$ & 3 & 6 & 6 & 2 & 3 & 4 & \textbf{12} & 6 & 6\\
 Ex.~2 & 1 & $(37,82)$ & 5 & 10 & 10 & 42 & 4 & 6 & \textbf{20} & 10 & 10\\
 Ex.~3 & 2 & $(3,80)$ & 4 & 8 & 8 & 48 & 3 & 4 & \textbf{18} & 8 & 10\\
 \botrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 
-In Table 1, \(w\)₀ = \(w\) = \(ord_N(q)\), \(N\) + 2 − 2\(w\) = 22, 74, 74 and \(K\) + 2\(d\)(\(D\)) = 10, 54, 56, \(B\) = deg \(g_D\), \(s\) = deg \(h\), ``\(d\)(\(D\)) \cite{A}'' is the lower bound printed in \cite{A}, and ``\(d\)(\(D\))'' is the exact value.
+In Table~\ref{tab1}, \(w\)₀ = \(w\) = \(ord_N(q)\), \(N\) + 2 − 2\(w\) = 22, 74, 74 and \(K\) + 2\(d\)(\(D\)) = 10, 54, 56, \(B\) = deg \(g_D\), \(s\) = deg \(h\), ``\(d\)(\(D\)) \cite{A}'' is the lower bound printed in \cite{A}, and ``\(d\)(\(D\))'' is the exact value.
 
 \textbf{What the table shows.} In all three examples \(s\) = 2\(w\), the equality case of Theorem 11.1(ii) for Examples 1 and 2. The deficit splits roughly equally between structural excess and coding-side slack. Examples 1 and 2 satisfy Δ ≥ 2\(w\), as Theorem 11.1(iii) requires. The inequality is strict because \(d\)(\(D\)) \textless{} \(B\) + 1.
 
