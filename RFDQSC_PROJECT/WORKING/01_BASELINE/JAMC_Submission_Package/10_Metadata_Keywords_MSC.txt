@@ -1,0 +1,27 @@
+TITLE
+Reciprocal-free divisors of prescribed order over finite fields and the saturation cost of cyclic quantum synchronizable codes
+
+RUNNING TITLE
+Reciprocal-free divisors of prescribed order
+
+JOURNAL
+Journal of Applied Mathematics and Computing (Springer)
+
+ARTICLE TYPE
+Original research article
+
+KEYWORDS (6)
+Finite fields; Polynomial order; Reciprocal polynomials; Cyclic codes; Cyclotomic cosets; Quantum synchronizable codes
+
+MSC 2020 (checked against the AMS MSC2020 classification list)
+Primary:   11T06  Polynomials over finite fields
+Secondary: 11T71  Algebraic coding theory; cryptography (number-theoretic aspects)
+           94B15  Cyclic codes
+           81P70  Quantum coding (general)
+           11A07  Congruences; primitive roots; residue systems
+
+ABSTRACT: 245 words (see 02_Main_Manuscript_JAMC.tex)
+PAGES: 28 (Springer Nature sn-jnl template)
+REFERENCES: 25    FIGURES: 0    TABLES: 1 numbered (Table 1)
+SUPPLEMENTARY: ESM_1.pdf (Online Resource 1), ESM_2.zip (Online Resource 2)
+AUTHORS: [PLACEHOLDERS - see file 08]
