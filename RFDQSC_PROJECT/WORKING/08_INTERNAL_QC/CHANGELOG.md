@@ -37,3 +37,9 @@
 | 09 | tex header comment | engine claim ("Compile with XeLaTeX or LuaLaTeX …") replaced by neutral build sequence | Unverified compile claim; no engine in sandbox | — |
 | 09 | bib content | No change (25/25 entries match Crossref) | — | Crossref query |
 | 09 | VALUE_LEDGER | V061 closed; V096–V099 added | — | — |
+| 10 | tex §2.2, §2.4 (Lemma 2.3), §3.1-3.2, §6, §9.2, all | Reciprocal stars restored as `^{*}`; emphasis/brace damage repaired; operator names via `\operatorname`; Σ mapped to `\sum`; Lemma 2.3 remark moved out of the lemma; Prop 3.1 list rebuilt; (6.2),(6.3) typeset as displays | Pandoc damage | phase10_repair.py, tex_lint.py |
+| 10 | tex §7.1 | Theorem B case table → numbered booktabs Table 1 (`tabB`); calibration table is now Table 2 | Journal: numbered, captioned tables | — |
+| 10 | tex §11.3 | Prose before/after the calibration table tidied (duplicate definitions removed) | Redundancy | — |
+| 10 | tex preamble | longtable, calc, `\LTcaptype` removed; 3 unused unicode hacks removed (δ, λ, …) | Dead code | tex_lint.py |
+| 10 | supplementary | ESM_1.tex added; ESM_1.pdf rebuilt (PyMuPDF); wording and S3 narrative aligned with the paper | Consistency with Phase 8 | Phase 10 report |
+| 10 | VALUE_LEDGER | V094 location updated; V100–V103 added | — | — |

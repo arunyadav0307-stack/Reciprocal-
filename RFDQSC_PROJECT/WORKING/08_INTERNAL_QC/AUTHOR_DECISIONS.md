@@ -50,3 +50,5 @@ Update (Phase 5): a curated code package is prepared in `04_CODE/curated/` (iden
 3. Options: keep curated (default); ship original; ship both.
 
 (Phase 9 note: Zhang–Ge arXiv:1508.00974 remains an in-text mention because the author's checklist (item 13) states that the reference list takes published/accepted works only. If the author knows of a journal version, add it as a bib entry. AD-001 unchanged: Statements and Declarations contents are placeholders.)
+
+(Phase 10 note: no TeX engine is available, so the main text is checked only by `tools/tex_lint.py` (environments, braces, math pairing, unicode coverage). ESM_1.pdf is built with PyMuPDF from the same content as ESM_1.tex (no italics); the author may prefer to compile ESM_1.tex. The main-text PDF must be compiled author-side (Overleaf) — see Phase 14.)

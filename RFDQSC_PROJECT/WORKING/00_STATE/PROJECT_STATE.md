@@ -18,7 +18,7 @@
 - Environment risk: **no LaTeX engine in the sandbox**; apt/CTAN/conda unreachable. Final compilation (Phase 14) needs a workaround (e.g. npm `texlive` pdfTeX-WASM tree) or author-side compilation. Recorded, not hidden.
 
 ## Phase status
-See `COMPLETED_PHASES.txt`. PHASE 00–09 — COMPLETE; PHASES 10–14 — NOT STARTED.
+See `COMPLETED_PHASES.txt`. PHASE 00–10 — COMPLETE; PHASES 11–14 — NOT STARTED.
 
 ## Major scientific findings (established only)
 - Quoted worked values w/w0 for (143,3), (55,3), (225,23), (35,3), (5,3), (26,3), (82,37), (80,3) and w(2,q)=∞ reproduced by an independent definition-level coset search.
@@ -45,4 +45,4 @@ AD-001 (metadata/declarations) PENDING · AD-002 (code/data availability) PENDIN
 `02_MANUSCRIPT/RFDQSC_WORKING.tex` (= baseline v0) with `03_REFERENCES/RFDQSC_references.bib`.
 
 ## Next action
-`NEXT PHASE: PHASE 10` — integrated scientific repair: repair Pandoc damage (reciprocal stars, GL/min/brace escapes, §6.4), move the Lemma 2.3 remark out of the lemma, retype ESM_1 S1 Step 3 and the S3 narrative, replace `\newunicodechar` hacks, dedupe the Table 1 post-text; keep Theorem 11.1 conditional on [LZ22] (AD-004).
+`NEXT PHASE: PHASE 11` — language pass on the repaired source (no scientific change); re-scan numbers/equations afterwards (diff of numeric tokens, tex_lint).

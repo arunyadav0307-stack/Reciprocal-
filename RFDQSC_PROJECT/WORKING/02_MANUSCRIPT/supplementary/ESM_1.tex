@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,array}
+\usepackage[margin=2.5cm]{geometry}
+\newtheorem*{lem}{Lemma 2.3 (dual containment)}
+\begin{document}
+
+\begin{center}
+{\large\bfseries Supplementary information (ESM\_1)}\\[4pt]
+{\bfseries Reciprocal-free divisors of prescribed order over finite fields and the saturation cost of cyclic quantum synchronizable codes}\\[4pt]
+[INSERT AUTHOR NAMES] --- Corresponding author: [INSERT NAME, E-MAIL]\\[2pt]
+Journal of Applied Mathematics and Computing
+\end{center}
+
+\noindent This file contains the proof of Lemma 2.3, the Class 2 observations of Sect.~11.4 and the table of computational checks of Sect.~12.3 of the main article. Section, lemma and theorem numbers refer to the main article. ``Li--Zhu'' denotes Z.~Li and S.~Zhu, Int.\ J.\ Theor.\ Phys.\ 61, 251 (2022). The Python code is provided as ESM\_2.zip.
+
+\section*{S1. Proof of Lemma 2.3}
+
+\begin{lem}
+Let $\gcd(N,q)=1$, and let $C$ be a cyclic code of length $N$ over $\mathbb F_q$ with generator polynomial $g_C$. Then
+\[
+C^{\perp}\subseteq C\iff g_C(x)\,g_C^{*}(x)\mid x^N-1 .
+\]
+\end{lem}
+
+\begin{proof}
+Write $R_N=\mathbb F_q[x]/(x^N-1)$ and $x^N-1=g_Ch_C$.
+
+\emph{Step 1 (orthogonality as a polynomial condition).} For $u,v\in R_N$ put $\bar v(x)=\sum_j v_jx^{-j}\in R_N$. The coefficient of $x^{s}$ in $u(x)\bar v(x)$ is $\sum_j u_{j+s}v_j$, with indices modulo $N$. This is the inner product of $v$ with the $s$-th cyclic shift of $u$. Since $C$ is spanned by the cyclic shifts of $g_C$,
+\[
+v\in C^{\perp}\iff g_C(x)\,\bar v(x)=0\ \text{ in } R_N .
+\]
+
+\emph{Step 2 (identification of $C^{\perp}$).} Now $g_C\bar v=0$ in $R_N$ if and only if $h_C$ divides $\bar v$ (as an element of $R_N$). The map $v\mapsto\bar v$ is the ring automorphism of $R_N$ induced by $x\mapsto x^{-1}$. It carries $\langle h_C\rangle$ onto $\langle h_C(x^{-1})\rangle=\langle h_C^{*}\rangle$, because $x^{\deg h_C}$ is a unit of $R_N$. Hence $C^{\perp}=\langle h_C^{*}\rangle$.
+
+\emph{Step 3 (comparison of ideals).} Since $h_C^{*}$ is a monic divisor of $x^N-1$, the inclusion $C^{\perp}\subseteq C$ holds if and only if $g_C\mid h_C^{*}$. Taking reciprocals, this is equivalent to $g_C^{*}\mid h_C$, and that is equivalent to $g_Cg_C^{*}\mid g_Ch_C=x^N-1$.
+\end{proof}
+
+\section*{S2. Class 2 computational observations (Sect.~11.4)}
+
+For the BCH class of Li--Zhu one has $n=(q^{2m}-1)/(q-1)$ and $N=2n$. The observations below use an index rule reconstructed from
+\begin{itemize}
+\item the defining-set truncations printed in Example 3 of Li--Zhu;
+\item the ranges $1\le i\le\delta-2$ and $1\le j\le\delta^{*}-2$;
+\item the upper limits for $\delta$ and $\delta^{*}$ stated by Li--Zhu.
+\end{itemize}
+``Saturated'' means $\operatorname{ord}(h)=N$ under this reconstruction.
+
+\begin{center}
+\small
+\begin{tabular}{@{}cccrrrc@{}}
+\toprule
+$(q,m)$ & $N$ & $\operatorname{ord}_N(q)=w_0=w$ & tuples & saturated & $\operatorname{ord}(h)<N$ & range of $s$ (saturated)\\
+\midrule
+$(3,2)$ & 80  & 4 & 75     & 75     & 0  & 8--24\\
+$(5,2)$ & 312 & 4 & 1,490  & 1,482  & 8  & 6--66\\
+$(7,2)$ & 800 & 4 & 10,269 & 10,263 & 6  & 8--124\\
+$(3,3)$ & 728 & 6 & 19,908 & 19,896 & 12 & 12--144\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+In every saturated tuple observed, $s>w$. These are computational observations under a reconstructed rule; they are not a theorem and they do not cover Class 2 exhaustively. The tuples with $\operatorname{ord}(h)<N$ may be excluded by the exact hypotheses of Li--Zhu. The observed minimum $s=6$ for $(q,m)=(5,2)$ is below $2w=8$, so the bound $s\ge 2w$ of Theorem 11.1 is not claimed for Class 2.
+
+\section*{S3. Computational checks (Sect.~12.3)}
+
+The values $w$ and $w_0$ were computed by a dynamic programme over the lcm-cover form (Proposition 4.2) and cross-checked against an independent brute force that enumerates sets of $q$-cyclotomic cosets directly, without using Proposition 4.2. The support-reduction enumerator for Theorem A allows distinct blocks to share a support, as in Sect.~6.6, where $45$ and $75$ both have support $\{3,5\}$.
+
+\begin{center}
+\small
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Check & Range (finite) & Checks & Failures\\
+\midrule
+DP vs.\ independent coset brute force & 15 values of $q$ (even and odd), $N<200$ & 1,999 & 0\\
+Lemma 5.1 & all prime powers $q<128$; odd $m<5000$ & 99,981 & 0\\
+Theorem A & all prime powers $q<128$; odd $N<2000$ & 39,968 & 0\\
+Formula (6.3) for $w_0$ & as for Theorem A & 39,968 & 0\\
+Theorem B & all prime powers $q<128$; odd two-prime $N<20000$ & 195,405 & 0\\
+Theorem C(i) & all prime powers $q<128$; odd primes $p<r<400$ & 30,079 & 0\\
+Theorem C(ii) & explicit triples $(p,r,q)$ with $p,r<400$ & 594 & 0\\
+Theorem 11.1(i) and the factor-degree structure & odd $q<128$; primes $n<400$ & 1,081 & 0\\
+\midrule
+Total & & 409,075 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The ranges include adversarial cases: repeated prime powers; three and four distinct primes; mixed 2-adic classes; blocks requiring helper primes; supports used by more than one block; and even $q$ for Lemma 5.1 and Theorems A and B. The record is not an exhaustive verification over all inputs.
+
+\emph{Instances from Li--Zhu.} Generator degrees, $\operatorname{ord}(h)$, dual containment and the exact $d(D)$ were computed directly for the three examples. In Example 3 the factor $m_0=x-1$ printed in $g_1$ and $g_3$ is incompatible with dual containment and with the printed dimensions; the computations omit it (Sect.~11.3).
+
+\section*{S4. Code}
+
+The Python scripts are provided as ESM\_2.zip; see its README.
+
+\end{document}
