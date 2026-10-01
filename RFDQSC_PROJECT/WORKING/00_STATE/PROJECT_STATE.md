@@ -18,7 +18,7 @@
 - Environment risk: **no LaTeX engine in the sandbox**; apt/CTAN/conda unreachable. Final compilation (Phase 14) needs a workaround (e.g. npm `texlive` pdfTeX-WASM tree) or author-side compilation. Recorded, not hidden.
 
 ## Phase status
-See `COMPLETED_PHASES.txt`. PHASE 00–11 — COMPLETE; PHASES 12–14 — NOT STARTED.
+See `COMPLETED_PHASES.txt`. PHASE 00–12 — COMPLETE; PHASES 13–14 — NOT STARTED.
 
 ## Major scientific findings (established only)
 - Quoted worked values w/w0 for (143,3), (55,3), (225,23), (35,3), (5,3), (26,3), (82,37), (80,3) and w(2,q)=∞ reproduced by an independent definition-level coset search.
@@ -45,4 +45,4 @@ AD-001 (metadata/declarations) PENDING · AD-002 (code/data availability) PENDIN
 `02_MANUSCRIPT/RFDQSC_WORKING.tex` (= baseline v0) with `03_REFERENCES/RFDQSC_references.bib`.
 
 ## Next action
-`NEXT PHASE: PHASE 12` — adversarial Q1 review (reviewer Q&A, hostile read of claims, Thm 11.1 conditionality, Theorem C scope).
+`NEXT PHASE: PHASE 13` — whole-manuscript consistency (cross-references, numbering after Table renumbering, abstract/intro/conclusion vs results, ledger vs text).

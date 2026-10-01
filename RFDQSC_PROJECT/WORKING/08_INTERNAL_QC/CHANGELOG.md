@@ -45,3 +45,5 @@
 | 10 | VALUE_LEDGER | V094 location updated; V100–V103 added | — | — |
 | 11 | tex (spelling, §2.4, §7.3, §11.3, §11.4) | see VOICE_CHANGES.md | language | Phase 11 report |
 | 11 | VALUE_LEDGER | V104 | — | — |
+| 12 | tex Thm 11.1 hypotheses | "Class-1 pair of [LZ22]" → explicit structural hypotheses | Independence from unreadable source | Phase 12 report |
+| 12 | REVIEWER_QA, VALUE_LEDGER V105 | added | — | — |
