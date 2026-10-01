@@ -40,4 +40,6 @@ Update (Phase 5): a curated code package is prepared in `04_CODE/curated/` (iden
 2. Why: the manuscript says only "to our knowledge"; a database check by the author would support this.
 3. Options: author runs a search (e.g. "order of a polynomial" + "reciprocal"/"self-reciprocal", "minimal degree" + "prescribed order") or accepts the hedged wording.
 
+(Phase 8 update: AD-003 default applied (short remark kept in §11.4). AD-004 default applied (no 'misprint' assertion; Table 1 column 'd(D) [A]' kept). AD-001 addition: the AI-use statement must reflect AI-assisted editing/auditing of this manuscript; placeholder left to the author.)
+
 (Phase 7 note: no new decision. Whether Table 1's column "d(D) [A]" stays depends on AD-004.)

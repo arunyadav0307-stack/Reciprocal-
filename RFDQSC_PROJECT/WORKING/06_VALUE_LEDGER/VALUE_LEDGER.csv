@@ -56,7 +56,7 @@ V054,verification_count,ESM_1 S3,Theorem C(i): prime powers q<128; odd primes p<
 V055,verification_count,ESM_1 S3,"Theorem C(ii): explicit triples p,r<400",594,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
 V056,verification_count,ESM_1 S3,Theorem 11.1(i) + factor-degree structure: odd q<128; primes n<400,1081,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
 V057,verification_count,Abstract; ESM_1 S3; cover letter,"total checks 409,075; failures 0","409,075",manuscript,REPRODUCED_BY_RUN,"eight rows reproduced; sum 409,075; 0 failures (2 runs)",00,06,sum of rows equals headline
-V058,verification_count,12.3; ESM_1 S3,"first enumerator reported 7 spurious failures ((23,225) example)",7,manuscript,"INTERNAL-WORKFLOW TRACE (remove from paper, Ph8/10)",,00,00,
+V058,verification_count,12.3; ESM_1 S3,"first enumerator reported 7 spurious failures ((23,225) example)",7,manuscript,WORKFLOW_TRACE_REMOVED_FROM_PAPER,,00,08,
 V059,meta,Abstract,245 words (math counted as one word),245,10_Metadata/checklist,NOT_RECOUNTED_PH0,,00,00,recount at Ph9
 V060,meta,Metadata,28 pages (sn-jnl); 25 references; 0 figures; 1 numbered table,28; 25; 0; 1,10_Metadata,BASELINE_PDF_PAGES=28 (checked); BIB_ENTRIES=25 (checked),28; 25,00,00,
 V061,meta,Bib,"Lidl-Niederreiter year 1996 (Crossref, 2nd ed.)",1996,09_Checklist,CITATION_CHECK_PENDING(Ph9),,00,00,
@@ -93,3 +93,4 @@ V091,traceability,"Sec 1.1, 4.4, 6.6, 7.4, Table 1, Sec 11.4, 12.3",29 quoted nu
 V092,code,Sec 12.3; ESM S3,"409,075 checks, 0 failures (curated verify_theorems.py)",409075; 0,curated verify_theorems.py,REPRODUCED_BY_RUN,identical eight counts; 238 s,05,05,curated code equals original logic
 V093,code,04_CODE,"curated package outputs identical to originals (Table 1, Class 2)",identical,curated scripts,VERIFIED_BY_RUN,diff by eye of printed lines,05,05,originals untouched
 V094,table,Table 1,"all entries incl. 2(s-w), 2(B+1-d(D)) row identity Delta=2(s-w)+2(B+1-d)",as printed,recomputation Ph4/Ph5/Ph7,VERIFIED_BY_RUN,identity holds in 3/3 rows,07,07,"caption, referencing and width repaired"
+V095,claims,Abstract,"Class 1 of [A]: s>=2w i.e. excess >= w; 409,075 exact checks over finite ranges",rewritten,Thm 11.1; g4 reproduction,VERIFIED (Thm 11.1 conditional on [A]); REPRODUCED_BY_RUN,,08,08,abstract made precise

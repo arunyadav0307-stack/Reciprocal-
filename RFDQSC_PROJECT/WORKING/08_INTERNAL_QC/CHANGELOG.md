@@ -27,3 +27,8 @@
 | 06 | manuscript | No change; computational-scope wording prepared for Phase 8/10 | V&V separation of verification and validation | Phase 6 report |
 | 07 | Table 1 caption, header, text (tex) | Caption states which column is quoted from [A]; `\cite{A}` replaces literal "[A]"; `Table~\ref{tab1}` references added; `\resizebox` guard against overflow | Caption inaccurate ("computed values" for a quoted column); no cross-reference; 12-column width risk | Phase 4/5 reproduction; Phase 7 report |
 | 07 | VALUE_LEDGER | Row V094 | — | — |
+| 08 | Abstract (tex) | Class 1 result stated precisely; "stress-tested…no failures" replaced | Precision; workflow wording | Thm 11.1; g4 reproduction |
+| 08 | §1.5, §12.1, §12.2, §12.3, §12.4, Conclusion (tex) | Defensive scope text shortened/positive; unverified [B] details removed; process narrative (7 spurious failures) removed; §12.4 renamed "Open directions"; priority statement kept only in §1.3 | Keep a normal research paper; evidence-supported statements only | Phase 8 report |
+| 08 | §11.1, §11.3, §11.4 (tex) | "printed inconsistencies … silently" removed; claims about [A] reduced to the facts needed; Class 2 rule described neutrally | AD-004 / AD-003 defaults | — |
+| 08 | whole tex | "Online Resource 1/2" → "supplementary information" | Journal terminology | — |
+| 08 | VALUE_LEDGER | workflow-trace row closed; V095 added | — | — |
