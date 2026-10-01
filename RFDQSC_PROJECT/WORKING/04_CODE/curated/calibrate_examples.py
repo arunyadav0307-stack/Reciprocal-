@@ -1,4 +1,4 @@
-"""Calibration of the three examples of Li and Zhu (Table 1): generator degrees, ord(h), dual containment, exact d(D), K, Delta.
+"""Calibration of the three examples of Li and Zhu (Table 2 of the paper): generator degrees, ord(h), dual containment, exact d(D), K, Delta.
 Example 3 is evaluated twice: with the factor list as printed (including m0 = x - 1) and without m0."""
 import math, itertools, warnings; warnings.filterwarnings("ignore")
 from poly_tools import pmul, pmod, xorder, recip, factors_of_xN_minus_1, trim, mindist_H, dcyc, coset

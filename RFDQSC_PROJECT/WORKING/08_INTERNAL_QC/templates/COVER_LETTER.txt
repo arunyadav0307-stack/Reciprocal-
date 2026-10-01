@@ -1,0 +1,26 @@
+[INSERT AUTHOR NAME(S)]
+[INSERT DEPARTMENT, INSTITUTION, CITY, COUNTRY]
+[INSERT E-MAIL] - ORCID: [INSERT]
+[INSERT DATE]
+
+The Editor-in-Chief
+Journal of Applied Mathematics and Computing
+
+Submission of an original research article
+
+Dear Editor,
+
+We submit the manuscript "Reciprocal-free divisors of prescribed order over finite fields and the saturation cost of cyclic quantum synchronizable codes" for consideration as an original research article in the Journal of Applied Mathematics and Computing.
+
+The paper studies the least degree w(N,q) of a divisor h of x^N - 1 over F_q of order N subject to the reciprocal-free condition gcd(h, h*) = 1, for gcd(N,q) = 1. This is the constraint satisfied by saturating synchronization factors in the cyclic construction of quantum synchronizable codes. The main results are a 2-adic admissibility criterion for odd moduli, a support-reduction theorem for odd N, an exact formula for N = p^a r^b, and a separation result showing that w/w_0 is unbounded over pairs (N,q) with q varying. In the semisimple cyclic framework every saturating factor has degree at least w, which yields K + 2d(D) <= N + 2 - 2w and an exact decomposition of the slack; for Class 1 of a published construction the synchronization-factor degree is at least 2w. All numbered statements are proved; finite computations (409,075 exact checks) complement the proofs and are provided as supplementary information.
+
+The manuscript fits the scope of the journal, which has published work on quantum synchronizable codes (Guenda, La Guardia and Gulliver, J. Appl. Math. Comput. 55, 393-407 (2017)). To our knowledge no earlier work defines or determines w(N,q); the classical unconstrained quantity and the known ingredients are credited in the paper.
+
+We confirm that the manuscript is original, has not been published previously, and is not under consideration elsewhere; all authors have approved the submission. [AUTHOR TO CONFIRM]
+
+Competing interests, funding and the use of AI tools are declared in the Statements and Declarations section. [AUTHOR TO CONFIRM]
+
+Suggested reviewers (optional): [INSERT OR DELETE]
+
+Sincerely,
+[INSERT NAME], on behalf of all authors

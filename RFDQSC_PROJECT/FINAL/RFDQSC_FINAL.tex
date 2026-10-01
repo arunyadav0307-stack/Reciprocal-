@@ -1,0 +1,942 @@
+%% Journal of Applied Mathematics and Computing -- manuscript source
+%% Springer Nature LaTeX template (sn-jnl.cls), Math and Physical Sciences numbered reference style.
+%% Build sequence: latex, bibtex, latex, latex.
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs,array}
+\usepackage{newunicodechar}
+\usepackage{xurl}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%% ---------- theorem-type environments (numbering carried in the title, as in the source) ----------
+\theoremstyle{thmstyleone}
+\newcommand{\thmxname}{}
+\newtheorem*{thmxinner}{\thmxname}
+\newenvironment{thmx}[1]{\renewcommand{\thmxname}{#1}\begin{thmxinner}}{\end{thmxinner}}
+\theoremstyle{thmstylethree}
+\newcommand{\defnname}{}
+\newtheorem*{defninner}{\defnname}
+\newenvironment{defn}[1]{\renewcommand{\defnname}{#1}\begin{defninner}}{\end{defninner}}
+\raggedbottom
+%% ---------- Unicode symbols used in the source text ----------
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{₀}{\ensuremath{_0}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{′}{\ensuremath{^{\prime}}}
+\newunicodechar{≡}{\ensuremath{\equiv}}
+\newunicodechar{₂}{\ensuremath{_2}}
+\newunicodechar{Σ}{\ensuremath{\sum}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{₁}{\ensuremath{_1}}
+\newunicodechar{⊆}{\ensuremath{\subseteq}}
+\newunicodechar{·}{\ensuremath{\cdot}}
+\newunicodechar{∏}{\ensuremath{\prod}}
+\newunicodechar{∅}{\ensuremath{\emptyset}}
+\newunicodechar{ℓ}{\ensuremath{\ell}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{Φ}{\ensuremath{\Phi}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{⊥}{\ensuremath{\perp}}
+\newunicodechar{∤}{\ensuremath{\nmid}}
+\newunicodechar{𝒫}{\ensuremath{\mathcal{P}}}
+\newunicodechar{²}{\ensuremath{^2}}
+\newunicodechar{∖}{\ensuremath{\setminus}}
+\newunicodechar{⊊}{\ensuremath{\subsetneq}}
+\newunicodechar{⟺}{\ensuremath{\Longleftrightarrow}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+\newunicodechar{ξ}{\ensuremath{\xi}}
+\newunicodechar{⋯}{\ensuremath{\cdots}}
+\newunicodechar{≢}{\ensuremath{\not\equiv}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{₃}{\ensuremath{_3}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{¹}{\ensuremath{^1}}
+\newunicodechar{₄}{\ensuremath{_4}}
+\newunicodechar{₅}{\ensuremath{_5}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{∎}{\ensuremath{\blacksquare}}
+\begin{document}
+\title[Reciprocal-free divisors of prescribed order]{Reciprocal-free divisors of prescribed order over finite fields and the saturation cost of cyclic quantum synchronizable codes}
+\author*[1]{\fnm{[INSERT FIRST NAME]} \sur{[INSERT SURNAME]}}\email{[INSERT E-MAIL]}
+\affil*[1]{\orgdiv{[INSERT DEPARTMENT]}, \orgname{[INSERT INSTITUTION]}, \orgaddress{\city{[INSERT CITY]}, \country{[INSERT COUNTRY]}}}
+\abstract{For a prime power $q$ and an integer $N\ge 2$ with $\gcd(N,q)=1$, let $w_0(N,q)$ be the classical least degree of a divisor of $x^N-1$ of order $N$. We study its reciprocal-free restriction $w(N,q)$, the least degree of such a divisor $h$ with $\gcd(h,h^*)=1$, where $h^*$ is the reciprocal polynomial, a constraint satisfied by saturating factors in cyclic quantum synchronizable codes. Always $w\ge w_0$; $w$ may be larger or infinite. For odd $N$, reciprocal-free admissibility is determined by the $2$-adic valuations of the orders $\mathrm{ord}_p(q)$ on the prime support, and a support-reduction theorem expresses $w(N,q)$ as a minimum over partitions of the prime support of $N$, where each block may use further prime divisors of $N$, to exponent $1$, as helpers; forbidding helpers recovers the classical formula for $w_0$. For $N=p^ar^b$ ($p,r$ distinct odd primes) we obtain an exact formula, and show that $w/w_0$ is unbounded over pairs $(N,q)$ in which $q$ varies with $N$. In the semisimple cyclic framework, every saturating factor has degree at least $w$, giving $K+2d(D)\le N+2-2w$, with $K$ the code dimension and $d(D)$ the classical minimum distance of the larger cyclic code, and an exact decomposition of the slack into a structural excess and a Singleton defect. For Class 1 of a published construction, the synchronization-factor degree is at least $2w$, an excess of at least $w$. All statements agree with 409,075 exact computational checks over finite ranges.}
+\keywords{Finite fields, Polynomial order, Reciprocal polynomials, Cyclic codes, Cyclotomic cosets, Quantum synchronizable codes}
+\pacs[MSC Classification]{11T06, 11T71, 94B15, 81P70, 11A07}
+\maketitle
+\section{Introduction}
+
+\subsection{Context}
+
+Let \(q\) be a prime power and \(N\) ≥ 2 an integer. A polynomial \(f\) ∈ \(F_q[x]\) with \(f\)(0) ≠ 0 has \emph{order} \(N\) if \(N\) is the least positive integer e with \(f\) \(\mid\) \(x^e\) − 1. Polynomials of prescribed order appear throughout the theory of finite fields: the least period of a linear recurring sequence equals the order of its minimal polynomial \cite{LN}, the order of an invertible matrix over \(F_q\) equals the order of its minimal polynomial, and the order of a divisor of \(x^N\) − 1 controls the cyclic structure of the codes it generates.
+
+The last point has a concrete role in the cyclic construction of quantum synchronizable codes (QSCs) of Fujiwara, Tonchev and Wong \cite{FTW}, in the \(q\)-ary form of \cite{XYY16,LM18}. There, nested cyclic codes \(C\) ⊊ \(D\) of length \(N\), with \(C\) dual-containing, yield a QSC whose misalignment tolerance is bounded by the order of the quotient \(h\) = \(g_C/g_D\) of their generator polynomials; the tolerance is maximal exactly when ord(\(h\)) = \(N\). This paper is primarily a study of divisors of \(x^N\) − 1 of prescribed order under a reciprocal-free constraint; the QSC setting supplies the motivation for that constraint and an application.
+
+\subsection{Classical baseline}
+
+The unrestricted problem asks for the least degree of a polynomial of order \(N\):
+
+\begin{center}\(w\)₀(\(N\),\(q\)) = min \{ deg \(h\) : \(h\) \(\mid\) \(x^N\) − 1, ord(\(h\)) = \(N\) \}.\end{center}
+
+For gcd(\(N\),\(q\)) = 1, an irreducible factor of \(x^N\) − 1 of order \(m\) \(\mid\) \(N\) has degree o(\(m\)) = \(\operatorname{ord}_m(q)\), and orders of coprime products combine by lcm, so \(w\)₀(\(N\),\(q\)) is the minimum of \(Σ_{m∈S}\) o(\(m\)) over sets \(S\) of divisors of \(N\) with lcm \(S\) = \(N\); it also has a partition form over the prime support of \(N\) (§3). The notation \(w\)₀ is ours, but the quantity is classical: it coincides with the least order of a linear recurrence of period \(N\) \cite{LN,BQ}, and with the least \(k\) for which \(\mathrm{GL}_k(q)\) contains an element of order \(N\) (§3.1).
+
+\subsection{The reciprocal-free restriction}
+
+Assume gcd(\(N\),\(q\)) = 1, and let \(h^{*}\) denote the reciprocal of a polynomial \(h\). A cyclic code \(C\) of length \(N\) is dual-containing exactly when \(g_C\) \(g_C^{*}\) divides \(x^N\) − 1. Since \(x^N\) − 1 is then squarefree, every divisor \(h\) of \(g_C\) satisfies gcd(\(h\), \(h^{*}\)) = 1. Hence the saturating quotient in the cyclic QSC construction is a reciprocal-free divisor of \(x^N\) − 1 of order \(N\), which leads to
+
+\begin{center}\(w\)(\(N\),\(q\)) = min \{ deg \(h\) : \(h\) \(\mid\) \(x^N\) − 1, ord(\(h\)) = \(N\), gcd(\(h\), \(h^{*}\)) = 1 \},\end{center}
+
+with \(w\)(\(N\),\(q\)) = ∞ if no such \(h\) exists. The quantity \(w\) is not another name for \(w\)₀: it minimizes over a smaller class of divisors, so \(w\)(\(N\),\(q\)) ≥ \(w\)₀(\(N\),\(q\)). Equality can hold, the inequality can be strict, and \(w\) can be infinite; for example, \(w\)(143, 3) = \(w\)₀(143, 3) = 8, \(w\)(55, 3) = 20 whereas \(w\)₀(55, 3) = 9, and \(w\)(225, 23) = 32 whereas \(w\)₀(225, 23) = 26. Every saturating factor therefore has degree at least \(w\)₀, but this classical bound can be far from attained once the reciprocal-free constraint is imposed. We are not aware of earlier work that defines or determines \(w\)(\(N\),\(q\)).
+
+\subsection{Research question}
+
+\emph{For gcd(\(N\),\(q\)) = 1, how does the reciprocal-free constraint reshape the prescribed-order minimum-degree problem? What is the exact arithmetic structure of \(w\)(\(N\),\(q\)), and how does it differ from \(w\)₀(\(N\),\(q\))?} For odd \(N\) we answer this structurally: \(w\)(\(N\),\(q\)) is reduced to an explicit finite optimization over the prime support of \(N\), and the constraint enters only through 2-adic invariants of the multiplicative orders of \(q\).
+
+\subsection{Main results}
+
+The principal results are the following.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Admissibility for odd moduli (Lemma 5.1).} For odd \(p\) ∤ \(q\) let \(t_p\) = \(v₂(\operatorname{ord}_p(q))\). For odd \(m\) ≥ 3 with gcd(\(m\),\(q\)) = 1, −1 ∉ ⟨\(q\)⟩ mod \(m\) exactly when the classes \(t_p\) of the primes dividing \(m\) are not all equal to one and the same positive integer; hence admissibility depends only on the prime support of \(m\). This criterion is known in substance; we give a complete proof.
+\item
+  \textbf{Support reduction (Theorem A).} For odd \(N\) with gcd(\(N\),\(q\)) = 1, \(w\)(\(N\),\(q\)) is the minimum, over partitions of the prime support of \(N\), of a sum of block costs. Each block carries its full prime powers and may use further prime divisors of \(N\) to exponent 1 as helpers, solely to make its support admissible. Forbidding helpers recovers the classical partition formula for \(w\)₀.
+\item
+  \textbf{Two prime powers (Theorem B).} For \(N\) = \(p^a\) \(r^b\), with \(p\) and \(r\) distinct odd primes and gcd(\(N\),\(q\)) = 1, \(w\)(\(N\),\(q\)) has an exact four-case formula determined by \(t_p\) and \(t_r\).
+\item
+  \textbf{Separation (Theorem C).} If \(t_p\) ≠ \(t_r\) and both are positive, then \(w\)(pr, \(q\)) = \(\operatorname{ord}_{pr}(q)\), while \(w\)₀(pr, \(q\)) ≤ \(\operatorname{ord}_p(q)\) + \(\operatorname{ord}_r(q)\). An explicit family of triples (\(p\), \(r\), \(q\)) with \(p\) ≥ 7, in which the prime \(q\) is chosen depending on \(p\) and \(r\), shows that \(w\)/\(w\)₀ is unbounded over pairs (\(N\),\(q\)).
+\item
+  \textbf{Saturation cost (Proposition 9.1, Corollary 9.2, Proposition 10.1).} In the semisimple cyclic QSC framework every saturating factor \(h\) satisfies deg \(h\) ≥ \(w\)(\(N\),\(q\)). Consequently \(K\) + 2\(d\)(\(D\)) ≤ \(N\) + 2 − 2\(w\), where \(d\)(\(D\)) is the classical minimum distance of the larger code \(D\), and the slack satisfies the exact identity Δ = 2(\(s\) − \(w\)) + 2(\(B\) + 1 − \(d\)(\(D\))), with \(s\) = deg \(h\) and \(B\) = deg \(g_D\).
+\item
+  \textbf{Calibration (Theorem 11.1).} For Class 1 of the construction of Li and Zhu \cite{LZ22} (\(q\) odd, \(N\) = 2\(n\) with \(n\) an odd prime), \(s\) ≥ 2\(w\) and Δ ≥ 2\(w\). Class 2 of \cite{LZ22} is examined only computationally, under a reconstructed index rule.
+\end{enumerate}
+
+\subsection{Scope and limitations}
+
+All results concerning \(w\) assume gcd(\(N\),\(q\)) = 1. Theorem A concerns odd \(N\), Theorem B two distinct odd prime-power factors, and in Theorem C the field size \(q\) varies together with \(N\); for fixed \(q\) the behavior of \(w\)/\(w\)₀ is not addressed. The bound involving \(w\) is a consequence of the Singleton bound; it is not claimed to be sharp, nor to determine the achievable QSC parameters. Repeated-root constructions, including those of Du et al.~\cite{DMLHW20}, lie outside the setting in which \(w\) describes saturation (§12.2).
+
+\subsection{Related literature}
+
+Quantum synchronizable codes were introduced by Fujiwara \cite{Fuj13}, and the cyclic framework used in this paper originates with \cite{FTW} for binary codes and was extended to \(q\)-ary codes in \cite{XYY16,LM18}. Further constructions include codes from finite geometries \cite{FV14}, from quadratic residue codes and their supercodes \cite{XYF14}, \(q\)-ary chain-containing codes \cite{XYY16}, algebraic constructions \cite{GLG17}, a class of codes from duadic codes with the highest possible tolerance against misalignment (T. Zhang and G. Ge, preprint arXiv:1508.00974, 2015), two families given in \cite{LML19}, and constructions from repeated-root cyclic codes \cite{LM18} and repeated-root quasi-cyclic codes \cite{DML23}. The constructions calibrated or excluded in this paper are those of \cite{LZ22,DMLHW20}.
+
+Dual-containing classical codes are the standard input to constructions of quantum codes from classical codes \cite{CRSS98,KKKS06,AKS07}. Negacyclic codes, which appear in the construction of \cite{LZ22}, are studied for instance in \cite{Bla08,KZ13}. Reciprocal polynomials also govern cyclic codes with complementary duals \cite{Mas92,YM94}, as well as self-dual and self-orthogonal cyclic codes \cite{ST,JLX}. The condition −1 ∈ ⟨\(q\)⟩ mod \(m\) is equivalent to \(m\) dividing \(q^k\) + 1 for some \(k\); divisors of numbers of the form \(a^k\) + \(b^k\) are studied in \cite{Mor97}.
+
+Element orders in linear groups over finite fields have a separate literature, for example on element orders in groups related to the general linear group \cite{Dar05} and on the order of a typical matrix with entries in a finite field \cite{Sch95}. These works address questions different from the minimum-degree problem considered here.
+
+\textbf{Organization.} Section 2 collects preliminaries and the cyclic QSC framework; §3 treats the classical quantity \(w\)₀; §4 introduces reciprocal-free admissibility and \(w\), with its lcm-cover form; §5 proves the admissibility criterion for odd moduli; §6 proves the support-reduction theorem; §7 gives the two-prime-power formula; §8 establishes the separation from \(w\)₀; §9 and §10 give the QSC application and the deficit decomposition; §11 calibrates the construction of \cite{LZ22}; §12 discusses scope and the computational verification; §13 concludes.
+
+\section{Preliminaries}
+
+Throughout, \(q\) is a prime power, \(F_q\) is the finite field with \(q\) elements, and \(N\) ≥ 1 is an integer. For a positive integer \(m\) with gcd(\(m\),\(q\)) = 1, ⟨\(q\)⟩ denotes the cyclic subgroup of (\(ℤ/mℤ)^×\) generated by \(q\) mod \(m\). All polynomials are in \(F_q[x]\). ``Divisor of \(x^N\) − 1'' means a monic divisor.
+
+\subsection{Polynomial order and the lcm law}
+
+\begin{defn}{Definition (order)}
+
+Let \(f\) ∈ \(F_q[x]\) be nonconstant with \(f\)(0) ≠ 0. The \emph{order} ord(\(f\)) is the least positive integer e such that \(f\)(\(x\)) divides \(x^e\) − 1. For a nonzero constant \(c\), set ord(\(c\)) = 1.
+
+\end{defn}
+
+The order exists because \(x\) is a unit in the finite ring \(F_q[x]/(f)\), since \(f\)(0) ≠ 0. In fact ord(\(f\)) is the multiplicative order of the class of \(x\) in that ring. Consequently, for every positive integer e,
+
+\begin{center}\(f\)(\(x\)) \(\mid\) \(x^e\) − 1 ⟺ ord(\(f\)) \(\mid\) e.\qquad (2.1)\end{center}
+
+For irreducible \(f\), ord(\(f\)) equals the multiplicative order of any root of \(f\) in a splitting field \cite{LN}.
+
+\begin{thmx}{Lemma 2.1 (lcm law)}
+
+Let \(f\), \(g\) ∈ \(F_q[x]\) satisfy \(f\)(0)\(g\)(0) ≠ 0 and gcd(\(f\),\(g\)) = 1. Then
+
+\begin{center}ord(fg) = lcm(ord(\(f\)), ord(\(g\))).\end{center}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+Since \(f\) and \(g\) are coprime, fg divides \(x^e\) − 1 if and only if both \(f\) and \(g\) divide \(x^e\) − 1. By (2.1) this holds if and only if ord(\(f\)) \(\mid\) e and ord(\(g\)) \(\mid\) e, that is, lcm(ord(\(f\)), ord(\(g\))) \(\mid\) e. The least such e is lcm(ord(\(f\)), ord(\(g\))).
+
+\end{proof}
+
+By induction, the order of a product of pairwise coprime polynomials with nonzero constant terms is the lcm of their orders.
+
+\subsection{Cyclotomic cosets and reciprocal polynomials}
+
+Assume gcd(\(m\),\(q\)) = 1. The \emph{\(q\)-cyclotomic coset} of i ∈ ℤ/\(m\)ℤ is \(C_i^{(m)}\) = \{ i \(q^j\) mod \(m\) : j ≥ 0 \}; the cosets partition ℤ/\(m\)ℤ. For \(m\) ≥ 1 write o(\(m\)) = \(\operatorname{ord}_m(q)\) for the multiplicative order of \(q\) modulo \(m\), with o(1) = 1.
+
+\textbf{Factorization of \(x^N\) − 1.} Let gcd(\(N\),\(q\)) = 1 and let ξ be a primitive \(N\)-th root of unity in an extension of \(F_q\). Then \(x^N\) − 1 is squarefree, and
+
+\begin{center}\(x^N\) − 1 = \(∏_{C}\) \(M_C(x)\), where \(M_C(x)\) = \(∏_{j∈C}\) (\(x\) − \(ξ^j\)),\end{center}
+
+the product running over the \(q\)-cyclotomic cosets \(C\) modulo \(N\); each \(M_C\) is irreducible over \(F_q\), and every irreducible factor of \(x^N\) − 1 arises this way exactly once \cite{LN}. If \(C\) = \(C_i^{(N)}\), the roots of \(M_C\) have multiplicative order \(m\) = \(N\)/gcd(i,\(N\)), so \(\operatorname{ord}(M_C)\) = \(m\) \(\mid\) \(N\); and an element α of order \(m\) satisfies \(α^{q^k}\) = α if and only if \(m\) \(\mid\) \(q^k\) − 1, so deg \(M_C\) = \textbar{}\(C\)\textbar{} = o(\(m\)). Thus \textbf{every irreducible factor of \(x^N\) − 1 of order \(m\) has degree o(\(m\))}, and for every \(m\) \(\mid\) \(N\) such a factor exists, for instance the minimal polynomial of \(ξ^{N/m}\).
+
+For \(f\) ∈ \(F_q[x]\) with \(f\)(0) ≠ 0, the \emph{(monic) reciprocal} is \(f^{*}(x)=f(0)^{-1}x^{\deg f}f(1/x)\). Its roots are the inverses of the roots of \(f\), with multiplicities; \(f\mapsto f^{*}\) preserves degree and irreducibility, \((fg)^{*}=f^{*}g^{*}\), and \(\operatorname{ord}(f^{*})=\operatorname{ord}(f)\). We call \(f\) \emph{self-reciprocal} if \(f^{*}=f\). Since \((x^N-1)^{*}=x^N-1\), the reciprocal of a divisor of \(x^N-1\) is again such a divisor.
+
+\begin{thmx}{Lemma 2.2 (self-reciprocal irreducible factors)}
+
+Let gcd(\(m\),\(q\)) = 1, and let \(f\) ∈ \(F_q[x]\) be irreducible with ord(\(f\)) = \(m\). Then
+
+\begin{center}\(f\) is self-reciprocal ⟺ −1 ∈ ⟨\(q\)⟩ ≤ (\(ℤ/mℤ)^×\).\end{center}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+Let α be a root of \(f\). Then α has multiplicative order \(m\), and the roots of \(f\) are \(α^{q^j}\), j ≥ 0. Since \(f\) and \(f^{*}\) are monic irreducible, \(f^{*}\) = \(f\) holds if and only if the root \(α^{−1}\) of \(f^{*}\) is a root of \(f\). That is, \(α^{−1}\) = \(α^{q^j}\) for some j, which is equivalent to \(q^j\) ≡ −1 (mod \(m\)).
+
+\end{proof}
+
+For \(m\) ∈ \{1, 2\} one has −1 ≡ 1 (mod \(m\)). Lemma 2.2 therefore recovers the fact that \(x\) − 1 and \(x\) + 1 (orders 1 and 2) are self-reciprocal. The criterion is classical in substance; we include the proof for completeness.
+
+\subsection{Cyclic codes, duals, and dual containment}
+
+Let \(R_N\) = \(F_q[x]/(x^N\) − 1). A vector (\(c_0\), \ldots, \(c_{N−1}\)) ∈ \(F_q^N\) is identified with \(c\)(\(x\)) = Σ \(c_i\) \(x^i\) ∈ \(R_N\).
+
+A \emph{cyclic code} of length \(N\) is an ideal \(C\) of \(R_N\). It is generated by a unique monic divisor \(g_C\) of \(x^N\) − 1, its \emph{generator polynomial}, and dim \(C\) = \(N\) − deg \(g_C\).
+
+The \emph{check polynomial} is
+
+\begin{center}\(h_C\) = (\(x^N\) − \(1)/g_C\).\end{center}
+
+We use the following fact: for monic divisors a, b of \(x^N\) − 1, ⟨a⟩ ⊆ ⟨b⟩ in \(R_N\) if and only if b \(\mid\) a. Here \(C^⊥\) denotes the dual of \(C\) with respect to the standard inner product.
+
+\begin{thmx}{Lemma 2.3 (dual containment)}
+
+Let gcd(\(N\),\(q\)) = 1, and let \(C\) be a cyclic code of length \(N\) with generator polynomial \(g_C\). Then
+
+\[C^{\perp}\subseteq C \iff g_C(x)\,g_C^{*}(x)\mid x^N-1.\]
+
+\end{thmx}
+
+The criterion is standard; for completeness, a proof (via the identification \(C^{\perp}=\langle h_C^{*}\rangle\), where \(h_C=(x^N-1)/g_C\)) is given in the supplementary information (S1).
+
+\textbf{Remark after Lemma 2.3.} The semisimple hypothesis matters for the consequence we need. If gcd(\(N\),\(q\)) = 1, then \(x^N-1\) is squarefree, so \(g_Cg_C^{*}\mid x^N-1\) forces \(\gcd(g_C,g_C^{*})=1\). Every divisor \(h\) of \(g_C\) then also satisfies \(\gcd(h,h^{*})=1\), because \(hh^{*}\) divides \(g_Cg_C^{*}\). Without the semisimple hypothesis this implication can fail.
+
+\begin{thmx}{Lemma 2.4 (Singleton bound)}
+
+Every linear {[}\(N\), \(k\), \(d\){]} code over \(F_q\) with \(k\) ≥ 1 satisfies \(d\) ≤ \(N\) − \(k\) + 1.
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+The codewords vanishing in the first \(k\) − 1 coordinates form a subspace of dimension at least 1. A nonzero element of that subspace has weight at most \(N\) − (\(k\) − 1).
+
+\end{proof}
+
+\subsection{The cyclic QSC framework}
+
+We recall only the part of the cyclic QSC framework that is used later. It is due to Fujiwara, Tonchev and Wong \cite{FTW} for binary codes and was extended to \(q\)-ary codes in \cite{XYY16,LM18}. Let \(C\) ⊊ \(D\) be cyclic codes of length \(N\) over \(F_q\) with generator polynomials \(g_C\) and \(g_D\), where \(C\) is dual-containing (\(C^⊥\) ⊆ \(C\)) and \(g_D\) \(\mid\) \(g_C\), \(g_D\) ≠ \(g_C\). Put \(h\) = \(g_C/g_D\) and \(k_C\) = dim \(C\) = \(N\) − deg \(g_C\); then \(h\) \(\mid\) \(x^N\) − 1, so ord(\(h\)) ≤ \(N\) by (2.1). For all non-negative integers \(a_l\), \(a_r\) with
+
+\begin{center}\(a_l\) + \(a_r\) \textless{} ord(\(h\)),\qquad (2.2)\end{center}
+
+the construction of \cite{FTW,XYY16,LM18} gives an (\(a_l\), \(a_r)-QSC\) of length \(N\) + \(a_l\) + \(a_r\) and dimension
+
+\begin{center}\(K\) = \(2k_C\) − \(N\) = \(N\) − 2 deg \(g_C\),\qquad (2.3)\end{center}
+
+which corrects misalignments of up to \(a_l\) positions to the left and \(a_r\) to the right; its quantum error-correcting capabilities are expressed through the minimum distances of \(C\) and \(D\) (see \cite{FTW} for the binary case). Throughout, \(d\)(\(D\)) denotes the \textbf{classical} minimum distance of \(D\), never a quantum distance. We call the pair (\(C\), \(D\)), or \(h\), \emph{saturated} if ord(\(h\)) = \(N\); then (2.2) permits all \(a_l\) + \(a_r\) ≤ \(N\) − 1. Only (2.2) and (2.3) are used later, and we make no claim that the quantities introduced below determine \(K\), \(d\)(\(D\)) or the set of achievable parameters. The constructions of \cite{LZ22,DMLHW20} are instances of this framework, discussed only in §11 and §12.
+
+\subsection{Notation}
+
+Throughout, the semisimple condition gcd(\(N\),\(q\)) = 1 is assumed wherever \(w\)(\(N\),\(q\)) or \(w\)₀(\(N\),\(q\)) appears; o(\(m\)) = \(\operatorname{ord}_m(q)\) for gcd(\(m\),\(q\)) = 1; \(t_p\) = \(v\)₂(o(\(p\))) for an odd prime \(p\) ∤ \(q\), where \(v\)₂ is the 2-adic valuation (used from §5 on). An integer \(m\) ≥ 1 with gcd(\(m\),\(q\)) = 1 is \emph{admissible} if −1 ∉ ⟨\(q\)⟩ ≤ (\(ℤ/mℤ)^×\); every admissible \(m\) satisfies \(m\) ≥ 3, and by Lemma 2.2 \(m\) is admissible if and only if the irreducible factors of order \(m\) are not self-reciprocal. A polynomial \(h\) with \(h\)(0) ≠ 0 is \emph{reciprocal-free} if gcd(\(h\), \(h^{*}\)) = 1. Minima over empty sets are +∞.
+
+\section{Classical minimum degree w₀}
+
+Throughout this section, \textbf{gcd(\(N\),\(q\)) = 1 and \(N\) ≥ 2}. Notation is as in §2.
+
+\subsection{Definition and basic interpretation}
+
+The \emph{classical minimal degree of order \(N\)} is
+
+\begin{center}\(w\)₀(\(N\),\(q\)) = min \{ deg \(h\) : \(h\) \(\mid\) \(x^N\) − 1, ord(\(h\)) = \(N\) \}.\end{center}
+
+The divisibility condition imposes no restriction beyond the order condition: by (2.1), every polynomial of order \(N\) divides \(x^N\) − 1. So \(w\)₀(\(N\),\(q\)) is the least degree of any polynomial over \(F_q\) with order \(N\). It is finite, because an irreducible factor of \(x^N\) − 1 of order \(N\) exists (§2.2).
+
+The quantity has two classical interpretations.
+
+\textbf{Linear recurrences.} The least period of a periodic linear recurring sequence equals the order of its minimal polynomial \cite{LN}. The set of least periods realized by linear recurrences of order \(k\) coincides with the set of orders of polynomials of degree at most \(k\) \cite{BQ}. Hence \(w\)₀(\(N\),\(q\)) is the least \(k\) for which some linear recurrence of order \(k\) over \(F_q\) has a sequence of least period \(N\).
+
+\textbf{Matrices.} \(w\)₀(\(N\),\(q\)) is the least \(k\) for which \(\mathrm{GL}_k(q)\) contains an element of order \(N\).
+
+\begin{proof}[Proof of the matrix interpretation]
+
+Let \(g\) ∈ \(\mathrm{GL}_k(q)\) have minimal polynomial μ. Then μ(0) ≠ 0, and \(g^e\) = I if and only if μ \(\mid\) \(x^e\) − 1, so the order of \(g\) equals ord(μ). If \(g\) has order \(N\), then μ has order \(N\) and degree at most \(k\), so \(w\)₀(\(N\),\(q\)) ≤ \(k\). Conversely, let \(h\) be a polynomial of order \(N\) with deg \(h\) = \(w\)₀(\(N\),\(q\)). Its companion matrix lies in \(\mathrm{\mathrm{GL}}_{\deg h}(q)\), has minimal polynomial \(h\), and so has order \(N\).
+
+\end{proof}
+
+\subsection{lcm-cover and partition forms}
+
+\begin{thmx}{Proposition 3.1 (classical forms of \(w\)₀)}
+
+Let gcd(\(N\),\(q\)) = 1 and \(N\) ≥ 2.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item \textbf{lcm-cover form:} \(w\)₀(\(N\),\(q\)) = min \{ \(Σ_{m∈S}\) o(\(m\)) : \(S\) ⊆ \{ \(d\) : \(d\) \(\mid\) \(N\), \(d\) \textgreater{} 1 \}, lcm \(S\) = \(N\) \}.
+\item \textbf{Partition form:} if \(N\) = \(∏_{p∈P}\) \(p^{a_p}\), with \(P\) the set of prime divisors of \(N\), and \(n_A\) = \(∏_{p∈A}\) \(p^{a_p}\) for nonempty A ⊆ \(P\), then \(w\)₀(\(N\),\(q\)) = \(\operatorname{min}_𝒫\) \(Σ_{A∈𝒫}\) \(o(n_A)\), where 𝒫 ranges over the partitions of \(P\).
+\end{enumerate}
+
+\end{thmx}
+
+Part (a) is the unconstrained case of Proposition 4.2, and part (b) is formula (6.3); both are proved in §4.3 and §6.5 alongside their reciprocal-free counterparts. Proposition 3.1 is a direct consequence of classical facts, and is not claimed as new. Formula (b) is the unrestricted counterpart of Theorem A: §6 shows that the reciprocal-free restriction changes exactly the block costs, and nothing else.
+
+The reciprocal-free restriction \(w\)(\(N\),\(q\)) of \(w\)₀ is formally introduced in Definition 4.1. Since it minimizes over a subclass of the divisors allowed for \(w\)₀, \(w\)(\(N\),\(q\)) ≥ \(w\)₀(\(N\),\(q\)). The inequality can be strict, or \(w\) can be infinite (Proposition 4.3(1) and §7.4).
+
+\section{Reciprocal-free admissibility and w(N,q)}
+
+Throughout this section, \textbf{gcd(\(N\),\(q\)) = 1 and \(N\) ≥ 2}. So \(x^N\) − 1 is squarefree and factors as in §2.2.
+
+\subsection{Admissible divisors}
+
+A monic divisor \(h\) of \(x^N\) − 1 is called \emph{admissible}, or \emph{reciprocal-free}, if
+
+\begin{center}gcd(\(h\), \(h^{*}\)) = 1.\end{center}
+
+Since \(x^N\) − 1 is squarefree, \(h\) is a product of distinct irreducible factors of \(x^N\) − 1, and \(h^{*}\) is the product of their reciprocals. So \(h\) is reciprocal-free exactly when two conditions hold: \textbf{(a)} no irreducible factor of \(h\) is self-reciprocal; \textbf{(b)} \(h\) does not contain both an irreducible factor \(f\) and its reciprocal \(f^{*}\) ≠ \(f\).
+
+By Lemma 2.2, condition (a) says that every irreducible factor of \(h\) has an admissible order.
+
+This is the condition met by every divisor of the generator polynomial of a dual-containing cyclic code (Remark after Lemma 2.3). Its existence aspect is classical in the theory of self-orthogonal and self-dual cyclic codes \cite{ST,JLX}.
+
+\subsection{Definition of w(N,q)}
+
+\begin{defn}{Definition 4.1}
+
+For gcd(\(N\),\(q\)) = 1 and \(N\) ≥ 2 define
+
+\begin{center}\(w\)₀(\(N\),\(q\)) = min \{ deg \(h\) : \(h\) \(\mid\) \(x^N\) − 1, ord(\(h\)) = \(N\) \},\end{center}
+
+\begin{center}\(w\)(\(N\),\(q\)) = min \{ deg \(h\) : \(h\) \(\mid\) \(x^N\) − 1, ord(\(h\)) = \(N\), gcd(\(h\), \(h^{*}\)) = 1 \},\end{center}
+
+with \(w\)(\(N\),\(q\)) = ∞ if no such \(h\) exists.
+
+\end{defn}
+
+\textbf{\(w\)₀(\(N\),\(q\))} is the classical unconstrained quantity: the least degree of a divisor of \(x^N\) − 1 of order \(N\). It is always finite, since an irreducible factor of order \(N\) exists. \textbf{\(w\)(\(N\),\(q\))} is its restriction to reciprocal-free divisors. The only difference between the two is the constraint gcd(\(h\), \(h^{*}\)) = 1.
+
+\subsection{The lcm-cover form}
+
+\begin{thmx}{Proposition 4.2 (lcm-cover form)}
+
+Let gcd(\(N\),\(q\)) = 1 and \(N\) ≥ 2. Then
+
+\begin{center}\(w\)(\(N\),\(q\)) = \(\operatorname{min}_S\) \(Σ_{m∈S}\) o(\(m\)),\end{center}
+
+where \(S\) ranges over the sets of admissible divisors \(m\) of \(N\) with \(\operatorname{lcm}_{m∈S}\) \(m\) = \(N\). Likewise,
+
+\begin{center}\(w\)₀(\(N\),\(q\)) = \(\operatorname{min}_S\) \(Σ_{m∈S}\) o(\(m\)),\end{center}
+
+where \(S\) ranges over the sets of divisors \(m\) \textgreater{} 1 of \(N\) with \(\operatorname{lcm}_{m∈S}\) \(m\) = \(N\).
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+We prove the statement for \(w\). The proof for \(w\)₀ is identical with every admissibility condition removed.
+
+\emph{(≤) Every admissible cover gives a feasible \(h\).} Let \(S\) be a set of admissible divisors of \(N\) with lcm \(S\) = \(N\). For each \(m\) ∈ \(S\) choose an irreducible factor \(f_m\) of \(x^N\) − 1 with \(\operatorname{ord}(f_m)\) = \(m\) (§2.2). Distinct \(m\) give distinct \(f_m\), so \(h\) = \(∏_{m∈S}\) \(f_m\) divides the squarefree polynomial \(x^N\) − 1. By Lemma 2.1, ord(\(h\)) = lcm \(S\) = \(N\). \(h\) is reciprocal-free: Each \(f_m^{*}\) is irreducible of order \(m\). A common irreducible factor of \(h\) and \(h^{*}\) would be \(f_m\) = \(f_{m′}^{*}\) for some \(m\), \(m\)′ ∈ \(S\). Comparing orders gives \(m\) = \(m\)′, so \(f_m\) would be self-reciprocal. That contradicts Lemma 2.2, since \(m\) is admissible.
+By §2.2, deg \(h\) = \(Σ_{m∈S}\) deg \(f_m\) = \(Σ_{m∈S}\) o(\(m\)). Hence \(w\)(\(N\),\(q\)) ≤ \(Σ_{m∈S}\) o(\(m\)).
+
+\emph{(≥) Every feasible \(h\) gives an admissible cover.} Let \(h\) be feasible for \(w\)(\(N\),\(q\)). Write \(h\) = \(f_1\) ⋯ \(f_r\) as a product of distinct irreducible factors of \(x^N\) − 1, with \(m_i\) = \(\operatorname{ord}(f_i)\) dividing \(N\). If some \(f_i\) were self-reciprocal, it would divide gcd(\(h\), \(h^{*}\)). So by Lemma 2.2 every \(m_i\) is admissible. By Lemma 2.1, \(\operatorname{lcm}(m_1\), \ldots, \(m_r\)) = ord(\(h\)) = \(N\). Let \(S=\{m_1,\ldots,m_r\}\), viewed as a set. Then lcm \(S\) = \(N\), and since deg \(f_i\) = \(o(m_i)\),
+
+\begin{center}\(Σ_{m∈S}\) o(\(m\)) ≤ \(Σ_{i=1}^r\) deg \(f_i\) = deg \(h\).\end{center}
+
+Taking \(h\) of minimal degree gives the reverse inequality.
+
+\end{proof}
+
+\subsection{Elementary properties}
+
+\begin{thmx}{Proposition 4.3}
+
+Let gcd(\(N\),\(q\)) = 1 and \(N\) ≥ 2.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(w\)(\(N\),\(q\)) \textless{} ∞ if and only if \(N\) is admissible.
+\item
+  \(w\)(\(N\),\(q\)) ≥ \(w\)₀(\(N\),\(q\)).
+\item
+  If \(w\)(\(N\),\(q\)) \textless{} ∞, then 1 ≤ \(w\)(\(N\),\(q\)) ≤ \(\operatorname{ord}_N(q)\).
+\item
+  If \(N\) \textgreater{} 2, then \(w\)(\(N\),\(q\)) = 1 if and only if \(N\) \(\mid\) \(q\) − 1.
+\end{enumerate}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+\emph{(1)} If \(N\) is admissible, \(S\) = \{\(N\)\} is admissible with lcm \(N\), so \(w\)(\(N\),\(q\)) ≤ o(\(N\)) \textless{} ∞ by Proposition 4.2.
+
+Conversely, suppose \(N\) is not admissible, so \(q^j\) ≡ −1 (mod \(N\)) for some j. Reducing modulo any divisor \(m\) of \(N\) gives \(q^j\) ≡ −1 (mod \(m\)), so no divisor of \(N\) is admissible. Every \(S\) with lcm \(S\) = \(N\) ≥ 2 is nonempty, so no admissible \(S\) exists. Hence \(w\)(\(N\),\(q\)) = ∞.
+
+\emph{(2)} Every \(h\) feasible for \(w\)(\(N\),\(q\)) is feasible for \(w\)₀(\(N\),\(q\)).
+
+\emph{(3)} A feasible \(h\) has ord(\(h\)) = \(N\) ≥ 2, so \(h\) is nonconstant and deg \(h\) ≥ 1. The upper bound is the choice \(S\) = \{\(N\)\} in (1).
+
+\emph{(4)} Suppose \(N\) \(\mid\) \(q\) − 1. Then o(\(N\)) = 1 and ⟨\(q\)⟩ = \{1\} in (\(ℤ/Nℤ)^×\). Since \(N\) \textgreater{} 2, −1 ≢ 1 (mod \(N\)), so \(N\) is admissible. By (1) and (3), \(w\)(\(N\),\(q\)) = 1.
+
+Conversely, suppose \(w\)(\(N\),\(q\)) = 1. Then some feasible \(h\) = \(x\) − a has degree 1. So a ∈ \(F_q^×\) has multiplicative order ord(\(h\)) = \(N\), which forces \(N\) \(\mid\) \(q\) − 1.
+
+\end{proof}
+
+The restriction \(N\) \textgreater{} 2 in (4) is necessary: the only divisors of \(x\)² − 1 of order 2 are \(x\) + 1 and \(x\)² − 1, neither reciprocal-free, so \(w\)(2,\(q\)) = ∞, in accordance with (1).
+
+\subsection{Comparison with w₀}
+
+Both quantities are minimum-cost lcm-covers of \(N\) by divisors with cost o(\(m\)); they differ only in that \(w\) allows admissible divisors alone, so \(w\) ≥ \(w\)₀. Equality can occur: if \(N\) \textgreater{} 2 and \(N\) \(\mid\) \(q\) − 1, then \(w\)(\(N\),\(q\)) = \(w\)₀(\(N\),\(q\)) = 1. Equality need not occur, even when \(w\) is finite. For \(q\) = 3 and \(N\) = 5, 3² ≡ −1 (mod 5), so 5 is not admissible and \(w\)(5,3) = ∞, while \(w\)₀(5,3) = o(5) = 4. For \(q\) = 3 and \(N\) = 55, 5 is not admissible, whereas 11 is admissible since ⟨3⟩ = \{1, 3, 4, 5, 9\} mod 11 does not contain −1; hence 55 is admissible (reduction mod 11). Any cover of 55 must contain a divisor divisible by 5, and the only admissible one is 55, so \(w\)(55,3) = o(55) = lcm(4,5) = 20, while \(S\) = \{5, 11\} gives \(w\)₀(55,3) = o(5) + o(11) = 4 + 5 = 9. The quantitative separation between \(w\) and \(w\)₀ is studied in §8.
+
+\section{Admissibility structure for odd N}
+
+Throughout this section \(q\) is a prime power. No parity assumption is made on \(q\).
+
+\subsection{\texorpdfstring{2-adic classes \(t_p\)}{2-adic classes t\_p}}
+
+For an odd prime \(p\) ∤ \(q\), define the \emph{2-adic class} of \(p\) (relative to \(q\)) as
+
+\begin{center}\(t_p\) = \(v\)₂(o(\(p\))) = \(v₂(\operatorname{ord}_p(q))\),\end{center}
+
+where \(v\)₂ is the 2-adic valuation. This is a standard arithmetic quantity; the notation is fixed only for later use.
+
+The class of \(p\) also controls every power of \(p\). For a ≥ 1 we have
+
+\begin{center}\(v₂(o(p^a))\) = \(t_p\),\qquad (5.1)\end{center}
+
+proved in Step 2 of §5.2. So any criterion expressed through the 2-adic valuations of the orders \(o(p^{a_p})\) depends only on the primes \(p\), not on the exponents \(a_p\). This is the source of the support invariance in §5.3.
+
+\subsection{The 2-adic admissibility criterion}
+
+\begin{thmx}{Lemma 5.1 (2-adic admissibility criterion)}
+
+Let \(m\) ≥ 3 be odd with gcd(\(m\),\(q\)) = 1. Then \(m\) is admissible, that is −1 ∉ ⟨\(q\)⟩ ≤ (\(ℤ/mℤ)^×\), if and only if it is \textbf{not} the case that all \(t_p\) (\(p\) a prime divisor of \(m\)) equal one and the same positive integer.
+
+Equivalently, \(m\) is inadmissible if and only if \(t_p\) ≥ 1 for every prime \(p\) \(\mid\) \(m\) and \(t_p\) = \(t_r\) for every pair of prime divisors \(p\), \(r\) of \(m\).
+
+\end{thmx}
+
+The condition \(t_p\) ≥ 1 cannot be dropped from the pairwise form: when \(m\) is a prime power, the pairwise condition is vacuous.
+
+\begin{proof}[Proof]
+
+Write \(m\) = \(∏_{p|m}\) \(p^{a_p}\) with \(a_p\) ≥ 1, and put \(o_p\) = \(o(p^{a_p})\).
+
+\textbf{Step 1 (CRT reduction).} By the Chinese remainder theorem, \(q^j\) ≡ −1 (mod \(m\)) holds if and only if \(q^j\) ≡ −1 (mod \(p^{a_p}\)) for every \(p\) \(\mid\) \(m\). Hence
+
+\begin{center}−1 ∈ ⟨\(q\)⟩ mod \(m\) ⟺ there is a single exponent j ≥ 0 with \(q^j\) ≡ −1 (mod \(p^{a_p}\)) for every \(p\) \(\mid\) \(m\).\qquad (5.2)\end{center}
+
+The reduction is to the prime powers \(p^{a_p}\), not to the primes \(p\). The passage to primes happens only through (5.1).
+
+\textbf{Step 2 (proof of (5.1)).} Reducing modulo \(p\) shows o(\(p\)) \(\mid\) \(o(p^a)\). Write \(q^{o(p)}\) = 1 + \(p\) \(u\) with \(u\) ∈ ℤ. The binomial theorem gives (1 + \(p\) \(u)^{p^{a−1}}\) ≡ 1 (mod \(p^a\)), so \(o(p^a)\) \(\mid\) o(\(p\)) \(p^{a−1}\). Hence \(o(p^a)/o(p)\) divides \(p^{a−1}\), which is odd. So \(v₂(o(p^a))\) = \(v\)₂(o(\(p\))) = \(t_p\).
+
+\textbf{Step 3 (a single prime power).} Since \(p\) is odd, (\(ℤ/p^aℤ)^×\) is cyclic, and it contains a unique element of order 2, namely −1 (note −1 ≢ 1 because \(p^a\) ≥ 3). The subgroup ⟨\(q\)⟩ mod \(p^a\) is cyclic of order \(o_p\). It contains an element of order 2 if and only if \(o_p\) is even, and that element is then \(q^{o_p/2}\) = −1. Consequently \(q^j\) ≡ −1 (mod \(p^{a_p}\)) if and only if \(o_p\) is even and
+
+\begin{center}j ≡ \(o_p/2\) (mod \(o_p\)).\qquad (5.3)\end{center}
+
+By (5.1), \(o_p\) is even if and only if \(t_p\) ≥ 1. Writing \(o_p\) = \(2^{t_p}\) \(u_p\) with \(u_p\) odd, (5.3) reads j ≡ \(2^{t_p−1}\) \(u_p\) (mod \(2^{t_p}\) \(u_p\)).
+
+\textbf{Step 4 (necessity).} Suppose −1 ∈ ⟨\(q\)⟩ mod \(m\), and let j be as in (5.2). By Step 3, every \(t_p\) ≥ 1, and j = \(2^{t_p−1}\) \(u_p\) + \(k_p\) \(2^{t_p}\) \(u_p\) = \(2^{t_p−1}\) \(u_p\) (1 + \(2k_p\)) for some integer \(k_p\). Since \(u_p\) (1 + \(2k_p\)) is odd, \(v\)₂(j) = \(t_p\) − 1. Therefore \(t_p\) = \(v\)₂(j) + 1 for every \(p\) \(\mid\) \(m\). So all \(t_p\) equal the same positive integer.
+
+\textbf{Step 5 (sufficiency: a common exponent).} Suppose \(t_p\) = \(t\) ≥ 1 for every \(p\) \(\mid\) \(m\). Then \(o_p\) = \(2^t\) \(u_p\) with \(u_p\) odd. Let \(U\) = \(\operatorname{lcm}_{p|m}\) \(u_p\), which is odd, and put
+
+\begin{center}j = \(2^{t−1}\) \(U\).\end{center}
+
+For each \(p\), j = (\(o_p/2)·(U/u_p\)), and \(U/u_p\) is an odd integer, say 2\(k\) + 1. Hence j = \(o_p/2\) + \(k\) \(o_p\) ≡ \(o_p/2\) (mod \(o_p\)). By Step 3, \(q^j\) ≡ −1 (mod \(p^{a_p}\)) for every \(p\) \(\mid\) \(m\). By (5.2), −1 ∈ ⟨\(q\)⟩ mod \(m\).
+
+Steps 4 and 5 prove the lemma. The criterion involves only the values \(t_p\), and by (5.1) these depend only on the prime divisors of \(m\), not on their exponents.
+
+\end{proof}
+
+\subsection{Support invariance}
+
+For an integer \(m\) ≥ 1 let supp(\(m\)) denote the set of prime divisors of \(m\).
+
+\begin{thmx}{Corollary 5.2 (support invariance)}
+
+Let \(m\) and \(m\)′ be odd integers ≥ 3 that are coprime to \(q\), with supp(\(m\)) = supp(\(m\)′). Then \(m\) is admissible if and only if \(m\)′ is admissible.
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+By Lemma 5.1, the admissibility of \(m\) depends only on the family (\(t_p)_{p∈\operatorname{supp}(m)}\), and the same holds for \(m\)′.
+
+\end{proof}
+
+\textbf{Consequence used in §6.} Let \(N\) be odd with gcd(\(N\),\(q\)) = 1, and let \(m\)′ \(\mid\) \(m\) \(\mid\) \(N\) with supp(\(m\)′) = supp(\(m\)). Then: \(m\)′ is admissible if and only if \(m\) is admissible; o(\(m\)′) divides o(\(m\)), because \(q^{o(m)}\) ≡ 1 (mod \(m\)) implies \(q^{o(m)}\) ≡ 1 (mod \(m\)′).
+
+So a divisor can be shrunk, provided its prime support is kept, without losing admissibility and without increasing its cost o(·).
+
+\textbf{Remark on even \(m\).} Lemma 5.1 and Corollary 5.2 are stated and proved only for odd \(m\). Step 3 uses the cyclicity of (\(ℤ/p^aℤ)^×\) for odd \(p\), and this fails for (\(ℤ/2^aℤ)^×\) when a ≥ 3. Accordingly, the structural results of §6 are restricted to odd \(N\). Even moduli are not treated in this paper.
+
+\section{Support-reduction theorem}
+
+Throughout this section: \(N\) ≥ 3 is odd with gcd(\(N\),\(q\)) = 1; \(N\) = \(∏_{p∈P}\) \(p^{a_p}\), with \(P\) = supp(\(N\)) ≠ ∅ and \(a_p\) ≥ 1; by a \emph{partition} of \(P\) we mean a set \(\{A_1,\ldots,A_s\}\) of pairwise disjoint nonempty subsets of \(P\) whose union is \(P\).
+
+\subsection{Blocks and helper primes}
+
+For a nonempty \emph{block} A ⊆ \(P\) put
+
+\begin{center}\(n_A\) = \(∏_{p∈A}\) \(p^{a_p}\).\end{center}
+
+\textbf{Helper sets.} A \emph{helper set} for A is a subset \(H\) ⊆ \(P\) ∖ A. Each helper prime is thus a prime divisor of \(N\) that lies outside A, and it is used to exponent 1 only. Set
+
+\begin{center}\(m\)(A,\(H\)) = \(n_A\) \(∏_{r∈H}\) \(r\).\end{center}
+
+Since every \(r\) ∈ \(H\) lies in \(P\) and 1 ≤ \(a_r\), we have
+
+\begin{center}\(m\)(A,\(H\)) \(\mid\) \(N\) and supp(\(m\)(A,\(H\))) = A ∪ \(H\).\qquad (6.1)\end{center}
+
+The helper set \(H\) is \emph{admissible for A} if \(m\)(A,\(H\)) is admissible. By Corollary 5.2 this depends only on A ∪ \(H\).
+
+\textbf{Block cost.} Define
+
+\begin{center}\(c\)(A) = min \{ o(\(m\)(A,\(H\))) : \(H\) ⊆ \(P\) ∖ A, \(m\)(A,\(H\)) admissible \},\end{center}
+
+with \(c\)(A) = ∞ if no admissible helper set exists. The minimum is over the finite family of subsets of \(P\) ∖ A, so it is attained whenever that family contains an admissible helper set.
+
+In particular, \(m\)(A,\(H\)) is always a divisor of \(N\), hence the order of an irreducible factor of \(x^N\) − 1 (§2.2).
+
+\subsection{Statement of Theorem A}
+
+\begin{thmx}{Theorem A (support-reduction formula)}
+
+Let \(N\) = \(∏_{p∈P}\) \(p^{a_p}\) be odd with gcd(\(N\),\(q\)) = 1. With \(n_A\), \(m\)(A,\(H\)) and \(c\)(A) as in §6.1,
+
+\[w(N,q)=\min_{\{A_1,\ldots,A_s\}\ \text{partition of }P}\ \sum_{j=1}^{s}c(A_j),\qquad (6.2)\]
+
+where both sides may equal ∞. Moreover, with the block cost \(c\)₀(A) = \(o(n_A)\) (no helpers),
+
+\[w_0(N,q)=\min_{\{A_1,\ldots,A_s\}\ \text{partition of }P}\ \sum_{j=1}^{s}o(n_{A_j}).\qquad (6.3)\]
+
+\end{thmx}
+
+Denote the right-hand side of (6.2) by F(\(N\),\(q\)). We prove F ≤ \(w\) in §6.3 and \(w\) ≤ F in §6.4, and then (6.3) in §6.5.
+
+\subsection{Proof: reduction of an optimal cover (F ≤ w)}
+
+If \(w\)(\(N\),\(q\)) = ∞ there is nothing to prove. Assume \(w\)(\(N\),\(q\)) \textless{} ∞.
+
+\textbf{Starting point.} By Proposition 4.2, fix a set \(S\) of admissible divisors of \(N\) with lcm \(S\) = \(N\) and \(Σ_{m∈S}\) o(\(m\)) = \(w\)(\(N\),\(q\)). Such an \(S\) arises from an optimal reciprocal-free divisor \(h\) by collecting the orders of its irreducible factors (proof of Proposition 4.2).
+
+\textbf{Assigning each prime to a carrier.} For each \(p\) ∈ \(P\),
+
+\begin{center}\(a_p\) = \(v_p(N)\) = \(\operatorname{max}_{m∈S}\) \(v_p(m)\),\end{center}
+
+because lcm \(S\) = \(N\). Choose one element μ(\(p\)) ∈ \(S\) with \(v_p(μ(p))\) = \(a_p\). For \(m\) ∈ \(S\) set \(A_m\) = \{ \(p\) ∈ \(P\) : μ(\(p\)) = \(m\) \}. Then: the nonempty sets among the \(A_m\) form a partition 𝒫 of \(P\); each prime lies in exactly one block, because μ is a function.
+
+No assumption is made that \(S\) has only one element per block, or one block per element. An element \(m\) ∈ \(S\) may carry several primes (\(A_m\) may have several elements), or none (\(A_m\) = ∅).
+
+\textbf{Shrinking a carrier.} Let \(m\) ∈ \(S\) with \(A_m\) ≠ ∅. Put \(H_m\) = supp(\(m\)) ∖ \(A_m\) ⊆ \(P\) ∖ \(A_m\) and
+
+\begin{center}\(m\)′ = \(m(A_m\), \(H_m\)) = \(n_{A_m}\) \(∏_{r∈H_m}\) \(r\).\end{center}
+
+Then: \textbf{\(m\)′ \(\mid\) \(m\).} For \(p\) ∈ \(A_m\), \(v_p(m′)\) = \(a_p\) = \(v_p(m)\). For \(r\) ∈ \(H_m\), \(v_r(m′)\) = 1 ≤ \(v_r(m)\). No other prime divides \(m\)′. \textbf{Admissibility is preserved.} supp(\(m\)′) = \(A_m\) ∪ \(H_m\) = supp(\(m\)). Since \(m\) is admissible, Corollary 5.2 shows \(m\)′ is admissible. So \(H_m\) is an admissible helper set for \(A_m\). \textbf{The cost does not increase.} By §5.3, o(\(m\)′) \(\mid\) o(\(m\)). Hence
+
+\begin{center}\(c(A_m)\) ≤ o(\(m\)′) ≤ o(\(m\)).\qquad (6.4)\end{center}
+
+\textbf{Why the construction is sound.} \emph{Prime powers are never split.} Each \(p\) ∈ \(P\) is carried at its full power \(p^{a_p}\) by exactly one block, the block of μ(\(p\)). The other occurrences of \(p\) in \(S\) are replaced by the single power \(p\), as helpers. This can only lower the cost, by (6.4). \emph{The target \(N\) is still reached.} Every full power \(p^{a_p}\) divides \(n_{A_{μ(p)}}\). The helper powers \(r\)¹ satisfy \(r\)¹ \(\mid\) \(r^{a_r}\), so they never exceed the exponent required in \(N\). \emph{Helpers serve admissibility only.} A helper \(r\) of a block A has its full power \(r^{a_r}\) supplied by a different block.
+
+\textbf{The bound.} Discard the elements with \(A_m\) = ∅; this only decreases the sum. By (6.4),
+
+\begin{center}F(\(N\),\(q\)) ≤ \(Σ_{A∈𝒫}\) \(c\)(A) = \(Σ_{m∈S,A_m≠∅}\) \(c(A_m)\) ≤ \(Σ_{m∈S}\) o(\(m\)) = \(w\)(\(N\),\(q\)).\end{center}
+
+\subsection{Proof: realization, including coinciding blocks (w ≤ F)}
+
+If F(\(N\),\(q\)) = ∞ there is nothing to prove. Otherwise fix a partition \(\{A_1,\ldots,A_s\}\) of \(P\) attaining F(\(N\),\(q\)). For each j fix an admissible helper set \(H_j\) ⊆ \(P\) ∖ \(A_j\) with \(o(m_j)\) = \(c(A_j)\), where \(m_j\) = \(m(A_j\), \(H_j\)).
+
+\textbf{The \(m_j\) form an admissible cover of \(N\).} (i) \(m_j\) \(\mid\) \(N\) by (6.1). So each \(m_j\) is the order of an irreducible factor of \(x^N\) − 1. (ii) Each \(m_j\) is admissible. (iii) \(\operatorname{lcm}_j\) \(m_j\) = \(N\). For \(p\) ∈ \(P\) there is exactly one j with \(p\) ∈ \(A_j\), and then \(v_p(m_j)\) = \(a_p\). For every i, \(v_p(m_i)\) ≤ \(a_p\) by (i).
+
+\textbf{Coinciding blocks.} The integers \(m_1\), \ldots, \(m_s\) need not be pairwise distinct a priori. For instance, when \(a_p\) = \(a_r\) = 1, the block \{\(p\)\} with helper set \{\(r\)\} and the block \{\(r\)\} with helper set \{\(p\)\} both give \(m\) = pr.
+
+Let \(S=\{m_1,\ldots,m_s\}\) be the underlying set. By (i)--(iii), \(S\) is a set of admissible divisors of \(N\) with lcm \(S\) = \(N\), and
+
+\begin{center}\(Σ_{m∈S}\) o(\(m\)) ≤ \(Σ_{j=1}^{s}\) \(o(m_j)\) = F(\(N\),\(q\)),\qquad (6.5)\end{center}
+
+with strict inequality if and only if two of the \(m_j\) coincide.
+
+\textbf{Constructing the divisor \(h\).} As in the proof of Proposition 4.2, choose for each \(m\) ∈ \(S\) \textbf{one} irreducible factor \(f_m\) of \(x^N\) − 1 with \(\operatorname{ord}(f_m)\) = \(m\), and put \(h\) = \(∏_{m∈S}\) \(f_m\). Then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{\(h\) \(\mid\) \(x^N\) − 1.} Each \(f_m\) is an irreducible factor of \(x^N\) − 1 of order \(m\) \(\mid\) \(N\). Distinct \(m\) give distinct \(f_m\), and \(x^N\) − 1 is squarefree.
+\item
+  \textbf{Only divisors of \(N\) occur as orders.} Every order used is some \(m_j\), and \(m_j\) \(\mid\) \(N\). Helper primes enter only as prime divisors of \(N\) at exponent 1.
+\item
+  \textbf{ord(\(h\)) = \(N\)}, by Lemma 2.1 and (iii).
+\item
+  \textbf{\(h\) is reciprocal-free.} A common irreducible factor of \(h\) and \(h^{*}\) would be \(f_m\) = \(f_{m′}^{*}\) with \(m\), \(m\)′ ∈ \(S\). Equal orders force \(m\) = \(m\)′, so \(f_m\) would be self-reciprocal, contradicting Lemma 2.2 because \(m\) is admissible.
+\item
+  \textbf{deg \(h\) = \(Σ_{m∈S}\) o(\(m\)) ≤ F(\(N\),\(q\))}, by §2.2 and (6.5).
+\end{enumerate}
+
+Hence \(w\)(\(N\),\(q\)) ≤ F(\(N\),\(q\)). Combined with §6.3, this proves (6.2), including the case where both sides are infinite.
+
+\textbf{Clarification on coinciding blocks.} No second irreducible factor of the same order is needed. A single factor \(f_m\) serves every block producing \(m\). At an optimal partition with optimal helper sets, coincidences do not in fact occur. If \(m_i\) = \(m_j\) for some i ≠ j, then (6.5) would be strict, and the constructed \(h\) would give \(w\)(\(N\),\(q\)) \textless{} F(\(N\),\(q\)). That contradicts §6.3. Consequently, for such a choice the \(m_j\) are pairwise distinct, and deg \(h\) = \(Σ_j\) \(c(A_j)\) = F(\(N\),\(q\)) exactly.
+
+\subsection{Specialization to w₀}
+
+Without the reciprocal-free constraint, Proposition 4.2 expresses \(w\)₀(\(N\),\(q\)) as the minimum of \(Σ_{m∈S}\) o(\(m\)) over sets \(S\) of divisors \(m\) \textgreater{} 1 of \(N\) with lcm \(S\) = \(N\). Admissibility plays no role, so helper primes are never needed.
+
+\textbf{Lower bound.} Repeat §6.3 with \(m\)′ = \(n_{A_m}\) in place of \(m(A_m\), \(H_m\)). Then \(m\)′ \(\mid\) \(m\), so \(o(n_{A_m})\) ≤ o(\(m\)). This gives min over partitions of Σ \(o(n_{A_j})\) ≤ \(w\)₀(\(N\),\(q\)).
+
+\textbf{Upper bound.} For a partition \(\{A_j\}\), the divisors \(n_{A_j}\) are pairwise distinct, since their supports are disjoint and nonempty. They satisfy \(\operatorname{lcm}_j\) \(n_{A_j}\) = \(N\). The construction of §6.4, without the reciprocal-free verification, gives a divisor of \(x^N\) − 1 of order \(N\) and degree \(Σ_j\) \(o(n_{A_j})\).
+
+This proves (6.3), which is a direct consequence of classical facts (§3.2). Equivalently, (6.3) is (6.2) with every helper set forced to be empty. In the unconstrained problem the empty helper set is always optimal, because \(o(n_A)\) \(\mid\) o(\(m\)(A,\(H\))).
+
+The difference between (6.2) and (6.3) lies entirely in the helper sets. They are required exactly for the blocks A whose own support is inadmissible, and by Lemma 5.1 this is decided by the 2-adic classes \(t_p\).
+
+\subsection{Worked example: N = 225}
+
+Take \(N\) = 225 = 3²·5² and \(q\) = 23, so \(P\) = \{3, 5\}, with o(3) = 2, o(5) = 4, o(9) = 6, o(25) = 20, and, since o(ab) = lcm(o(a), o(b)) for coprime a, b, o(45) = 12, o(75) = 20, o(225) = 60. Here \(t_3\) = 1 and \(t_5\) = 2, so by Lemma 5.1 the supports \{3\} and \{5\} are inadmissible and \{3,5\} is admissible. Hence \(c\)(\{3,5\}) = o(225) = 60; \(c\)(\{3\}) requires the helper 5, giving \(m\)(\{3\},\{5\}) = 45 and \(c\)(\{3\}) = 12; and \(c\)(\{5\}) requires the helper 3, giving \(m\)(\{5\},\{3\}) = 75 and \(c\)(\{5\}) = 20. The partitions \{\{3,5\}\} and \{\{3\},\{5\}\} give 60 and 12 + 20 = 32, so \(w\)(225, 23) = 32 by Theorem A. The realizing divisor is \(h\) = \(f_{45}\) \(f_{75}\), with ord(\(h\)) = lcm(45, 75) = 225. The distinct moduli 45 and 75 have the \textbf{same} prime support \{3,5\}: an admissible support can be used by more than one block. For comparison, (6.3) gives \(w\)₀(225, 23) = min(60, o(9) + o(25)) = 26, since in the unconstrained problem the blocks \{3\} and \{5\} need no helpers.
+
+\section{Exact two-prime-power case}
+
+\subsection{Statement of Theorem B}
+
+\textbf{Setting and notation.} Throughout §7: \(N\) = \(p^a\) \(r^b\), where \(p\) and \(r\) are distinct odd primes, a, b ≥ 1, and gcd(\(N\),\(q\)) = 1; \(o_p\) = \(o(p^a)\) and \(o_r\) = \(o(r^b)\); \(o_{p0}\) = o(\(p\)) and \(o_{r0}\) = o(\(r\)); \(t_p\) = \(v₂(o_{p0})\) and \(t_r\) = \(v₂(o_{r0})\), the prime-level 2-adic classes of §5.1. By (5.1) they also equal \(v₂(o_p)\) and \(v₂(o_r)\). \(L\) = \(\operatorname{lcm}(o_p\), \(o_r\)).
+
+\textbf{Order of a coprime product.} For coprime moduli \(M\)₁, \(M\)₂ and integer \(k\), CRT gives \(q^k\) ≡ 1 (mod \(M\)₁\(M\)₂) if and only if \(q^k\) ≡ 1 modulo both \(M\)₁ and \(M\)₂. Hence
+
+\begin{center}o(\(M\)₁\(M\)₂) = lcm(o(\(M\)₁), o(\(M\)₂)).\qquad (7.1)\end{center}
+
+In particular \(L\) = o(\(N\)) = \(\operatorname{ord}_N(q)\), and \(o(p^a\) \(r\)) = \(\operatorname{lcm}(o_p\), \(o_{r0}\)), o(\(p\) \(r^b\)) = \(\operatorname{lcm}(o_{p0}\), \(o_r\)).
+
+\begin{table}[ht]
+\caption{Values of $w_0(N,q)$ and $w(N,q)$ for $N=p^ar^b$ (Theorem B); notation as in the setting above.}\label{tabB}
+\centering\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Case & Condition & $w(N,q)$ & $w_0(N,q)$\\
+\midrule
+I & $t_p=t_r\ge 1$ & $\infty$ & $\min(L,\,o_p+o_r)$\\
+II & $t_p=t_r=0$ & $\min(L,\,o_p+o_r)$ & $\min(L,\,o_p+o_r)$\\
+III & $t_p=0,\ t_r\ge 1$ & $\min\bigl(L,\,o_p+\operatorname{lcm}(o_{p0},o_r)\bigr)$ & $\min(L,\,o_p+o_r)$\\
+IV & $t_p,t_r\ge 1,\ t_p\ne t_r$ & $\min\bigl(L,\,\operatorname{lcm}(o_p,o_{r0})+\operatorname{lcm}(o_{p0},o_r)\bigr)$ & $\min(L,\,o_p+o_r)$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{thmx}{Theorem B}
+
+Let \(N\) = \(p^a\) \(r^b\) with \(p\) and \(r\) distinct odd primes, a, b ≥ 1, and gcd(\(N\),\(q\)) = 1. Then: in every case, \(w\)₀(\(N\),\(q\)) = min(\(L\), \(o_p\) + \(o_r\)); \(w\)(\(N\),\(q\)) is given by Table~\ref{tabB}. The case \(t_r\) = 0, \(t_p\) ≥ 1 is Case III with \(p\) and \(r\) interchanged, and then \(w\)(\(N\),\(q\)) = min(\(L\), \(o_r\) + \(\operatorname{lcm}(o_p\), \(o_{r0}\))).
+
+\end{thmx}
+
+\subsection{Proof by case analysis}
+
+\textbf{Common setup.} We apply Theorem A with \(P\) = \{\(p\), \(r\)\}. \emph{Partitions.} There are exactly two: the one-block partition \{\{\(p\),\(r\)\}\} and the two-block partition \{\{\(p\)\},\{\(r\)\}\}. \emph{Admissibility of supports.} By Lemma 5.1 and Corollary 5.2, a nonempty support I ⊆ \{\(p\), \(r\)\} is admissible unless all \(t\)-values on I are equal and positive. \emph{One-block cost.} For A = \{\(p\), \(r\)\}, the only helper set is \(H\) = ∅, and \(m\)(A, ∅) = \(N\). So \(c\)(\{\(p\),\(r\)\}) = \(L\) if \{\(p\),\(r\)\} is admissible, and ∞ otherwise. \emph{Singleton costs.} For A = \{\(p\)\} there are two helper sets: \(H\) = ∅ gives \(m\) = \(p^a\) and order \(o_p\); \(H\) = \{\(r\)\} gives \(m\) = \(p^a\) \(r\) and order \(\operatorname{lcm}(o_p\), \(o_{r0}\)) by (7.1).
+
+\begin{center}Since \(o_p\) divides \(\operatorname{lcm}(o_p\), \(o_{r0}\)), whenever \{\(p\)\} is itself admissible the empty helper set is optimal. So\end{center}
+
+\begin{center}\(c\)(\{\(p\)\}) = \(o_p\) if \{\(p\)\} is admissible; \(\operatorname{lcm}(o_p\), \(o_{r0}\)) if \{\(p\)\} is inadmissible and \{\(p\),\(r\)\} is admissible; ∞ otherwise.\end{center}
+
+The same holds for \(c\)(\{\(r\)\}) with \(p\) and \(r\) interchanged.
+\emph{The minimum.} By Theorem A, \(w\)(\(N\),\(q\)) = min(\(c\)(\{\(p\),\(r\)\}), \(c\)(\{\(p\)\}) + \(c\)(\{\(r\)\})).
+
+\textbf{\(w\)₀ (all cases).} By (6.3), \(w\)₀(\(N\),\(q\)) = min(o(\(N\)), \(o(p^a)\) + \(o(r^b)\)) = min(\(L\), \(o_p\) + \(o_r\)). This does not depend on the \(t\)-values.
+
+\textbf{Case I (\(t_p\) = \(t_r\) = \(t\) ≥ 1).} \{\(p\)\} and \{\(r\)\} are inadmissible, since each carries a single positive class. \{\(p\),\(r\)\} is inadmissible, since both classes equal the same positive integer. So every divisor \(m\) \textgreater{} 1 of \(N\) is inadmissible (Corollary 5.2), and \(m\) = 1 is never admissible. In particular \(N\) is inadmissible. Hence \(w\)(\(N\),\(q\)) = ∞ by Proposition 4.3(1). Equivalently, every block cost in Theorem A is ∞.
+
+\textbf{Case II (\(t_p\) = \(t_r\) = 0).} All three supports contain a prime of class 0, so all are admissible. So \(c\)(\{\(p\),\(r\)\}) = \(L\), \(c\)(\{\(p\)\}) = \(o_p\) and \(c\)(\{\(r\)\}) = \(o_r\). Hence \(w\)(\(N\),\(q\)) = min(\(L\), \(o_p\) + \(o_r\)), which is exactly the unconstrained value: no helper is ever needed.
+
+\textbf{Case III (\(t_p\) = 0, \(t_r\) ≥ 1).} \{\(p\)\} and \{\(p\),\(r\)\} are admissible, because each contains \(p\), of class 0. \{\(r\)\} is inadmissible, because it has a single positive class. One block: \(c\)(\{\(p\),\(r\)\}) = \(L\). Block \{\(p\)\}: admissible on its own, so \(c\)(\{\(p\)\}) = \(o_p\). Block \{\(r\)\}: \(H\) = ∅ is inadmissible. The helper set \{\(p\)\} gives support \{\(p\),\(r\)\}, which is admissible, with auxiliary modulus \(r^b\) \(p\) \(\mid\) \(N\) and order \(\operatorname{lcm}(o_{p0}\), \(o_r\)) by (7.1). So \(c\)(\{\(r\)\}) = \(\operatorname{lcm}(o_{p0}\), \(o_r\)). Hence \(w\)(\(N\),\(q\)) = min(\(L\), \(o_p\) + \(\operatorname{lcm}(o_{p0}\), \(o_r\))).
+
+\textbf{Case IV (\(t_p\), \(t_r\) ≥ 1, \(t_p\) ≠ \(t_r\)).} \{\(p\)\} and \{\(r\)\} are inadmissible, since each has a single positive class. \{\(p\),\(r\)\} is admissible, since the two classes differ. One block: \(c\)(\{\(p\),\(r\)\}) = \(L\). Block \{\(p\)\}: the only admissible helper set is \{\(r\)\}. The auxiliary modulus is \(p^a\) \(r\) \(\mid\) \(N\), with order \(\operatorname{lcm}(o_p\), \(o_{r0}\)). Block \{\(r\)\}: the only admissible helper set is \{\(p\)\}. The auxiliary modulus is \(p\) \(r^b\) \(\mid\) \(N\), with order \(\operatorname{lcm}(o_{p0}\), \(o_r\)). Hence \(w\)(\(N\),\(q\)) = min(\(L\), \(\operatorname{lcm}(o_p\), \(o_{r0}\)) + \(\operatorname{lcm}(o_{p0}\), \(o_r\))).
+
+\textbf{Symmetric case (\(t_r\) = 0, \(t_p\) ≥ 1).} Interchange the roles of \(p\) and \(r\) in Case III. ∎
+
+In Cases III and IV the two-block cost may be smaller or larger than \(L\). The formulas take the minimum, and neither alternative is dominant in general.
+
+\subsection{Comparison with w₀}
+
+Theorem B makes Proposition 4.3(2), \(w\) ≥ \(w\)₀, explicit. All three possible relations occur:
+
+\textbf{Case I:} \(w\) = ∞ \textgreater{} \(w\)₀. The reciprocal-free problem is infeasible. \textbf{Case II:} \(w\) = \(w\)₀. \textbf{Cases III and IV:} \(w\) and \(w\)₀ share the one-block term \(L\). In the two-block term, one or both of \(o_p\) and \(o_r\) is replaced by an lcm that is divisible by it. So \(w\) ≥ \(w\)₀, with equality exactly when the minimum in both formulas is attained at \(L\), or when the replaced lcms coincide with \(o_p\) and \(o_r\). The inequality can be strict (§7.4).
+
+In particular, the strict inequality \(w\) \textgreater{} \(w\)₀ does not hold for all (\(N\),\(q\)).
+
+\subsection{Examples}
+
+All values below come from Theorem B and agree with the verification record. (i) (\(q\), \(N\)) = (3, 143) = (3, 11·13), Case II: o(11) = 5, o(13) = 3, \(t\)₁₁ = \(t\)₁₃ = 0, and \(w\) = \(w\)₀ = min(15, 5 + 3) = 8 \textless{} ord₁₄₃(3) = 15. (ii) (3, 55) = (3, 11·5), Case III with the class-0 prime 11: o(11) = 5 (\(t\) = 0), o(5) = 4 (\(t\) = 2), \(w\) = min(20, 5 + lcm(5, 4)) = 20 and \(w\)₀ = min(20, 9) = 9, a genuine gap. (iii) (3, 35) = (3, 5·7), Case IV: o(5) = 4 (\(t\) = 2), o(7) = 6 (\(t\) = 1), \(w\) = min(12, lcm(4, 6) + lcm(4, 6)) = 12 and \(w\)₀ = min(12, 10) = 10. (iv) (23, 225), \(N\) = 3²·5², Case IV (§6.6): o(3) = 2, o(9) = 6, o(5) = 4, o(25) = 20, \(t\)₃ = 1, \(t\)₅ = 2, \(w\) = min(60, lcm(6, 4) + lcm(2, 20)) = 32 \textless{} \(L\) = 60, and \(w\)₀ = min(60, 26) = 26.
+
+\section{Separation between w and w₀}
+
+\subsection{Theorem C(i)}
+
+\begin{thmx}{Theorem C (i)}
+
+Let \(p\) ≠ \(r\) be odd primes with \(p\), \(r\) ∤ \(q\). Suppose \(t_p\) ≠ \(t_r\) and \(t_p\), \(t_r\) ≥ 1. Then
+
+\begin{center}\(w\)(pr, \(q\)) = lcm(o(\(p\)), o(\(r\))) = \(\operatorname{ord}_{pr}(q)\), and \(w\)₀(pr, \(q\)) ≤ o(\(p\)) + o(\(r\)).\end{center}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+Apply Theorem B, Case IV, with a = b = 1. Then \(o_p\) = \(o_{p0}\) = o(\(p\)) and \(o_r\) = \(o_{r0}\) = o(\(r\)), and \(L\) = lcm(o(\(p\)), o(\(r\))) = \(\operatorname{ord}_{pr}(q)\) by (7.1). Both helper-supported singleton costs collapse: \(\operatorname{lcm}(o_p\), \(o_{r0}\)) = \(\operatorname{lcm}(o_{p0}\), \(o_r\)) = \(L\). The auxiliary moduli are \(p\)·\(r\) = \(N\) in both cases. So the two-block partition costs 2\(L\). The one-block partition costs \(L\). Hence \(w\)(pr, \(q\)) = min(\(L\), 2\(L\)) = \(L\). The bound for \(w\)₀ is the two-singleton partition in (6.3).
+
+\end{proof}
+
+\subsection{An explicit family}
+
+\begin{thmx}{Theorem C (ii), first part}
+
+Let \(p\) and \(r\) be primes with: \(p\) ≡ 3 (mod 4) and \textbf{\(p\) ≥ 7}; \(r\) ≡ 5 (mod 8); gcd((\(p\)−1)/2, (\(r\)−1)/4) = 1.
+
+Let \(q\) be a prime that is a primitive root modulo \(p\) and modulo \(r\). Then
+
+\begin{center}\(w\)(pr, \(q\)) = (\(p\)−1)(\(r\)−1)/2 and \(w\)₀(pr, \(q\)) = \(p\) + \(r\) − 2.\end{center}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+\emph{2-adic classes.} Since \(q\) is a primitive root modulo \(p\) and modulo \(r\), neither \(p\) nor \(r\) divides \(q\), so gcd(pr, \(q\)) = 1. Also o(\(p\)) = \(p\) − 1 and o(\(r\)) = \(r\) − 1. \(p\) ≡ 3 (mod 4) gives \(v\)₂(\(p\)−1) = 1, and \(r\) ≡ 5 (mod 8) gives \(v\)₂(\(r\)−1) = 2. Hence \(t_p\) = 1 and \(t_r\) = 2: both positive and unequal. By Theorem C(i), \(w\)(pr, \(q\)) = lcm(\(p\)−1, \(r\)−1).
+
+\emph{The lcm.} Write \(p\) − 1 = 2\(u\) and \(r\) − 1 = 4\(v\) with \(u\), \(v\) odd, and gcd(\(u\), \(v\)) = 1 by hypothesis. Then gcd(\(p\)−1, \(r\)−1) = gcd(2\(u\), 4\(v\)) = 2·gcd(\(u\), 2\(v\)) = 2·gcd(\(u\), \(v\)) = 2, using that \(u\) is odd. Hence lcm(\(p\)−1, \(r\)−1) = (\(p\)−1)(\(r\)−1)/2.
+
+\emph{\(w\)₀.} By (6.3) with a = b = 1, \(w\)₀(pr, \(q\)) = min((\(p\)−1)(\(r\)−1)/2, (\(p\)−1) + (\(r\)−1)). Now (\(p\)−1)(\(r\)−1)/2 ≥ (\(p\)−1) + (\(r\)−1) if and only if (\(p\)−3)(\(r\)−3) ≥ 4. Since \(p\) ≥ 7 and \(r\) ≥ 5, (\(p\)−3)(\(r\)−3) ≥ 4·2 = 8. So the minimum is \(p\) + \(r\) − 2.
+
+\end{proof}
+
+The hypothesis \(p\) ≥ 7 excludes \(p\) = 3, where (\(p\)−3)(\(r\)−3) = 0. For \(p\) = 3 one gets \(w\)₀ = \(r\) − 1 = \(w\) instead.
+
+\subsection{Unboundedness over pairs (N, q)}
+
+The argument uses two classical theorems: \textbf{(PR)} For every prime ℓ, the group (\(ℤ/ℓℤ)^×\) is cyclic. That is, a primitive root modulo ℓ exists. \textbf{(\(D\))} \emph{Dirichlet's theorem on primes in arithmetic progressions:} if gcd(\(c\), \(M\)) = 1, there are infinitely many primes ≡ \(c\) (mod \(M\)).
+
+No result on primitive roots for a fixed base (Artin-type) is used.
+
+\begin{thmx}{Theorem C (ii), second part}
+
+There are infinitely many triples (\(p\), \(r\), \(q\)) satisfying the hypotheses of §8.2, and they can be chosen with min(\(p\), \(r\)) → ∞. Consequently the set \{ \(w\)(\(N\),\(q\))/\(w\)₀(\(N\),\(q\)) : \(N\) odd, \(q\) prime, gcd(\(N\),\(q\)) = 1 \} is unbounded.
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+\emph{Step 1 (choice of \(p\)).} By (\(D\)) with \(M\) = 4, there are infinitely many primes \(p\) ≡ 3 (mod 4). Choose such primes \(p\)₁ \textless{} \(p\)₂ \textless{} ⋯ with \(p\)₁ ≥ 7.
+
+\emph{Step 2 (choice of \(r\) for a given \(p\)).} Let \(u\) = (\(p\)−1)/2, which is odd. Let ℓ₁, \ldots, \(ℓ_k\) be the distinct primes dividing \(u\) (possibly \(k\) = 0). All \(ℓ_i\) are odd. By CRT, there is a residue class \(c\)′ modulo \(M\)′ = \(8ℓ₁⋯ℓ_k\) with \(c\)′ ≡ 5 (mod 8) and \(c\)′ ≡ 2 (mod \(ℓ_i\)) for each i. gcd(\(c\)′, \(M\)′) = 1, because 5 is odd and 2 ≢ 0 (mod \(ℓ_i\)). By (\(D\)), there are infinitely many primes \(r\) ≡ \(c\)′ (mod \(M\)′). Choose one with \(r\) \textgreater{} \(p\). Then \(r\) ≡ 5 (mod 8). Also \(r\) − 1 ≡ 1 (mod \(ℓ_i\)), so no \(ℓ_i\) divides \(r\) − 1, and hence none divides (\(r\)−1)/4. Therefore gcd(\(u\), (\(r\)−1)/4) = 1.
+
+\emph{Step 3 (choice of \(q\) for a given pair (\(p\), \(r\))).} By (PR), choose primitive roots \(g_p\) modulo \(p\) and \(g_r\) modulo \(r\). By CRT, there is \(c\) modulo pr with \(c\) ≡ \(g_p\) (mod \(p\)) and \(c\) ≡ \(g_r\) (mod \(r\)). Then gcd(\(c\), pr) = 1. By (\(D\)), there are infinitely many primes \(q\) ≡ \(c\) (mod pr). For any such \(q\): \(q\) ≡ \(g_p\) (mod \(p\)), so o(\(p\)) = \(p\) − 1, and similarly o(\(r\)) = \(r\) − 1. So \(q\) is a primitive root modulo both \(p\) and \(r\). The multiplicative order modulo a prime depends only on the residue class.
+
+\emph{Step 4 (the ratio).} For each \(k\), Steps 2 and 3 give a triple (\(p_k\), \(r_k\), \(q_k\)) satisfying the hypotheses of §8.2, with \(r_k\) \textgreater{} \(p_k\). By §8.2, with \(s\) = \(\operatorname{min}(p_k\), \(r_k\)) = \(p_k\) and \(M\) = \(\operatorname{max}(p_k\), \(r_k\)):
+
+\begin{center}\(w\)/\(w\)₀ = (\(p_k\) − \(1)(r_k\) − 1) / (\(2(p_k\) + \(r_k\) − 2)) ≥ (\(s\)−1)(\(M\)−1) / (2·2(\(M\)−1)) = (\(s\) − 1)/4,\end{center}
+
+using \(p_k\) + \(r_k\) − 2 ≤ 2(\(M\) − 1).
+Since \(s\) = \(p_k\) → ∞, the ratio is unbounded along (\(N_k\), \(q_k\)) = (\(p_k\) \(r_k\), \(q_k\)).
+
+\end{proof}
+
+\textbf{Fixed-q scope remark.} Theorem C(ii) establishes unbounded separation of \(w\) from \(w\)₀ over pairs (\(N\), \(q\)), with the prime \(q\) chosen after, and depending on, \(N\) = pr. It does not establish unboundedness of \(w\)(\(N\),\(q\))/\(w\)₀(\(N\),\(q\)) for any fixed \(q\).
+
+\section{Application to quantum synchronizable codes}
+
+\subsection{Saturated cyclic QSC framework}
+
+Throughout §9--§11, \textbf{gcd(\(N\),\(q\)) = 1}, and \(C\) ⊊ \(D\) is a pair as in §2.4: \(g_D\) \(\mid\) \(g_C\), \(g_D\) ≠ \(g_C\), and \(C^⊥\) ⊆ \(C\). The synchronization factor is \(h\) = \(g_C/g_D\), with \(s\) = deg \(h\) and \(B\) = deg \(g_D\), so that deg \(g_C\) = \(B\) + \(s\), \(k_C\) = \(N\) − deg \(g_C\), \(k_D\) = dim \(D\) = \(N\) − \(B\), and \(K\) = \(2k_C\) − \(N\) = \(N\) − 2 deg \(g_C\) by (2.3). As before, \(d\)(\(D\)) is the \textbf{classical} minimum distance of \(D\), not a quantum distance. By (2.2) the tolerance satisfies \(a_l\) + \(a_r\) \textless{} ord(\(h\)) ≤ \(N\), and the pair is \emph{saturated} when ord(\(h\)) = \(N\).
+
+\subsection{w as a saturation-cost lower bound}
+
+\begin{thmx}{Proposition 9.1 (saturation cost)}
+
+Assume gcd(\(N\),\(q\)) = 1 and the setting of §9.1. If ord(\(h\)) = \(N\), then \(h\) is feasible for \(w\)(\(N\),\(q\)) in Definition 4.1. In particular,
+
+\begin{center}\(s\) = deg \(h\) ≥ \(w\)(\(N\),\(q\)).\end{center}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+\(h\) divides \(g_C\), which divides \(x^N-1\). By Lemma 2.3, \(g_Cg_C^{*}\) divides \(x^N-1\). Since gcd(\(N\),\(q\)) = 1, \(x^N-1\) is squarefree, so \(\gcd(g_C,g_C^{*})=1\). As \(h\mid g_C\) and \(h^{*}\mid g_C\), this gives \(\gcd(h,h^{*})=1\). Together with \(\operatorname{ord}(h)=N\), \(h\) is feasible for \(w\)(\(N\),\(q\)), and the inequality follows from Definition 4.1.
+
+\end{proof}
+
+\textbf{Consequences.} By Proposition 4.3(1), saturation in this framework requires \(N\) to be admissible, and \(w\)(\(N\),\(q\)), which depends only on (\(N\),\(q\)), is the least possible degree of a saturating factor. The value \(w\) is attained: if \(h\) is feasible for \(w\)(\(N\),\(q\)) with deg \(h\) = \(w\)(\(N\),\(q\)), then \(h\) and \(h^{*}\) are coprime divisors of \(x^N\) − 1, so \(h\,h^{*}\) \(\mid\) \(x^N\) − 1, and by Lemma 2.3 the choice \(g_C\) = \(h\), \(g_D\) = 1 (so that \(D\) is the full space) gives a saturated pair with \(s\) = \(w\)(\(N\),\(q\)). This pair is degenerate, since \(d\)(\(D\)) = 1, and it carries no information on the quantum error-correcting capability.
+
+\subsection{Consequence for the parameter inequality}
+
+\begin{thmx}{Corollary 9.2}
+
+Under the hypotheses of Proposition 9.1,
+
+\begin{center}\(K\) + 2\(d\)(\(D\)) ≤ \(N\) + 2 − 2\(s\) ≤ \(N\) + 2 − 2\(w\)(\(N\),\(q\)).\qquad (9.1)\end{center}
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+\(D\) ≠ \{0\}, because \(C^⊥\) ⊆ \(C\) ⊊ \(D\) forces \(C\) ≠ \{0\}. So Lemma 2.4 applied to \(D\) gives \(d\)(\(D\)) ≤ \(N\) − \(k_D\) + 1 = \(B\) + 1. \(K\) = \(N\) − 2 deg \(g_C\) = \(N\) − 2\(B\) − 2\(s\). Hence \(K\) + 2\(d\)(\(D\)) ≤ \(N\) − 2\(B\) − 2\(s\) + 2\(B\) + 2 = \(N\) + 2 − 2\(s\). The second inequality in (9.1) is Proposition 9.1.
+
+\end{proof}
+
+The middle term \(N\) + 2 − 2\(s\) depends on the construction, through \(s\). The right-hand term depends only on (\(N\),\(q\)).
+
+\subsection{Scope of the QSC interpretation}
+
+Within the cyclic framework, \(w\) lower-bounds the degree of a saturating factor (Proposition 9.1) and enters the elementary inequality (9.1), which follows from the Singleton bound applied to \(D\). We do \textbf{not} claim that \(w\) determines \(K\), \(d\)(\(D\)), the quantum error-correcting capability, or the set of achievable QSC parameters; that (9.1) is sharp or improves Singleton-type bounds in general; or that these statements extend beyond gcd(\(N\),\(q\)) = 1. In particular, repeated-root constructions such as those of \cite{DMLHW20} are outside the scope of Proposition 9.1 and are not treated here.
+
+\section{Deficit decomposition}
+
+\subsection{Definition of the deficit Δ}
+
+Assume the hypotheses of Proposition 9.1 (gcd(\(N\),\(q\)) = 1, the setting of §9.1, and ord(\(h\)) = \(N\)). The \emph{deficit} of the saturated pair (\(C\), \(D\)) is
+
+\begin{center}Δ = {[}\(N\) + 2 − 2\(w\)(\(N\),\(q\)){]} − {[}\(K\) + 2\(d\)(\(D\)){]}.\end{center}
+
+So Δ is the slack in the right-hand inequality of (9.1), and Δ ≥ 0 by Corollary 9.2.
+
+\subsection{Exact deficit decomposition}
+
+\begin{thmx}{Proposition 10.1 (deficit decomposition)}
+
+Under the hypotheses of Proposition 9.1,
+
+\begin{center}Δ = 2(\(s\) − \(w\)(\(N\),\(q\))) + 2(\(B\) + 1 − \(d\)(\(D\))),\qquad (10.1)\end{center}
+
+and both summands are non-negative.
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+Substituting \(K\) = \(N\) − 2\(B\) − 2\(s\) into the definition of Δ gives
+
+\begin{center}Δ = \(N\) + 2 − 2\(w\) − \(N\) + 2\(B\) + 2\(s\) − 2\(d\)(\(D\)) = 2(\(s\) − \(w\)) + 2(\(B\) + 1 − \(d\)(\(D\))).\end{center}
+
+\(s\) − \(w\) ≥ 0 by Proposition 9.1. \(B\) + 1 − \(d\)(\(D\)) ≥ 0 by Lemma 2.4 applied to \(D\), as in the proof of Corollary 9.2.
+
+\end{proof}
+
+The hypothesis gcd(\(N\),\(q\)) = 1 enters only through Proposition 9.1.
+
+\subsection{Interpretation of the two slack terms}
+
+The decomposition (10.1) separates two sources of slack. The \textbf{structural excess} 2(\(s\) − \(w\)) measures how far the degree of the actual saturating factor \(h\) exceeds the intrinsic minimum \(w\)(\(N\),\(q\)). The \textbf{coding-side slack} 2(\(B\) + 1 − \(d\)(\(D\))) is twice the Singleton defect of the classical code \(D\). The identity (10.1) implies Corollary 9.2 but is not a new coding bound. It does not assert that either slack term can be reduced, or reduced independently of the other: lowering \(s\) changes \(D\), and hence \(d\)(\(D\)). A positive structural excess is not evidence that a construction is inferior; \(K\), \(d\)(\(D\)) and the tolerance must be assessed jointly, together with the quantum distances, which (10.1) does not involve.
+
+\section{Calibration with the published construction}
+
+\subsection{Calibration scope}
+
+We calibrate the constructions of Li and Zhu \cite{LZ22} against \(w\). In \cite{LZ22} the code length is \(N\) = 2\(n\) with gcd(\(n\),\(q\)) = 1 and \(q\) odd, so gcd(\(N\),\(q\)) = 1 and Propositions 9.1 and 10.1 apply.
+
+\textbf{Structure of the codes in \cite{LZ22}.} \cite{LZ22} builds composite codes of length 2\(n\) from a cyclic code of length \(n\) (generator dividing \(x^n\) − 1) and a negacyclic code of length \(n\) (generator dividing \(x^n\) + 1), via the (\(u\)+\(v\) \(\mid\) \(u\)−\(v\)) construction. For odd \(q\), \(c\)(\(x\)) ↦ (\(c\) mod (\(x^n\) − 1), \(c\) mod (\(x^n\) + 1)) is a ring isomorphism \(F_q[x]/(x^{2n}\) − 1) → \(F_q[x]/(x^n\) − 1) ⊕ \(F_q[x]/(x^n\) + 1). Under this isomorphism, and up to the scalar 1/2, the (\(u\)+\(v\) \(\mid\) \(u\)−\(v\)) composite of \(⟨g_1⟩\) and \(⟨g_2⟩\) is the cyclic code of length 2\(n\) with generator \(g_1\) \(g_2\). Accordingly, in \cite{LZ22}'s notation, \(g_C\) = \(g_1\) \(g_2\) and \(g_D\) = \(g_3\) \(g_4\), and
+
+\begin{center}\(h\) = (\(g_1/g_3)(g_2/g_4\)),\end{center}
+
+\begin{center}where \(g_3\) \(\mid\) \(g_1\) divides \(x^n\) − 1 and \(g_4\) \(\mid\) \(g_2\) divides \(x^n\) + 1.\end{center}
+
+\textbf{What calibration means here.} Calibration compares the construction cost \(s\) with the intrinsic cost \(w\) and reports the decomposition (10.1); it does not rank \cite{LZ22} against other constructions.
+
+\subsection{Class 1: N = 2n, n an odd prime}
+
+\begin{thmx}{Theorem 11.1 (calibration of \cite{LZ22}, Class 1)}
+
+Hypotheses: \(q\) is an odd prime power, and \(n\) is an odd prime with \(n\) ∤ \(q\); −1 ∉ ⟨\(q\)⟩ mod 2\(n\); o = \(\operatorname{ord}_n(q)\); \(C\) and \(D\) are the cyclic codes of length 2\(n\) with generators \(g_C\) = \(g_1\) \(g_2\) and \(g_D\) = \(g_3\) \(g_4\) as in §11.1, where \(g_3\) \(\mid\) \(g_1\) \(\mid\) \(x^n\) − 1 and \(g_4\) \(\mid\) \(g_2\) \(\mid\) \(x^n\) + 1; \(C\) is dual-containing; \(g_1/g_3\) and \(g_2/g_4\) are nonconstant (the strict nesting required on both sides in \cite{LZ22}); ord(\(h\)) = 2\(n\).
+
+Then: (i) \(\operatorname{ord}_{2n}(q)\) = o, and \(w\)(2\(n\),\(q\)) = \(w\)₀(2\(n\),\(q\)) = o. (ii) \(s\) ≥ 2\(w\)(2\(n\),\(q\)). Equality \(s\) = 2\(w\) holds if and only if \(h\) contains exactly one irreducible factor of \(Φ_n\) and exactly one irreducible factor of \(Φ_{2n}\). (iii) Δ ≥ 2\(w\)(2\(n\),\(q\)). Equality Δ = 2\(w\) holds if and only if \(s\) = 2\(w\) and \(d\)(\(D\)) = \(B\) + 1.
+
+\end{thmx}
+
+\begin{proof}[Proof]
+
+\emph{(i) Orders and the value of \(w\).} Since \(q\) is odd, \(q^j\) ≡ 1 (mod 2) for all j. By CRT, \(\operatorname{ord}_{2n}(q)\) = \(\operatorname{ord}_n(q)\) = o. For the same reason, −1 ∈ ⟨\(q\)⟩ mod 2\(n\) if and only if −1 ∈ ⟨\(q\)⟩ mod \(n\). So both \(n\) and 2\(n\) are admissible. The divisors of 2\(n\) that are ≥ 3 are exactly \(n\) and 2\(n\). By Proposition 4.2, an admissible cover of 2\(n\) must contain 2\(n\), because lcm\{\(n\)\} = \(n\). So \(w\)(2\(n\),\(q\)) = o(2\(n\)) = o. For \(w\)₀, the covers are \{2\(n\)\} (cost o), \{\(n\), 2\} (cost o + 1), and supersets of these. So \(w\)₀(2\(n\),\(q\)) = o.
+
+\emph{(ii) The degree of \(h\).} Put \(h_1\) = \(g_1/g_3\) and \(h_2\) = \(g_2/g_4\). Both are nonconstant by hypothesis. By Lemma 2.3 and squarefreeness, \(g_C\) = \(g_1\) \(g_2\) is reciprocal-free. So it has no self-reciprocal irreducible factor, and in particular \(x\) − 1 ∤ \(g_1\) and \(x\) + 1 ∤ \(g_2\). Since \(x^n\) − 1 = (\(x\) − \(1)Φ_n\) and \(x^n\) + 1 = (\(x\) + \(1)Φ_{2n}\), it follows that \(h_1\) \(\mid\) \(Φ_n\) and \(h_2\) \(\mid\) \(Φ_{2n}\). Every irreducible factor of \(Φ_n\) has order \(n\) and degree o(\(n\)) = o. Every irreducible factor of \(Φ_{2n}\) has order 2\(n\) and degree o(2\(n\)) = o (§2.2). Hence deg \(h_1\) and deg \(h_2\) are positive multiples of o, and \(s\) = deg \(h_1\) + deg \(h_2\) ≥ 2o = 2\(w\). Equality holds if and only if deg \(h_1\) = deg \(h_2\) = o, that is, if and only if each of \(h_1\) and \(h_2\) is a single irreducible factor.
+
+\emph{(iii) The deficit.} By (10.1) and (ii),
+
+\begin{center}Δ = 2(\(s\) − \(w\)) + 2(\(B\) + 1 − \(d\)(\(D\))) ≥ 2(2\(w\) − \(w\)) = 2\(w\).\end{center}
+
+Since both summands of (10.1) are non-negative, equality requires \(s\) = 2\(w\) and \(d\)(\(D\)) = \(B\) + 1.
+
+\end{proof}
+
+\textbf{Remarks on Theorem 11.1.} \textbf{Index-level equality needs an extra assumption.} \cite{LZ22} writes \(g_1\) and \(g_3\) as products of half-factors \(f_{n,j}\), and \(g_2\) and \(g_4\) as products of half-factors \(y_j\). The \(y_j\) are irreducible, by \cite{LZ22}'s count of the factors of \(Φ_{2n}\). The equality condition in (ii) can be restated as ``exactly one index with a gap on each side'' \textbf{only under the additional assumption} that the \(f_{n,j}\) are irreducible. That assumption is not established here. \textbf{Source of the factor 2.} The bound \(s\) ≥ 2\(w\) reflects the construction: \cite{LZ22} requires a nontrivial factor on both the cyclic side (\(h_1\)) and the negacyclic side (\(h_2\)). Only \(h_2\) contributes order 2\(n\). The factor \(h_1\) has order \(n\), contributes to the degree, and is not needed for ord(\(h\)) = 2\(n\). A single irreducible factor of \(Φ_{2n}\) is reciprocal-free, has order 2\(n\), and has degree \(w\). Theorem 11.1 does not assert that \(w\) itself doubles, nor that a construction with \(s\) = \(w\) is available within \cite{LZ22}'s hypotheses.
+\textbf{Parity of \(N\).} Theorem 11.1 is proved directly for even \(N\) = 2\(n\). It does not rely on Theorem A, which concerns odd \(N\).
+
+\subsection{Numerical calibration of the three examples}
+
+Table~\ref{tab1} lists the computed values for the three examples of \cite{LZ22}. Here \(d\)(\(D\)) is the exact classical minimum distance of the cyclic code \(D\) with generator \(g_D=g_3g_4\), computed by parity-check rank; the values printed in \cite{LZ22} are lower bounds. For Example 3 we use the factor lists of \cite{LZ22} without the factor \(m_0=x-1\), which is self-reciprocal and therefore incompatible with dual containment; with this reading, the dimensions \([40,32]\) and \([40,36]\) and \(h=m_4m_5\) given in \cite{LZ22} are reproduced. Examples 1 and 2 belong to Class 1. Example 3 belongs to the BCH class (Class 2) of \cite{LZ22}, so its values come from direct computation, not from Theorem 11.1.
+
+\begin{table}[h]
+\caption{Calibration of the three examples of \cite{LZ22}. All entries are computed, except the column $d(D)$~\cite{LZ22}, which gives the lower bounds printed in \cite{LZ22}. In all three cases $\deg g_C = B + s$ and $\mathrm{ord}(h) = N$.}\label{tab1}
+\centering\small\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{@{}lccccccccccc@{}}
+\toprule
+ & Class & $(q,N)$ & $w_0=w$ & $B$ & $s$ & $K$ & $d(D)$~\cite{LZ22} & $d(D)$ & $\Delta$ & $2(s-w)$ & $2(B+1-d(D))$\\
+\midrule
+Ex.~1 & 1 & $(3,26)$ & 3 & 6 & 6 & 2 & 3 & 4 & \textbf{12} & 6 & 6\\
+Ex.~2 & 1 & $(37,82)$ & 5 & 10 & 10 & 42 & 4 & 6 & \textbf{20} & 10 & 10\\
+Ex.~3 & 2 & $(3,80)$ & 4 & 8 & 8 & 48 & 3 & 4 & \textbf{18} & 8 & 10\\
+\botrule
+\end{tabular}}
+\end{table}
+
+
+In Table~\ref{tab1}, \(w_0=w=\operatorname{ord}_N(q)\), \(N+2-2w=22,74,74\) and \(K+2d(D)=10,54,56\) for Examples 1--3.
+
+\textbf{What the table shows.} In all three examples \(s\) = 2\(w\); for Examples 1 and 2 this is the equality case of Theorem 11.1(ii). The deficit splits roughly equally between structural excess and coding-side slack. Examples 1 and 2 satisfy Δ ≥ 2\(w\), as Theorem 11.1(iii) requires. The inequality is strict because \(d\)(\(D\)) \textless{} \(B\) + 1.
+
+\subsection{Class 2 computational observations}
+
+For the BCH class of \cite{LZ22} (Class 2; \(n\) = (\(q^{2m}\) − 1)/(\(q\) − 1), \(N\) = 2\(n\)) we use an index rule reconstructed from Example 3 and the parameter ranges stated in \cite{LZ22} (described in the supplementary information). For (\(q\), \(m\)) = (3,2), (5,2), (7,2), (3,3) one has \(w\)₀ = \(w\) = \(\operatorname{ord}_N(q)\) = 4, 4, 4, 6, respectively. Of the 31,742 parameter tuples examined, 31,716 are saturated, and every saturated tuple observed has \(s\) \textgreater{} \(w\). These observations are not a theorem and not exhaustive; tuples with ord(\(h\)) \textless{} \(N\) may be excluded by the exact hypotheses of \cite{LZ22}. The observed minimum \(s\) = 6 for (\(q\), \(m\)) = (5, 2) is below 2\(w\) = 8, so \(s\) ≥ 2\(w\) is not claimed for Class 2.
+
+\textbf{Calibration conclusions.} For every calibrated instance of \cite{LZ22}, \(w\)(\(N\),\(q\)) = \(w\)₀(\(N\),\(q\)) = \(\operatorname{ord}_N(q)\), and the saturating factor of \cite{LZ22} is feasible for \(w\) (Proposition 9.1). In Class 1 the construction cost satisfies \(s\) ≥ 2\(w\), and hence Δ ≥ 2\(w\) (Theorem 11.1); the excess comes from the requirement in \cite{LZ22} of nontrivial factors on both the cyclic and negacyclic sides. In the three worked examples \(s\) = 2\(w\), Δ = 12, 20, 18 splits as shown in §11.3, and the exact classical distances \(d\)(\(D\)) exceed the lower bounds printed in \cite{LZ22}. Class 2 is calibrated only empirically, under a reconstructed index rule. None of these statements implies that the codes of \cite{LZ22} are suboptimal: \(K\), \(d\)(\(D\)), the tolerance and the quantum capabilities must be assessed jointly. The \(w\)-calibration does not apply to the repeated-root constructions of \cite{DMLHW20}.
+
+\section{Scope, limitations and computational verification}
+
+\subsection{Scope of the structural results}
+
+The exact ranges of the structural results are those stated in their hypotheses and summarized in §1.6: Lemma 5.1 and Corollary 5.2 for odd \(m\) ≥ 3 with gcd(\(m\),\(q\)) = 1 (no parity assumption on \(q\)); Theorem A for odd \(N\); Theorem B for \(N\) = \(p^a\) \(r^b\) with distinct odd primes; Theorem C for \(N\) = pr, part (ii) for an explicit family in which the prime \(q\) depends on (\(p\), \(r\)); Propositions 9.1 and 10.1 and Corollary 9.2 for saturated cyclic QSC pairs with gcd(\(N\),\(q\)) = 1, for \(N\) of either parity; and Theorem 11.1 for \(N\) = 2\(n\) with \(q\) odd and \(n\) an odd prime. A support-reduction theory for general even \(N\), closed formulas for three or more distinct prime factors beyond the finite minimization of Theorem A, and the behavior of \(w\)/\(w\)₀ for fixed \(q\) lie outside the scope of the paper.
+
+\subsection{Semisimple restriction and repeated-root exclusion}
+
+Every statement involving \(w\)(\(N\),\(q\)) assumes gcd(\(N\),\(q\)) = 1. The hypothesis enters twice: \(x^N\) − 1 is then squarefree, which gives the factorization and degree formulas of §2.2 and the lcm-cover form (Proposition 4.2), and dual containment then implies that the synchronization factor is reciprocal-free (Proposition 9.1). When gcd(\(N\),\(q\)) \textgreater{} 1, dual containment still means \(g_C\) \(g_C^{*}\) \(\mid\) \(x^N\) − 1 (Lemma 2.3), but \(x^N\) − 1 has repeated factors, so a divisor of \(g_C\) may contain self-reciprocal factors or reciprocal pairs with bounded multiplicity; gcd(\(h\), \(h^{*}\)) = 1 is then \textbf{not} the correct constraint on saturating factors, and \(w\)(\(N\),\(q\)) is not the relevant saturation cost. For this reason the repeated-root constructions of \cite{DMLHW20} are not calibrated by \(w\). A saturation-cost invariant for repeated-root lengths would require a different definition; none is proposed here.
+
+\subsection{Computational verification}
+
+All numbered results are proved; the computations complement the proofs and are not part of them. The values \(w\) and \(w\)₀ were computed by a dynamic program over the lcm-cover form (Proposition 4.2) and cross-checked against an independent brute force over sets of \(q\)-cyclotomic cosets. Over prime powers \(q\) \textless{} 128 and the ranges of \(N\) listed in the supplementary information, 409,075 exact checks of Lemma 5.1, Theorems A, \(B\) and \(C\), formula (6.3) and Theorem 11.1(i) found no discrepancy; they include even \(q\), repeated prime powers, three and four distinct primes, mixed 2-adic classes and supports shared by several blocks. For the instances from \cite{LZ22}, generator degrees, ord(\(h\)), dual containment and exact \(d\)(\(D\)) were computed directly (§11.3). The code is provided as supplementary information.
+
+\subsection{Open directions}
+
+Open directions include a structural theory of \(w\)(\(N\),\(q\)) for even \(N\), where (\(ℤ/2^aℤ)^×\) is not cyclic for a ≥ 3; closed formulas for three or more distinct prime factors; a sharper description of when \(w\) = \(w\)₀; the behavior of \(w\)/\(w\)₀ for fixed \(q\); the interaction of \(w\) with explicit optimization of QSC parameters; and a saturation-cost invariant for repeated-root lengths.
+
+\section{Conclusion}
+
+For gcd(\(N\),\(q\)) = 1 we studied the reciprocal-free restriction \(w\)(\(N\),\(q\)) of the classical minimal degree \(w\)₀(\(N\),\(q\)). Admissibility for odd moduli is governed by the 2-adic classes \(t_p\) (Lemma 5.1); for odd \(N\), Theorem A locates the difference between \(w\) and \(w\)₀ precisely in the helper costs; Theorem B makes this explicit for \(N\) = \(p^a\) \(r^b\); and Theorem C gives arbitrarily large separation over pairs (\(N\),\(q\)) with \(q\) varying. In the semisimple cyclic QSC framework, \(w\) bounds the degree of every saturating factor, giving \(K\) + 2\(d\)(\(D\)) ≤ \(N\) + 2 − 2\(w\) and the decomposition (10.1); in Class 1 of \cite{LZ22} the construction forces \(s\) ≥ 2\(w\), a property of that construction rather than a statement about code quality. The support-reduction theory is established for odd \(N\) only, and repeated-root constructions require a different notion of saturation cost.
+
+\backmatter
+\bmhead{Supplementary information}
+The supplementary information (ESM\_1.pdf) contains the proof of Lemma 2.3, the Class 2 observations and the list of computational checks; the Python code is provided as ESM\_2.zip.
+
+\bmhead{Acknowledgements} [INSERT OR DELETE]
+
+\section*{Statements and Declarations}
+\bmhead{Funding} [INSERT, e.g. ``The author(s) did not receive support from any organization for the submitted work.'']
+\bmhead{Competing interests} [INSERT, e.g. ``The author(s) have no competing interests to declare that are relevant to the content of this article.'']
+\bmhead{Data availability} No datasets were generated or analyzed; all values are reproducible with the supplementary code. [AUTHOR TO CONFIRM]
+\bmhead{Code availability} The Python code used for the computations is provided as supplementary information (ESM\_2) [and at: INSERT REPOSITORY LINK IF DEPOSITED].
+\bmhead{Use of AI tools} [AUTHOR TO COMPLETE: describe truthfully any use of large language models, as required by Springer Nature policy.]
+\bmhead{Ethics approval, consent to participate, consent for publication} Not applicable.
+\bmhead{Author contributions} [INSERT]
+
+\bibliography{RFDQSC_FINAL}
+\end{document}
