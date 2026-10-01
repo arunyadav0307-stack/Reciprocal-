@@ -77,3 +77,9 @@ V075,math,Prop 9.1 (added sentence),"w attained with g_C=h, g_D=1 (degenerate, d
 V076,math,Sec 11.1,"(u+v|u-v) composite of <g1>,<g2> is cyclic with generator g1 g2 (q odd)",as stated,manuscript,VERIFIED_BY_DERIVATION,CRT argument,02,02,dual splits as C1perp (+) C2perp
 V077,math,Theorem 11.1,(i) w=w0=ord_n(q); (ii) s>=2w; (iii) Delta>=2w,as stated,manuscript,VERIFIED_BY_DERIVATION (conditional on A's hypotheses),(i) 129 definition-level cases agree,02,02,ord(h)=2n hypothesis redundant given h2 nonconstant
 V078,literature,Sec 11.2/12.2; ref B,B is repeated-root cyclic/constacyclic; 'N=12p^s' and 'powers of self-reciprocal factors',as stated,IEEE Xplore abstract (first half only),PARTLY_VERIFIED,,02,02,soften in Ph10
+V079,boundary,Prop 4.3; Sec 4.4,"w(2,q)=inf; N=3; prime-power N; w=1 iff N|q-1; w0<=w; 1<=w<=ord_N(q)",as stated,manuscript,SPOT_CHECKED,"1332 definition-level cases, 0 failures",03,03,12 q incl. even
+V080,boundary,Prop 4.2/9.1 for even N,lcm-cover form holds for even N,as stated,manuscript,SPOT_CHECKED,"234 even-N cases, 0 failures",03,03,
+V081,dimension,Sec 9-10,K=N-2deg g_C>=0; 2w<=N for finite w,implicit,derivation,VERIFIED_BY_DERIVATION; SPOT_CHECKED,"850 pairs; 1332 (q,N)",03,03,
+V082,boundary,Sec 8.2 remark,p=3: w=w0=r-1,as stated,manuscript,SPOT_CHECKED,"all admissible (q,r), r<200",03,03,
+V083,limit,Thm 11.1; Sec 11.2 remark,"s>=2w needs h1,h2 nonconstant; with h1 constant s may be <2w",as stated,manuscript,SPOT_CHECKED,850 saturated pairs: 532 both nonconstant (all s>=2w); 318 h1 constant (246 with s<2w),03,03,"n in {3,5,7,11,13,17}, q in {3,5,7,11,13}"
+V084,reproduction,Sec 12.3; ESM S3,"409,075 checks, 0 failures",409075; 0,authors' g4_audit.py,REPRODUCED_BY_RUN,8 rows 1999+99981+39968+39968+195405+30079+594+1081=409075; 0 failures; 221 s,03,03,output saved in 08_INTERNAL_QC/evidence; formal V&V record in Ph6

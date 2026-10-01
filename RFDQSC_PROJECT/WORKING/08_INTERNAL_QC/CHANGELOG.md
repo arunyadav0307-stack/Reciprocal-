@@ -12,3 +12,6 @@
 | 02 | §9.2 (tex) | Added attainment of w (g_C=h, g_D=1; degenerate pair) after "least possible degree of a saturating factor" | The claim was only a bound; attainment is provable | Lemma 2.3; derivation in Phase 2 report |
 | 02 | tools | Added `phase02_math_check.py` (independent definition-level checks) | Evidence for Theorems A, B, C, 11.1(i) | 0 failures on finite ranges |
 | 02 | VALUE_LEDGER | Rows V068–V078 | Math audit | — |
+| 03 | tools/evidence | Added `phase03_boundary_check.py`; saved `evidence/g4_audit_output_run1.txt` | Boundary stress test; reproduction of authors' check record | 0 failures; counts sum to 409,075 |
+| 03 | manuscript | No change | No boundary failure found | Phase 3 report |
+| 03 | VALUE_LEDGER | Rows V079–V084 | Boundary/limit evidence | — |
