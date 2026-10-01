@@ -25,3 +25,15 @@ Status values: PENDING / RESOLVED.
 5. Required: author preference only if [A] cannot be checked.
 
 (No other decision is currently open. New entries will be appended; resolved entries are marked RESOLVED with the resolution.)
+
+## AD-004 — Access to Li–Zhu (2022) [A] · PENDING
+1. Issue: [A] is paywalled; its hypotheses (are h1 and h2 both nonconstant?), Example 3 printed `m0`, and printed d(D) values (3, 4, 3 vs recomputed exact 4, 6, 4) cannot be confirmed.
+2. Location: §11 (Theorem 11.1, Table 1 discussion), ESM_1.
+3. Why: any statement that [A] "misprints" something, and the scope of Theorem 11.1, depend on the source.
+4. Options: (a) author supplies the PDF; (b) author confirms the statements; (c) default: soften/remove misprint assertions and keep Theorem 11.1 explicitly conditional on [A]'s hypotheses (decided in Phases 8/10).
+5. Required: PDF or confirmation.
+
+## AD-005 — Optional MathSciNet novelty check · PENDING (low priority)
+1. Issue: Novelty of w(N,q) rests on web, zbMATH Open and arXiv searches; MathSciNet/Scopus not accessible.
+2. Why: the manuscript says only "to our knowledge"; a database check by the author would support this.
+3. Options: author runs a search (e.g. "order of a polynomial" + "reciprocal"/"self-reciprocal", "minimal degree" + "prescribed order") or accepts the hedged wording.

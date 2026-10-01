@@ -60,3 +60,9 @@ V058,verification_count,12.3; ESM_1 S3,"first enumerator reported 7 spurious fai
 V059,meta,Abstract,245 words (math counted as one word),245,10_Metadata/checklist,NOT_RECOUNTED_PH0,,00,00,recount at Ph9
 V060,meta,Metadata,28 pages (sn-jnl); 25 references; 0 figures; 1 numbered table,28; 25; 0; 1,10_Metadata,BASELINE_PDF_PAGES=28 (checked); BIB_ENTRIES=25 (checked),28; 25,00,00,
 V061,meta,Bib,"Lidl-Niederreiter year 1996 (Crossref, 2nd ed.)",1996,09_Checklist,CITATION_CHECK_PENDING(Ph9),,00,00,
+V062,literature,Sec 2.4; FTW,FTW framework is binary (codes over F_2); a_l+a_r<ord(f) (Lemma 3),a_l+a_r<ord(h),arXiv:1304.0502v3 (read),VERIFIED_EXTERNAL,,01,01,manuscript now attributes binary to FTW
+V063,literature,"Sec 2.4; XYY16, LM18",q-ary extension of the framework,"(2.2),(2.3) over F_q","arXiv:1904.03902 Thm 1 (snippet credits XYY16, LM18)",VERIFIED_EXTERNAL_SECONDARY,,01,01,primary XYY16/LM18 texts not opened
+V064,literature,Sec 11; LML19 Thm 2,(u+v|u-v) max tolerance 2n iff ord(g1/g3)=n & ord(g2/g4)=2 (n odd) or ord(g2/g4)=2n,consistent with Class 1 remark,arXiv:1904.03902 Thm 2 (snippet),VERIFIED_EXTERNAL_SECONDARY,,01,01,ord(h2)=2 forces h2=x+1 (self-reciprocal)
+V065,literature,Sec 1.6; Zhang-Ge,arXiv:1508.00974 exists; duadic QSC highest possible tolerance,description correct,arXiv abs page,VERIFIED_EXTERNAL,,01,01,title to add in Ph9
+V066,literature,Sec 11; ref A,"Li-Zhu hypotheses, Example 3 printed values, printed d(D)",unverifiable,paywalled,UNVERIFIED_AD-004,,01,01,keep Thm 11.1 conditional
+V067,novelty,Abstract; Sec 1.1; 12.4,"no earlier work on w(N,q)",'to our knowledge',web+zbMATH+arXiv searches; MathSciNet not accessed,SOFT_CLAIM_SUPPORTED_BY_SEARCH,,01,01,AD-005

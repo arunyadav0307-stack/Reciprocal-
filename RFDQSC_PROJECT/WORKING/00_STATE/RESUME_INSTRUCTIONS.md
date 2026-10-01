@@ -14,7 +14,7 @@ Read, in order:
 7. `08_INTERNAL_QC/AUTHOR_DECISIONS.md`
 8. all files in `07_PHASE_REPORTS/` (currently `PHASE_00_INTAKE.md`)
 
-Then begin **Phase 01 — Research problem, literature gap and novelty**, following the master prompt (phased Q1 SCI manuscript audit/repair/finalisation).
+Then begin the phase named by `NEXT_PHASE` in `00_STATE/CURRENT_PHASE.txt` (see `COMPLETED_PHASES.txt` for the phase list), following the master prompt (phased Q1 SCI manuscript audit/repair/finalisation).
 
 Working rules carried forward
 - Manuscript under repair: `02_MANUSCRIPT/RFDQSC_WORKING.tex`; bibliography `03_REFERENCES/RFDQSC_references.bib`. Never edit `01_BASELINE/`.

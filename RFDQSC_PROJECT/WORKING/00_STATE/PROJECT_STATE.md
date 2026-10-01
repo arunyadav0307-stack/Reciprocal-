@@ -18,7 +18,7 @@
 - Environment risk: **no LaTeX engine in the sandbox**; apt/CTAN/conda unreachable. Final compilation (Phase 14) needs a workaround (e.g. npm `texlive` pdfTeX-WASM tree) or author-side compilation. Recorded, not hidden.
 
 ## Phase status
-See `COMPLETED_PHASES.txt`. PHASE 00 — COMPLETE; PHASES 01–14 — NOT STARTED.
+See `COMPLETED_PHASES.txt`. PHASE 00–01 — COMPLETE; PHASES 02–14 — NOT STARTED.
 
 ## Major scientific findings (established only)
 - Quoted worked values w/w0 for (143,3), (55,3), (225,23), (35,3), (5,3), (26,3), (82,37), (80,3) and w(2,q)=∞ reproduced by an independent definition-level coset search.
@@ -27,16 +27,16 @@ See `COMPLETED_PHASES.txt`. PHASE 00 — COMPLETE; PHASES 01–14 — NOT STARTE
 - Nothing else is established yet; all theorem proofs are pending audit (Phase 2).
 
 ## Corrections made
-None (Phase 0 changes nothing in the manuscript).
+Phase 1: FTW/XYY16/LM18 attribution (binary vs q-ary); search-trace phrasing replaced by hedged priority statement; gap sentence added; 'primary result' label removed. See CHANGELOG.
 
 ## Unresolved issues (routed)
 Pandoc-conversion damage in the .tex (stars/emphasis, subscripts, no \label/\ref); internal-workflow wording in the paper (enumerator bug story, "literature search performed for this work", "Online Resource", "printed inconsistencies"); reconstructed Class-2 rule; source check of [A] Example 3 and FTW hypotheses; audit_* naming and unrelated scripts in the public code; placeholders.
 
 ## Author decisions
-AD-001 (metadata/declarations) PENDING · AD-002 (code/data availability) PENDING · AD-003 (Class 2 retention) PENDING.
+AD-001 (metadata/declarations) PENDING · AD-002 (code/data availability) PENDING · AD-003 (Class 2 retention) PENDING · AD-004 (access to [A]) PENDING · AD-005 (optional MathSciNet check) PENDING.
 
 ## Current authoritative manuscript
 `02_MANUSCRIPT/RFDQSC_WORKING.tex` (= baseline v0) with `03_REFERENCES/RFDQSC_references.bib`.
 
 ## Next action
-`NEXT PHASE: PHASE 01` — research problem, literature gap and novelty (retrieve FTW 2013, Li–Zhu 2022, search for prior prescribed-order / reciprocal-free minimum-degree results).
+`NEXT PHASE: PHASE 02` — mathematical audit of all proofs (Lemma 2.3 edge cases, Thm A coinciding blocks, Thm B Case III, Thm C(ii) Step 2, Thm 11.1 hypotheses).
