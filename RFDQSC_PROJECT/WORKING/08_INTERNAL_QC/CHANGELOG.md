@@ -47,3 +47,4 @@
 | 11 | VALUE_LEDGER | V104 | — | — |
 | 12 | tex Thm 11.1 hypotheses | "Class-1 pair of [LZ22]" → explicit structural hypotheses | Independence from unreadable source | Phase 12 report |
 | 12 | REVIEWER_QA, VALUE_LEDGER V105 | added | — | — |
+| 13 | VALUE_LEDGER | V106; statuses of Thm 11.1 rows reworded | Consistency with Phase 12 | Phase 13 report |
