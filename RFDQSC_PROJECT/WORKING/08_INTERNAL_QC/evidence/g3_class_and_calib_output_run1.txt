@@ -1,0 +1,22 @@
+T2 FAIL 17 675 32 60
+T2 FAIL 23 225 32 60
+T2 FAIL 23 675 56 180
+T2 FAIL 23 1125 112 300
+T2 FAIL 47 225 32 60
+T2 FAIL 47 675 56 180
+T2 FAIL 47 1125 112 300
+Lemma1: 33205 (q,m) tested, failures 0
+Thm2 (support reduction, <=3 primes): 13251 (q,N), failures 7
+Thm3 (two-prime closed form): 6773 (q,N), failures 0; cases w!=w0 among them: 2410
+A-Ex1: q=3 N=26 A=12 B=6 s=6 deg h=6 ord(h)=26 K=2 dC=- dD=4 dualcont=True | w=3 w0=3 ord_N=3 | R8rhs=22 K+2dD=10 Delta=12
+A-Ex2: q=37 N=82 A=20 B=10 s=10 deg h=10 ord(h)=82 K=42 dC=- dD=6 dualcont=True | w=5 w0=5 ord_N=5 | R8rhs=74 K+2dD=54 Delta=20
+A-Ex3 (printed g1,g3 incl. m0): q=3 N=80 A=17 B=9 s=8 deg h=8 ord(h)=80 K=46 dC=- dD=5 dualcont=False | w=4 w0=4 ord_N=4 | R8rhs=74 K+2dD=56 Delta=18
+A-Ex3 (without m0): q=3 N=80 A=16 B=8 s=8 deg h=8 ord(h)=80 K=48 dC=- dD=4 dualcont=True | w=4 w0=4 ord_N=4 | R8rhs=74 K+2dD=56 Delta=18
+class-1 instances: 134 violations of w(2n,q)=ord_n(q)=ord_2n(q): 0
+class2 q=3 m=2 N=80 ord_N=4 w=4 w0=4 | instances=75 ord(h)<N: 0 | min s=8 | s-distribution={8: 16, 12: 26, 16: 17, 20: 12, 24: 4}
+class2 q=5 m=2 N=312 ord_N=4 w=4 w0=4 | instances=1490 ord(h)<N: 8 | min s=6 | s-distribution={6: 8, 8: 64, 10: 18, 12: 114, 14: 29, 16: 133, 18: 48, 20: 135, 22: 64, 24: 101, 26: 70, 28: 75, 30: 72, 32: 55, 34: 75, 36: 44, 38: 77, 40: 25, 42: 71, 44: 12, 46: 62, 48: 4, 50: 55, 54: 39, 58: 21, 62: 9, 66: 2}
+class2 q=7 m=2 N=800 ord_N=4 w=4 w0=4 | instances=10269 ord(h)<N: 6 | min s=8 | s-distribution={8: 210, 12: 390, 16: 517, 20: 605, 24: 667, 28: 702, 32: 667, 36: 634, 40: 597, 44: 562, 48: 547, 52: 527, 56: 487, 60: 438, 64: 394, 68: 354, 72: 330, 76: 293, 80: 263, 84: 230, 88: 199, 92: 170, 96: 149, 100: 119, 104: 91, 108: 59, 112: 35, 116: 18, 120: 7, 124: 2}
+class2 q=3 m=3 N=728 ord_N=6 w=6 w0=6 | instances=19908 ord(h)<N: 12 | min s=12 | s-distribution={12: 436, 18: 1026, 24: 1297, 30: 1606, 36: 1708, 42: 1780, 48: 1722, 54: 1620, 60: 1483, 66: 1336, 72: 1200, 78: 1052, 84: 917, 90: 768, 96: 634, 102: 484, 108: 351, 114: 214, 120: 139, 126: 70, 132: 37, 138: 12, 144: 4}
+real	1m58.496s
+user	1m58.353s
+sys	0m0.136s

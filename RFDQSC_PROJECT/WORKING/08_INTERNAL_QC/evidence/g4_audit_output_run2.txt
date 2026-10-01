@@ -1,0 +1,12 @@
+time 233
+DP vs coset brute force: tested 1999, failures 0, first failure None
+Lemma 1: tested 99981, failures 0, first failure None
+Theorem A: tested 39968, failures 0, first failure None
+w0 partition formula: tested 39968, failures 0, first failure None
+Theorem B: tested 195405, failures 0, first failure None
+Theorem C(i): tested 30079, failures 0, first failure None
+Theorem C(ii) instances: tested 594, failures 0, first failure None
+Theorem 2 (i)-(ii) structure: tested 1081, failures 0, first failure None
+real	3m53.835s
+user	3m53.651s
+sys	0m0.116s

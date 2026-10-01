@@ -15,3 +15,6 @@
 | 03 | tools/evidence | Added `phase03_boundary_check.py`; saved `evidence/g4_audit_output_run1.txt` | Boundary stress test; reproduction of authors' check record | 0 failures; counts sum to 409,075 |
 | 03 | manuscript | No change | No boundary failure found | Phase 3 report |
 | 03 | VALUE_LEDGER | Rows V079–V084 | Boundary/limit evidence | — |
+| 04 | evidence | Saved reproduction outputs (g4 run 2, g3_class/g3_calib) and ENVIRONMENT.txt | Numerical audit | identical to claimed values |
+| 04 | manuscript/code | No change | No numerical defect; hygiene items routed to Phases 5/6 | Phase 4 report |
+| 04 | VALUE_LEDGER | Rows V085–V090 | Reproduction evidence | — |
