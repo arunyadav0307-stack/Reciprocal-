@@ -9,3 +9,6 @@
 | 01 | §1.1 (tex) | Added sentence: classical bound deg h ≥ w0 can be far from attained under the reciprocal-free constraint | State the gap precisely | Examples (55,3), (225,23) recomputed in Phase 0 |
 | 01 | §1.4 (tex) | Removed "primary result" self-label of Theorem A | Unneeded self-promotion | — |
 | 01 | VALUE_LEDGER | Rows V062–V067 added | Literature verification | — |
+| 02 | §9.2 (tex) | Added attainment of w (g_C=h, g_D=1; degenerate pair) after "least possible degree of a saturating factor" | The claim was only a bound; attainment is provable | Lemma 2.3; derivation in Phase 2 report |
+| 02 | tools | Added `phase02_math_check.py` (independent definition-level checks) | Evidence for Theorems A, B, C, 11.1(i) | 0 failures on finite ranges |
+| 02 | VALUE_LEDGER | Rows V068–V078 | Math audit | — |

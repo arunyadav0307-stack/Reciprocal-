@@ -66,3 +66,14 @@ V064,literature,Sec 11; LML19 Thm 2,(u+v|u-v) max tolerance 2n iff ord(g1/g3)=n 
 V065,literature,Sec 1.6; Zhang-Ge,arXiv:1508.00974 exists; duadic QSC highest possible tolerance,description correct,arXiv abs page,VERIFIED_EXTERNAL,,01,01,title to add in Ph9
 V066,literature,Sec 11; ref A,"Li-Zhu hypotheses, Example 3 printed values, printed d(D)",unverifiable,paywalled,UNVERIFIED_AD-004,,01,01,keep Thm 11.1 conditional
 V067,novelty,Abstract; Sec 1.1; 12.4,"no earlier work on w(N,q)",'to our knowledge',web+zbMATH+arXiv searches; MathSciNet not accessed,SOFT_CLAIM_SUPPORTED_BY_SEARCH,,01,01,AD-005
+V068,math,Lemma 2.3; ESM S1,"C^perp<=C iff g g* | x^N-1 (incl. g_C=1, C={0})",as stated,manuscript,VERIFIED_BY_DERIVATION,re-derived,02,02,ESM_1 PDF Step 3 damaged by conversion
+V069,math,Prop 4.2/4.3,"lcm-cover form; w(2,q)=inf; w=1 iff N|q-1 (N>2)",as stated,manuscript,VERIFIED_BY_DERIVATION,re-derived,02,02,
+V070,math,Lemma 5.1; Cor 5.2,2-adic admissibility criterion; support invariance,as stated,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED,1342 definition-level cases agree (Ph2 script),02,02,finite spot check
+V071,math,"Theorem A (6.2),(6.3)",support-reduction formulas,as stated,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED,"1342 cases, 0 mismatches",02,02,"odd N<400, 9 values of q, #cosets<=18"
+V072,math,Theorem B table,four-case formula,as stated,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED,"567 definition-level + 6952 formula cases, 0 mismatches",02,02,
+V073,math,"Theorem C(i),(ii)","w(pr,q)=lcm(o(p),o(r)); family w=(p-1)(r-1)/2, w0=p+r-2; ratio>=(p-1)/4",as stated,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED,"1122 triples, 0 mismatches",02,02,"p,r<120, q prime<400"
+V074,math,"Prop 9.1, Cor 9.2, Prop 10.1",s>=w; K+2d(D)<=N+2-2s<=N+2-2w; Delta identity,as stated,manuscript,VERIFIED_BY_DERIVATION,algebra rechecked,02,02,
+V075,math,Prop 9.1 (added sentence),"w attained with g_C=h, g_D=1 (degenerate, d(D)=1)",new text,derivation,VERIFIED_BY_DERIVATION,,02,02,repair of 'least possible degree' claim
+V076,math,Sec 11.1,"(u+v|u-v) composite of <g1>,<g2> is cyclic with generator g1 g2 (q odd)",as stated,manuscript,VERIFIED_BY_DERIVATION,CRT argument,02,02,dual splits as C1perp (+) C2perp
+V077,math,Theorem 11.1,(i) w=w0=ord_n(q); (ii) s>=2w; (iii) Delta>=2w,as stated,manuscript,VERIFIED_BY_DERIVATION (conditional on A's hypotheses),(i) 129 definition-level cases agree,02,02,ord(h)=2n hypothesis redundant given h2 nonconstant
+V078,literature,Sec 11.2/12.2; ref B,B is repeated-root cyclic/constacyclic; 'N=12p^s' and 'powers of self-reciprocal factors',as stated,IEEE Xplore abstract (first half only),PARTLY_VERIFIED,,02,02,soften in Ph10

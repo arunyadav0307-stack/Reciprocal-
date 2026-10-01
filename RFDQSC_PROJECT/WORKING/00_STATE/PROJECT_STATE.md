@@ -18,16 +18,16 @@
 - Environment risk: **no LaTeX engine in the sandbox**; apt/CTAN/conda unreachable. Final compilation (Phase 14) needs a workaround (e.g. npm `texlive` pdfTeX-WASM tree) or author-side compilation. Recorded, not hidden.
 
 ## Phase status
-See `COMPLETED_PHASES.txt`. PHASE 00–01 — COMPLETE; PHASES 02–14 — NOT STARTED.
+See `COMPLETED_PHASES.txt`. PHASE 00–02 — COMPLETE; PHASES 03–14 — NOT STARTED.
 
 ## Major scientific findings (established only)
 - Quoted worked values w/w0 for (143,3), (55,3), (225,23), (35,3), (5,3), (26,3), (82,37), (80,3) and w(2,q)=∞ reproduced by an independent definition-level coset search.
 - Table 1 deficit arithmetic (22/74/74; 10/54/56; Δ = 12/20/18; splits 6+6, 10+10, 8+10) is internally consistent.
 - Headline check count 409,075 equals the sum of the eight ESM_1 rows; Class 2 totals 31,742 / 31,716 equal the sum of the ESM_1 rows. (Arithmetic only; reproduction by running code is pending, Phase 6.)
-- Nothing else is established yet; all theorem proofs are pending audit (Phase 2).
+- Phase 2: all lemmas, propositions and theorems re-derived; no mathematical error found; independent finite spot checks (Theorems A, B, C, 11.1(i)) agree with 0 mismatches. Theorem 11.1 remains conditional on [A]'s hypotheses (AD-004).
 
 ## Corrections made
-Phase 1: FTW/XYY16/LM18 attribution (binary vs q-ary); search-trace phrasing replaced by hedged priority statement; gap sentence added; 'primary result' label removed. See CHANGELOG.
+Phase 1: FTW/XYY16/LM18 attribution (binary vs q-ary); search-trace phrasing replaced by hedged priority statement; gap sentence added; 'primary result' label removed. Phase 2: attainment of w added in §9.2. See CHANGELOG.
 
 ## Unresolved issues (routed)
 Pandoc-conversion damage in the .tex (stars/emphasis, subscripts, no \label/\ref); internal-workflow wording in the paper (enumerator bug story, "literature search performed for this work", "Online Resource", "printed inconsistencies"); reconstructed Class-2 rule; source check of [A] Example 3 and FTW hypotheses; audit_* naming and unrelated scripts in the public code; placeholders.
@@ -39,4 +39,4 @@ AD-001 (metadata/declarations) PENDING · AD-002 (code/data availability) PENDIN
 `02_MANUSCRIPT/RFDQSC_WORKING.tex` (= baseline v0) with `03_REFERENCES/RFDQSC_references.bib`.
 
 ## Next action
-`NEXT PHASE: PHASE 02` — mathematical audit of all proofs (Lemma 2.3 edge cases, Thm A coinciding blocks, Thm B Case III, Thm C(ii) Step 2, Thm 11.1 hypotheses).
+`NEXT PHASE: PHASE 03` — dimensional/boundary/limiting-case stress test (N=2, N prime power, q even, w=1, w=∞, N=3, Theorem C(ii) lower end p=7,r=5, Theorem 11.1 with n=3).
