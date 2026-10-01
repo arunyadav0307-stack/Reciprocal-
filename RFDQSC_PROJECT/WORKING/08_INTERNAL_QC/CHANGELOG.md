@@ -18,3 +18,7 @@
 | 04 | evidence | Saved reproduction outputs (g4 run 2, g3_class/g3_calib) and ENVIRONMENT.txt | Numerical audit | identical to claimed values |
 | 04 | manuscript/code | No change | No numerical defect; hygiene items routed to Phases 5/6 | Phase 4 report |
 | 04 | VALUE_LEDGER | Rows V085–V090 | Reproduction evidence | — |
+| 05 | 04_CODE/curated, CODE_MAP.md | Curated code package created (no import-time legacy tests, manuscript labels, no dead code, README/requirements); originals unchanged | Code hygiene defects from Phase 4 | outputs identical to originals |
+| 05 | tools | Added `phase05_trace.py` | Trace of quoted values | 29/29 |
+| 05 | manuscript | No change | No discrepancy found | Phase 5 report |
+| 05 | VALUE_LEDGER | Rows V091–V093 | — | — |

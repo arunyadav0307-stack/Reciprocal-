@@ -24,6 +24,8 @@ Status values: PENDING / RESOLVED.
 4. Options: keep as clearly labelled observation; move entirely to supplementary; delete. If the published paper [A] can be obtained and the rule confirmed (Phase 1), the issue may be resolved without the author.
 5. Required: author preference only if [A] cannot be checked.
 
+Update (Phase 5): a curated code package is prepared in `04_CODE/curated/` (identical results). The author's choice in AD-002 now only concerns where it is released and whether the earlier exploratory scripts are shipped.
+
 (No other decision is currently open. New entries will be appended; resolved entries are marked RESOLVED with the resolution.)
 
 ## AD-004 — Access to Li–Zhu (2022) [A] · PENDING

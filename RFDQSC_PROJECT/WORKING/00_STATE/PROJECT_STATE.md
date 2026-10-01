@@ -18,7 +18,7 @@
 - Environment risk: **no LaTeX engine in the sandbox**; apt/CTAN/conda unreachable. Final compilation (Phase 14) needs a workaround (e.g. npm `texlive` pdfTeX-WASM tree) or author-side compilation. Recorded, not hidden.
 
 ## Phase status
-See `COMPLETED_PHASES.txt`. PHASE 00–04 — COMPLETE; PHASES 05–14 — NOT STARTED.
+See `COMPLETED_PHASES.txt`. PHASE 00–05 — COMPLETE; PHASES 06–14 — NOT STARTED.
 
 ## Major scientific findings (established only)
 - Quoted worked values w/w0 for (143,3), (55,3), (225,23), (35,3), (5,3), (26,3), (82,37), (80,3) and w(2,q)=∞ reproduced by an independent definition-level coset search.
@@ -27,6 +27,7 @@ See `COMPLETED_PHASES.txt`. PHASE 00–04 — COMPLETE; PHASES 05–14 — NOT S
 - Phase 2: all lemmas, propositions and theorems re-derived; no mathematical error found; independent finite spot checks (Theorems A, B, C, 11.1(i)) agree with 0 mismatches. Theorem 11.1 remains conditional on [A]'s hypotheses (AD-004).
 - Phase 3: no boundary failure (1,332 (q,N) cases, 234 even-N cases, 850 saturated pairs enumerated for N=2n). The authors' g4_audit.py was run to completion: 8 rows, total 409,075 checks, 0 failures (reproduced).
 - Phase 4: exact integer arithmetic, deterministic (two identical runs). Table 1 and the Class 2 (ESM S2) tables reproduced by the authors' scripts. Hygiene: g2_test.py runs legacy tests at import (prints the 7 failures); README omits numpy; dead code; label mismatch.
+- Phase 5: 29 quoted values traced, 0 mismatches; curated code package (04_CODE/curated) reproduces the originals' results; CODE_MAP.md added.
 
 ## Corrections made
 Phase 1: FTW/XYY16/LM18 attribution (binary vs q-ary); search-trace phrasing replaced by hedged priority statement; gap sentence added; 'primary result' label removed. Phase 2: attainment of w added in §9.2. See CHANGELOG.
@@ -41,4 +42,4 @@ AD-001 (metadata/declarations) PENDING · AD-002 (code/data availability) PENDIN
 `02_MANUSCRIPT/RFDQSC_WORKING.tex` (= baseline v0) with `03_REFERENCES/RFDQSC_references.bib`.
 
 ## Next action
-`NEXT PHASE: PHASE 05` — code <-> equation <-> parameter <-> result reconciliation (mapping table script labels -> manuscript numbering; every manuscript number traced to a script line; curated code package decision AD-002).
+`NEXT PHASE: PHASE 06` — verification, validation and reproducibility: formal V&V statement (verification vs validation, what is and is not established), reproducibility record, ledger status update, data/code availability wording.

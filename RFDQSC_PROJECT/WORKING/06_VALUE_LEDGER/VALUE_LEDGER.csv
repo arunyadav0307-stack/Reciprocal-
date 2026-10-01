@@ -89,3 +89,6 @@ V087,numerics,Sec 11.3 text,"Ex3 with printed m0: not dual-containing (dualcont 
 V088,numerics,Sec 11.4; ESM S2,Class 2: tuples 75/1490/10269/19908; saturated 75/1482/10263/19896; min s 8/6/8/12,as in ESM S2,authors' g3_class.py,REPRODUCED_BY_RUN,identical; ord(h)<N 0/8/6/12,04,04,under reconstructed rule (AD-003)
 V089,numerics,Sec 12.3,"7 spurious failures (e.g. (23,225)) from legacy enumerator",7,authors' g2_test.py,REPRODUCED_BY_RUN,"7 T2 FAIL lines incl. (23,225)",04,04,legacy code runs at import: hygiene item
 V090,numerics,Sec 12.3; ESM S3,"DP vs coset brute force 1999 of 2197 pairs (198 skipped, >22 cosets)",1999,authors' g4_audit.py,REPRODUCED_BY_RUN; SCOPE_NOTED,"2197 total, 198 skipped",04,04,skip rule not stated in the paper
+V091,traceability,"Sec 1.1, 4.4, 6.6, 7.4, Table 1, Sec 11.4, 12.3",29 quoted numerical values,as quoted,curated rfd_core via phase05_trace.py,REPRODUCED_BY_RUN,0 mismatches,05,05,
+V092,code,Sec 12.3; ESM S3,"409,075 checks, 0 failures (curated verify_theorems.py)",409075; 0,curated verify_theorems.py,REPRODUCED_BY_RUN,identical eight counts; 238 s,05,05,curated code equals original logic
+V093,code,04_CODE,"curated package outputs identical to originals (Table 1, Class 2)",identical,curated scripts,VERIFIED_BY_RUN,diff by eye of printed lines,05,05,originals untouched
