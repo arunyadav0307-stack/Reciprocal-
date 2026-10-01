@@ -43,3 +43,5 @@
 | 10 | tex preamble | longtable, calc, `\LTcaptype` removed; 3 unused unicode hacks removed (δ, λ, …) | Dead code | tex_lint.py |
 | 10 | supplementary | ESM_1.tex added; ESM_1.pdf rebuilt (PyMuPDF); wording and S3 narrative aligned with the paper | Consistency with Phase 8 | Phase 10 report |
 | 10 | VALUE_LEDGER | V094 location updated; V100–V103 added | — | — |
+| 11 | tex (spelling, §2.4, §7.3, §11.3, §11.4) | see VOICE_CHANGES.md | language | Phase 11 report |
+| 11 | VALUE_LEDGER | V104 | — | — |
