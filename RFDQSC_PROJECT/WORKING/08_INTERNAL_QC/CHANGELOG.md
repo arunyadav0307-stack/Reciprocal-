@@ -32,3 +32,8 @@
 | 08 | §11.1, §11.3, §11.4 (tex) | "printed inconsistencies … silently" removed; claims about [A] reduced to the facts needed; Class 2 rule described neutrally | AD-004 / AD-003 defaults | — |
 | 08 | whole tex | "Online Resource 1/2" → "supplementary information" | Journal terminology | — |
 | 08 | VALUE_LEDGER | workflow-trace row closed; V095 added | — | — |
+| 09 | bib keys (bib + tex) | `A` → `LZ22`, `B` → `DMLHW20`; all `\cite{A}`, `\cite{B}`, `\cite{A,B}` updated | Non-descriptive keys | — |
+| 09 | tex `\bibliography` | `03_References_JAMC` → `RFDQSC_references` (working bib name) | Name mismatch would break bibtex | Phase 9 report |
+| 09 | tex header comment | engine claim ("Compile with XeLaTeX or LuaLaTeX …") replaced by neutral build sequence | Unverified compile claim; no engine in sandbox | — |
+| 09 | bib content | No change (25/25 entries match Crossref) | — | Crossref query |
+| 09 | VALUE_LEDGER | V061 closed; V096–V099 added | — | — |

@@ -43,3 +43,10 @@ Update (Phase 5): a curated code package is prepared in `04_CODE/curated/` (iden
 (Phase 8 update: AD-003 default applied (short remark kept in §11.4). AD-004 default applied (no 'misprint' assertion; Table 1 column 'd(D) [A]' kept). AD-001 addition: the AI-use statement must reflect AI-assisted editing/auditing of this manuscript; placeholder left to the author.)
 
 (Phase 7 note: no new decision. Whether Table 1's column "d(D) [A]" stays depends on AD-004.)
+
+## AD-006 — Supplementary code package (ESM_2) and cover letter · PENDING (default applied)
+1. Issue: ESM_2.zip as supplied holds the original scripts; Phase 5 produced a curated package (`04_CODE/curated/`, outputs identical, no legacy 7-line "T2 FAIL" output). The supplied cover letter (07_Cover_Letter) repeats wording the manuscript no longer uses ("literature search performed", "Online Resources 1 and 2", "stress test").
+2. Default: the final package ships ESM_2 = curated code (+ README), and a cover letter is re-issued with the same placeholders and consistent wording (Phase 14). The author may prefer the original scripts.
+3. Options: keep curated (default); ship original; ship both.
+
+(Phase 9 note: Zhang–Ge arXiv:1508.00974 remains an in-text mention because the author's checklist (item 13) states that the reference list takes published/accepted works only. If the author knows of a journal version, add it as a bib entry. AD-001 unchanged: Statements and Declarations contents are placeholders.)

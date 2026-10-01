@@ -1,6 +1,6 @@
 %% Journal of Applied Mathematics and Computing -- manuscript source
 %% Springer Nature LaTeX template (sn-jnl.cls), Math and Physical Sciences numbered reference style.
-%% Compile with XeLaTeX or LuaLaTeX (the "pdflatex" class option only disables breakurl/dvips code):  xelatex -> bibtex -> xelatex -> xelatex
+%% Build sequence: latex, bibtex, latex, latex.
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
@@ -122,22 +122,22 @@ The principal results are the following.
 \item
   \textbf{Saturation cost (Proposition 9.1, Corollary 9.2, Proposition 10.1).} In the semisimple cyclic QSC framework every saturating factor \(h\) satisfies deg \(h\) ≥ \(w\)(\(N\),\(q\)). Consequently \(K\) + 2\(d\)(\(D\)) ≤ \(N\) + 2 − 2\(w\), where \(d\)(\(D\)) is the classical minimum distance of the larger code \(D\), and the slack satisfies the exact identity Δ = 2(\(s\) − \(w\)) + 2(\(B\) + 1 − \(d\)(\(D\))), with \(s\) = deg \(h\) and \(B\) = deg \(g_D\).
 \item
-  \textbf{Calibration (Theorem 11.1).} For Class 1 of the construction of Li and Zhu \cite{A} (\(q\) odd, \(N\) = 2\(n\) with \(n\) an odd prime), \(s\) ≥ 2\(w\) and Δ ≥ 2\(w\). Class 2 of \cite{A} is examined only computationally, under a reconstructed index rule.
+  \textbf{Calibration (Theorem 11.1).} For Class 1 of the construction of Li and Zhu \cite{LZ22} (\(q\) odd, \(N\) = 2\(n\) with \(n\) an odd prime), \(s\) ≥ 2\(w\) and Δ ≥ 2\(w\). Class 2 of \cite{LZ22} is examined only computationally, under a reconstructed index rule.
 \end{enumerate}
 
 \subsection{Scope and limitations}
 
-All results concerning \(w\) assume gcd(\(N\),\(q\)) = 1. Theorem A concerns odd \(N\), Theorem B two distinct odd prime-power factors, and in Theorem C the field size \(q\) varies together with \(N\); for fixed \(q\) the behaviour of \(w\)/\(w\)₀ is not addressed. The bound involving \(w\) is a consequence of the Singleton bound; it is not claimed to be sharp, nor to determine the achievable QSC parameters. Repeated-root constructions, including those of Du et al.~\cite{B}, lie outside the setting in which \(w\) describes saturation (§12.2).
+All results concerning \(w\) assume gcd(\(N\),\(q\)) = 1. Theorem A concerns odd \(N\), Theorem B two distinct odd prime-power factors, and in Theorem C the field size \(q\) varies together with \(N\); for fixed \(q\) the behaviour of \(w\)/\(w\)₀ is not addressed. The bound involving \(w\) is a consequence of the Singleton bound; it is not claimed to be sharp, nor to determine the achievable QSC parameters. Repeated-root constructions, including those of Du et al.~\cite{DMLHW20}, lie outside the setting in which \(w\) describes saturation (§12.2).
 
 \subsection{Related literature}
 
-Quantum synchronizable codes were introduced by Fujiwara \cite{Fuj13}, and the cyclic framework used in this paper originates with \cite{FTW} for binary codes and was extended to \(q\)-ary codes in \cite{XYY16,LM18}. Further constructions include codes from finite geometries \cite{FV14}, from quadratic residue codes and their supercodes \cite{XYF14}, \(q\)-ary chain-containing codes \cite{XYY16}, algebraic constructions \cite{GLG17}, a class of codes from duadic codes with the highest possible tolerance against misalignment (T. Zhang and G. Ge, preprint arXiv:1508.00974, 2015), two families given in \cite{LML19}, and constructions from repeated-root cyclic codes \cite{LM18} and repeated-root quasi-cyclic codes \cite{DML23}. The constructions calibrated or excluded in this paper are those of \cite{A,B}.
+Quantum synchronizable codes were introduced by Fujiwara \cite{Fuj13}, and the cyclic framework used in this paper originates with \cite{FTW} for binary codes and was extended to \(q\)-ary codes in \cite{XYY16,LM18}. Further constructions include codes from finite geometries \cite{FV14}, from quadratic residue codes and their supercodes \cite{XYF14}, \(q\)-ary chain-containing codes \cite{XYY16}, algebraic constructions \cite{GLG17}, a class of codes from duadic codes with the highest possible tolerance against misalignment (T. Zhang and G. Ge, preprint arXiv:1508.00974, 2015), two families given in \cite{LML19}, and constructions from repeated-root cyclic codes \cite{LM18} and repeated-root quasi-cyclic codes \cite{DML23}. The constructions calibrated or excluded in this paper are those of \cite{LZ22,DMLHW20}.
 
-Dual-containing classical codes are the standard input to constructions of quantum codes from classical codes \cite{CRSS98,KKKS06,AKS07}. Negacyclic codes, which appear in the construction of \cite{A}, are studied for instance in \cite{Bla08,KZ13}. Reciprocal polynomials also govern cyclic codes with complementary duals \cite{Mas92,YM94}, as well as self-dual and self-orthogonal cyclic codes \cite{ST,JLX}. The condition −1 ∈ ⟨\(q\)⟩ mod \(m\) is equivalent to \(m\) dividing \(q^k\) + 1 for some \(k\); divisors of numbers of the form \(a^k\) + \(b^k\) are studied in \cite{Mor97}.
+Dual-containing classical codes are the standard input to constructions of quantum codes from classical codes \cite{CRSS98,KKKS06,AKS07}. Negacyclic codes, which appear in the construction of \cite{LZ22}, are studied for instance in \cite{Bla08,KZ13}. Reciprocal polynomials also govern cyclic codes with complementary duals \cite{Mas92,YM94}, as well as self-dual and self-orthogonal cyclic codes \cite{ST,JLX}. The condition −1 ∈ ⟨\(q\)⟩ mod \(m\) is equivalent to \(m\) dividing \(q^k\) + 1 for some \(k\); divisors of numbers of the form \(a^k\) + \(b^k\) are studied in \cite{Mor97}.
 
 Element orders in linear groups over finite fields have a separate literature, for example on element orders in groups related to the general linear group \cite{Dar05} and on the order of a typical matrix with entries in a finite field \cite{Sch95}. These works address questions different from the minimum-degree problem considered here.
 
-\textbf{Organisation.} Section 2 collects preliminaries and the cyclic QSC framework; §3 treats the classical quantity \(w\)₀; §4 introduces reciprocal-free admissibility and \(w\), with its lcm-cover form; §5 proves the admissibility criterion for odd moduli; §6 proves the support-reduction theorem; §7 gives the two-prime-power formula; §8 establishes the separation from \(w\)₀; §9 and §10 give the QSC application and the deficit decomposition; §11 calibrates the construction of \cite{A}; §12 discusses scope and the computational verification; §13 concludes.
+\textbf{Organisation.} Section 2 collects preliminaries and the cyclic QSC framework; §3 treats the classical quantity \(w\)₀; §4 introduces reciprocal-free admissibility and \(w\), with its lcm-cover form; §5 proves the admissibility criterion for odd moduli; §6 proves the support-reduction theorem; §7 gives the two-prime-power formula; §8 establishes the separation from \(w\)₀; §9 and §10 give the QSC application and the deficit decomposition; §11 calibrates the construction of \cite{LZ22}; §12 discusses scope and the computational verification; §13 concludes.
 
 \section{Preliminaries}
 
@@ -247,7 +247,7 @@ the construction of \cite{FTW,XYY16,LM18} gives an (\(a_l\), \(a_r)-QSC\) of len
 
 \begin{center}\(K\) = \(2k_C\) − \(N\) = \(N\) − 2 deg \(g_C\),\qquad (2.3)\end{center}
 
-which corrects misalignments of up to \(a_l\) positions to the left and \(a_r\) to the right; its quantum error-correcting capabilities are expressed through the minimum distances of \(C\) and \(D\) (see \cite{FTW} for the binary case). Throughout, \(d\)(\(D\)) denotes the \textbf{classical} minimum distance of \(D\), never a quantum distance. We call the pair (\(C\), \(D\)), or \(h\), \emph{saturated} if ord(\(h\)) = \(N\); then (2.2) permits all \(a_l\) + \(a_r\) ≤ \(N\) − 1. Only (2.2) and (2.3) are used later, and we make no claim that the quantities introduced below determine \(K\), \(d\)(\(D\)) or the set of achievable parameters. The constructions of \cite{A,B} are instances of this framework, discussed only in §11 and §12.
+which corrects misalignments of up to \(a_l\) positions to the left and \(a_r\) to the right; its quantum error-correcting capabilities are expressed through the minimum distances of \(C\) and \(D\) (see \cite{FTW} for the binary case). Throughout, \(d\)(\(D\)) denotes the \textbf{classical} minimum distance of \(D\), never a quantum distance. We call the pair (\(C\), \(D\)), or \(h\), \emph{saturated} if ord(\(h\)) = \(N\); then (2.2) permits all \(a_l\) + \(a_r\) ≤ \(N\) − 1. Only (2.2) and (2.3) are used later, and we make no claim that the quantities introduced below determine \(K\), \(d\)(\(D\)) or the set of achievable parameters. The constructions of \cite{LZ22,DMLHW20} are instances of this framework, discussed only in §11 and §12.
 
 \subsection{Notation}
 
@@ -818,7 +818,7 @@ The middle term \(N\) + 2 − 2\(s\) depends on the construction, through \(s\).
 
 \subsection{Scope of the QSC interpretation}
 
-Within the cyclic framework, \(w\) lower-bounds the degree of a saturating factor (Proposition 9.1) and enters the elementary inequality (9.1), which follows from the Singleton bound applied to \(D\). We do \textbf{not} claim that \(w\) determines \(K\), \(d\)(\(D\)), the quantum error-correcting capability, or the set of achievable QSC parameters; that (9.1) is sharp or improves Singleton-type bounds in general; or that these statements extend beyond gcd(\(N\),\(q\)) = 1. In particular, repeated-root constructions such as those of \cite{B} are outside the scope of Proposition 9.1 and are not treated here.
+Within the cyclic framework, \(w\) lower-bounds the degree of a saturating factor (Proposition 9.1) and enters the elementary inequality (9.1), which follows from the Singleton bound applied to \(D\). We do \textbf{not} claim that \(w\) determines \(K\), \(d\)(\(D\)), the quantum error-correcting capability, or the set of achievable QSC parameters; that (9.1) is sharp or improves Singleton-type bounds in general; or that these statements extend beyond gcd(\(N\),\(q\)) = 1. In particular, repeated-root constructions such as those of \cite{DMLHW20} are outside the scope of Proposition 9.1 and are not treated here.
 
 \section{Deficit decomposition}
 
@@ -862,21 +862,21 @@ The decomposition (10.1) separates two sources of slack. The \textbf{structural 
 
 \subsection{Calibration scope}
 
-We calibrate the constructions of Li and Zhu \cite{A} against \(w\). In \cite{A} the code length is \(N\) = 2\(n\) with gcd(\(n\),\(q\)) = 1 and \(q\) odd, so gcd(\(N\),\(q\)) = 1 and Propositions 9.1 and 10.1 apply.
+We calibrate the constructions of Li and Zhu \cite{LZ22} against \(w\). In \cite{LZ22} the code length is \(N\) = 2\(n\) with gcd(\(n\),\(q\)) = 1 and \(q\) odd, so gcd(\(N\),\(q\)) = 1 and Propositions 9.1 and 10.1 apply.
 
-\textbf{Structure of the codes in \cite{A}.} \cite{A} builds composite codes of length 2\(n\) from a cyclic code of length \(n\) (generator dividing \(x^n\) − 1) and a negacyclic code of length \(n\) (generator dividing \(x^n\) + 1), via the (\(u\)+\(v\) \(\mid\) \(u\)−\(v\)) construction. For odd \(q\), \(c\)(\(x\)) ↦ (\(c\) mod (\(x^n\) − 1), \(c\) mod (\(x^n\) + 1)) is a ring isomorphism \(F_q[x]/(x^{2n}\) − 1) → \(F_q[x]/(x^n\) − 1) ⊕ \(F_q[x]/(x^n\) + 1). Under this isomorphism, and up to the scalar 1/2, the (\(u\)+\(v\) \(\mid\) \(u\)−\(v\)) composite of \(⟨g_1⟩\) and \(⟨g_2⟩\) is the cyclic code of length 2\(n\) with generator \(g_1\) \(g_2\). Accordingly, in \cite{A}'s notation, \(g_C\) = \(g_1\) \(g_2\) and \(g_D\) = \(g_3\) \(g_4\), and
+\textbf{Structure of the codes in \cite{LZ22}.} \cite{LZ22} builds composite codes of length 2\(n\) from a cyclic code of length \(n\) (generator dividing \(x^n\) − 1) and a negacyclic code of length \(n\) (generator dividing \(x^n\) + 1), via the (\(u\)+\(v\) \(\mid\) \(u\)−\(v\)) construction. For odd \(q\), \(c\)(\(x\)) ↦ (\(c\) mod (\(x^n\) − 1), \(c\) mod (\(x^n\) + 1)) is a ring isomorphism \(F_q[x]/(x^{2n}\) − 1) → \(F_q[x]/(x^n\) − 1) ⊕ \(F_q[x]/(x^n\) + 1). Under this isomorphism, and up to the scalar 1/2, the (\(u\)+\(v\) \(\mid\) \(u\)−\(v\)) composite of \(⟨g_1⟩\) and \(⟨g_2⟩\) is the cyclic code of length 2\(n\) with generator \(g_1\) \(g_2\). Accordingly, in \cite{LZ22}'s notation, \(g_C\) = \(g_1\) \(g_2\) and \(g_D\) = \(g_3\) \(g_4\), and
 
 \begin{center}\(h\) = (\(g_1/g_3)(g_2/g_4\)),\end{center}
 
 \begin{center}where \(g_3\) \(\mid\) \(g_1\) divides \(x^n\) − 1 and \(g_4\) \(\mid\) \(g_2\) divides \(x^n\) + 1.\end{center}
 
-\textbf{What calibration means here.} Calibration compares the construction cost \(s\) with the intrinsic cost \(w\) and reports the decomposition (10.1); it does not rank \cite{A} against other constructions.
+\textbf{What calibration means here.} Calibration compares the construction cost \(s\) with the intrinsic cost \(w\) and reports the decomposition (10.1); it does not rank \cite{LZ22} against other constructions.
 
 \subsection{Class 1: N = 2n, n an odd prime}
 
-\begin{thmx}{Theorem 11.1 (calibration of \cite{A}, Class 1)}
+\begin{thmx}{Theorem 11.1 (calibration of \cite{LZ22}, Class 1)}
 
-Hypotheses: \(q\) is an odd prime power, and \(n\) is an odd prime with \(n\) ∤ \(q\); −1 ∉ ⟨\(q\)⟩ mod 2\(n\); o = \(ord_n(q)\); (\(C\), \(D\)) is a Class-1 pair of \cite{A}, with \cite{A}'s strict-nesting hypotheses on both sides, so that \(g_1/g_3\) and \(g_2/g_4\) are nonconstant; ord(\(h\)) = 2\(n\).
+Hypotheses: \(q\) is an odd prime power, and \(n\) is an odd prime with \(n\) ∤ \(q\); −1 ∉ ⟨\(q\)⟩ mod 2\(n\); o = \(ord_n(q)\); (\(C\), \(D\)) is a Class-1 pair of \cite{LZ22}, with \cite{LZ22}'s strict-nesting hypotheses on both sides, so that \(g_1/g_3\) and \(g_2/g_4\) are nonconstant; ord(\(h\)) = 2\(n\).
 
 Then: (i) \(ord_{2n}(q)\) = o, and \(w\)(2\(n\),\(q\)) = \(w\)₀(2\(n\),\(q\)) = o. (ii) \(s\) ≥ 2\(w\)(2\(n\),\(q\)). Equality \(s\) = 2\(w\) holds if and only if \(h\) contains exactly one irreducible factor of \(Φ_n\) and exactly one irreducible factor of \(Φ_{2n}\). (iii) Δ ≥ 2\(w\)(2\(n\),\(q\)). Equality Δ = 2\(w\) holds if and only if \(s\) = 2\(w\) and \(d\)(\(D\)) = \(B\) + 1.
 
@@ -896,20 +896,20 @@ Since both summands of (10.1) are non-negative, equality requires \(s\) = 2\(w\)
 
 \end{proof}
 
-\textbf{Remarks on Theorem 11.1.} \textbf{Index-level equality needs an extra assumption.} \cite{A} writes \(g_1\) and \(g_3\) as products of half-factors \(f_{n,j}\), and \(g_2\) and \(g_4\) as products of half-factors \(y_j\). The \(y_j\) are irreducible, by \cite{A}'s count of the factors of \(Φ_{2n}\). The equality condition in (ii) can be restated as ``exactly one index with a gap on each side'' \textbf{only under the additional assumption} that the \(f_{n,j}\) are irreducible. That assumption is not established here. \textbf{Source of the factor 2.} The bound \(s\) ≥ 2\(w\) reflects the construction: \cite{A} requires a nontrivial factor on both the cyclic side (\(h_1\)) and the negacyclic side (\(h_2\)). Only \(h_2\) contributes order 2\(n\). The factor \(h_1\) has order \(n\), contributes to the degree, and is not needed for ord(\(h\)) = 2\(n\). A single irreducible factor of \(Φ_{2n}\) is reciprocal-free, has order 2\(n\), and has degree \(w\). Theorem 11.1 does not assert that \(w\) itself doubles, nor that a construction with \(s\) = \(w\) is available within \cite{A}'s hypotheses.
+\textbf{Remarks on Theorem 11.1.} \textbf{Index-level equality needs an extra assumption.} \cite{LZ22} writes \(g_1\) and \(g_3\) as products of half-factors \(f_{n,j}\), and \(g_2\) and \(g_4\) as products of half-factors \(y_j\). The \(y_j\) are irreducible, by \cite{LZ22}'s count of the factors of \(Φ_{2n}\). The equality condition in (ii) can be restated as ``exactly one index with a gap on each side'' \textbf{only under the additional assumption} that the \(f_{n,j}\) are irreducible. That assumption is not established here. \textbf{Source of the factor 2.} The bound \(s\) ≥ 2\(w\) reflects the construction: \cite{LZ22} requires a nontrivial factor on both the cyclic side (\(h_1\)) and the negacyclic side (\(h_2\)). Only \(h_2\) contributes order 2\(n\). The factor \(h_1\) has order \(n\), contributes to the degree, and is not needed for ord(\(h\)) = 2\(n\). A single irreducible factor of \(Φ_{2n}\) is reciprocal-free, has order 2\(n\), and has degree \(w\). Theorem 11.1 does not assert that \(w\) itself doubles, nor that a construction with \(s\) = \(w\) is available within \cite{LZ22}'s hypotheses.
 \textbf{Parity of \(N\).} Theorem 11.1 is proved directly for even \(N\) = 2\(n\). It does not rely on Theorem A, which concerns odd \(N\).
 
 \subsection{Numerical calibration of the three examples}
 
-Table~\ref{tab1} lists computed values. \(d\)(\(D\)) (exact) is the classical minimum distance of the cyclic code \(D\) with generator \(g_D\) = \(g_3\) \(g_4\). It was computed exactly by parity-check rank. The values of \(d\)(\(D\)) given in \cite{A} are lower bounds. For Example 3 we use the factor lists of \cite{A} without the factor \(m_0\) = \(x\) − 1, which is self-reciprocal and therefore incompatible with dual containment; with this reading, the dimensions {[}40,32{]} and {[}40,36{]} and \(h\) = \(m_4\) \(m_5\) given in \cite{A} are reproduced. Examples 1 and 2 belong to Class 1. Example 3 belongs to \cite{A}'s BCH class (Class 2), so for it the values come from direct computation, not from Theorem 11.1.
+Table~\ref{tab1} lists computed values. \(d\)(\(D\)) (exact) is the classical minimum distance of the cyclic code \(D\) with generator \(g_D\) = \(g_3\) \(g_4\). It was computed exactly by parity-check rank. The values of \(d\)(\(D\)) given in \cite{LZ22} are lower bounds. For Example 3 we use the factor lists of \cite{LZ22} without the factor \(m_0\) = \(x\) − 1, which is self-reciprocal and therefore incompatible with dual containment; with this reading, the dimensions {[}40,32{]} and {[}40,36{]} and \(h\) = \(m_4\) \(m_5\) given in \cite{LZ22} are reproduced. Examples 1 and 2 belong to Class 1. Example 3 belongs to \cite{LZ22}'s BCH class (Class 2), so for it the values come from direct computation, not from Theorem 11.1.
 
 \begin{table}[h]
-\caption{Calibration of the three examples of \cite{A}. All entries are computed, except the column $d(D)$~\cite{A}, which gives the lower bounds printed in \cite{A}. In all three cases $\deg g_C = B + s$ and $\mathrm{ord}(h) = N$.}\label{tab1}
+\caption{Calibration of the three examples of \cite{LZ22}. All entries are computed, except the column $d(D)$~\cite{LZ22}, which gives the lower bounds printed in \cite{LZ22}. In all three cases $\deg g_C = B + s$ and $\mathrm{ord}(h) = N$.}\label{tab1}
 \centering\small\setlength{\tabcolsep}{3.5pt}
 \resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
 \begin{tabular}{@{}lccccccccccc@{}}
 \toprule
- & Class & $(q,N)$ & $w_0=w$ & $B$ & $s$ & $K$ & $d(D)$~\cite{A} & $d(D)$ & $\Delta$ & $2(s-w)$ & $2(B+1-d(D))$\\
+ & Class & $(q,N)$ & $w_0=w$ & $B$ & $s$ & $K$ & $d(D)$~\cite{LZ22} & $d(D)$ & $\Delta$ & $2(s-w)$ & $2(B+1-d(D))$\\
 \midrule
 Ex.~1 & 1 & $(3,26)$ & 3 & 6 & 6 & 2 & 3 & 4 & \textbf{12} & 6 & 6\\
 Ex.~2 & 1 & $(37,82)$ & 5 & 10 & 10 & 42 & 4 & 6 & \textbf{20} & 10 & 10\\
@@ -919,15 +919,15 @@ Ex.~3 & 2 & $(3,80)$ & 4 & 8 & 8 & 48 & 3 & 4 & \textbf{18} & 8 & 10\\
 \end{table}
 
 
-In Table~\ref{tab1}, \(w\)₀ = \(w\) = \(ord_N(q)\), \(N\) + 2 − 2\(w\) = 22, 74, 74 and \(K\) + 2\(d\)(\(D\)) = 10, 54, 56, \(B\) = deg \(g_D\), \(s\) = deg \(h\), ``\(d\)(\(D\)) \cite{A}'' is the lower bound printed in \cite{A}, and ``\(d\)(\(D\))'' is the exact value.
+In Table~\ref{tab1}, \(w\)₀ = \(w\) = \(ord_N(q)\), \(N\) + 2 − 2\(w\) = 22, 74, 74 and \(K\) + 2\(d\)(\(D\)) = 10, 54, 56, \(B\) = deg \(g_D\), \(s\) = deg \(h\), ``\(d\)(\(D\)) \cite{LZ22}'' is the lower bound printed in \cite{LZ22}, and ``\(d\)(\(D\))'' is the exact value.
 
 \textbf{What the table shows.} In all three examples \(s\) = 2\(w\), the equality case of Theorem 11.1(ii) for Examples 1 and 2. The deficit splits roughly equally between structural excess and coding-side slack. Examples 1 and 2 satisfy Δ ≥ 2\(w\), as Theorem 11.1(iii) requires. The inequality is strict because \(d\)(\(D\)) \textless{} \(B\) + 1.
 
 \subsection{Class 2 computational observations}
 
-For the BCH class of \cite{A} (Class 2; \(n\) = (\(q^{2m}\) − 1)/(\(q\) − 1), \(N\) = 2\(n\)), for which we use an index rule reconstructed from Example 3 and the parameter ranges stated in \cite{A} (described in the supplementary information). For (\(q\), \(m\)) = (3,2), (5,2), (7,2), (3,3), with \(w\)₀ = \(w\) = \(ord_N(q)\) = 4, 4, 4, 6, 31,716 of the 31,742 parameter tuples examined are saturated, and every saturated tuple observed has \(s\) \textgreater{} \(w\). These observations are not a theorem and not exhaustive; tuples with ord(\(h\)) \textless{} \(N\) may be excluded by the exact hypotheses of \cite{A}. The observed minimum \(s\) = 6 for (\(q\), \(m\)) = (5, 2) is below 2\(w\) = 8, so \(s\) ≥ 2\(w\) is not claimed for Class 2.
+For the BCH class of \cite{LZ22} (Class 2; \(n\) = (\(q^{2m}\) − 1)/(\(q\) − 1), \(N\) = 2\(n\)), for which we use an index rule reconstructed from Example 3 and the parameter ranges stated in \cite{LZ22} (described in the supplementary information). For (\(q\), \(m\)) = (3,2), (5,2), (7,2), (3,3), with \(w\)₀ = \(w\) = \(ord_N(q)\) = 4, 4, 4, 6, 31,716 of the 31,742 parameter tuples examined are saturated, and every saturated tuple observed has \(s\) \textgreater{} \(w\). These observations are not a theorem and not exhaustive; tuples with ord(\(h\)) \textless{} \(N\) may be excluded by the exact hypotheses of \cite{LZ22}. The observed minimum \(s\) = 6 for (\(q\), \(m\)) = (5, 2) is below 2\(w\) = 8, so \(s\) ≥ 2\(w\) is not claimed for Class 2.
 
-\textbf{Calibration conclusions.} For every calibrated instance of \cite{A}, \(w\)(\(N\),\(q\)) = \(w\)₀(\(N\),\(q\)) = \(ord_N(q)\), and the saturating factor of \cite{A} is feasible for \(w\) (Proposition 9.1). In Class 1 the construction cost satisfies \(s\) ≥ 2\(w\), and hence Δ ≥ 2\(w\) (Theorem 11.1); the excess comes from the requirement in \cite{A} of nontrivial factors on both the cyclic and negacyclic sides. In the three worked examples \(s\) = 2\(w\), Δ = 12, 20, 18 splits as shown in §11.3, and the exact classical distances \(d\)(\(D\)) exceed the lower bounds printed in \cite{A}. Class 2 is calibrated only empirically, under a reconstructed index rule. None of these statements implies that the codes of \cite{A} are suboptimal: \(K\), \(d\)(\(D\)), the tolerance and the quantum capabilities must be assessed jointly. The \(w\)-calibration does not apply to the repeated-root constructions of \cite{B}.
+\textbf{Calibration conclusions.} For every calibrated instance of \cite{LZ22}, \(w\)(\(N\),\(q\)) = \(w\)₀(\(N\),\(q\)) = \(ord_N(q)\), and the saturating factor of \cite{LZ22} is feasible for \(w\) (Proposition 9.1). In Class 1 the construction cost satisfies \(s\) ≥ 2\(w\), and hence Δ ≥ 2\(w\) (Theorem 11.1); the excess comes from the requirement in \cite{LZ22} of nontrivial factors on both the cyclic and negacyclic sides. In the three worked examples \(s\) = 2\(w\), Δ = 12, 20, 18 splits as shown in §11.3, and the exact classical distances \(d\)(\(D\)) exceed the lower bounds printed in \cite{LZ22}. Class 2 is calibrated only empirically, under a reconstructed index rule. None of these statements implies that the codes of \cite{LZ22} are suboptimal: \(K\), \(d\)(\(D\)), the tolerance and the quantum capabilities must be assessed jointly. The \(w\)-calibration does not apply to the repeated-root constructions of \cite{DMLHW20}.
 
 \section{Scope, limitations and computational verification}
 
@@ -937,11 +937,11 @@ The exact ranges of the structural results are those stated in their hypotheses 
 
 \subsection{Semisimple restriction and repeated-root exclusion}
 
-Every statement involving \(w\)(\(N\),\(q\)) assumes gcd(\(N\),\(q\)) = 1. The hypothesis enters twice: \(x^N\) − 1 is then squarefree, which gives the factorisation and degree formulas of §2.2 and the lcm-cover form (Proposition 4.2), and dual containment then implies that the synchronisation factor is reciprocal-free (Proposition 9.1). When gcd(\(N\),\(q\)) \textgreater{} 1, dual containment still means \(g_C\) \(g_C\)* \(\mid\) \(x^N\) − 1 (Lemma 2.3), but \(x^N\) − 1 has repeated factors, so a divisor of \(g_C\) may contain self-reciprocal factors or reciprocal pairs with bounded multiplicity; gcd(\(h\), \(h\)*) = 1 is then \textbf{not} the correct constraint on saturating factors, and \(w\)(\(N\),\(q\)) is not the relevant saturation cost. For this reason the repeated-root constructions of \cite{B} are not calibrated by \(w\). A saturation-cost invariant for repeated-root lengths would require a different definition; none is proposed here.
+Every statement involving \(w\)(\(N\),\(q\)) assumes gcd(\(N\),\(q\)) = 1. The hypothesis enters twice: \(x^N\) − 1 is then squarefree, which gives the factorisation and degree formulas of §2.2 and the lcm-cover form (Proposition 4.2), and dual containment then implies that the synchronisation factor is reciprocal-free (Proposition 9.1). When gcd(\(N\),\(q\)) \textgreater{} 1, dual containment still means \(g_C\) \(g_C\)* \(\mid\) \(x^N\) − 1 (Lemma 2.3), but \(x^N\) − 1 has repeated factors, so a divisor of \(g_C\) may contain self-reciprocal factors or reciprocal pairs with bounded multiplicity; gcd(\(h\), \(h\)*) = 1 is then \textbf{not} the correct constraint on saturating factors, and \(w\)(\(N\),\(q\)) is not the relevant saturation cost. For this reason the repeated-root constructions of \cite{DMLHW20} are not calibrated by \(w\). A saturation-cost invariant for repeated-root lengths would require a different definition; none is proposed here.
 
 \subsection{Computational verification}
 
-All numbered results are proved; the computations complement the proofs and are not part of them. The values \(w\) and \(w\)₀ were computed by a dynamic programme over the lcm-cover form (Proposition 4.2) and cross-checked against an independent brute force over sets of \(q\)-cyclotomic cosets. Over prime powers \(q\) \textless{} 128 and the ranges of \(N\) listed in the supplementary information, 409,075 exact checks of Lemma 5.1, Theorems A, \(B\) and \(C\), formula (6.3) and Theorem 11.1(i) found no discrepancy; they include even \(q\), repeated prime powers, three and four distinct primes, mixed 2-adic classes and supports shared by several blocks. For the instances from \cite{A}, generator degrees, ord(\(h\)), dual containment and exact \(d\)(\(D\)) were computed directly (§11.3). The code is provided as supplementary information.
+All numbered results are proved; the computations complement the proofs and are not part of them. The values \(w\) and \(w\)₀ were computed by a dynamic programme over the lcm-cover form (Proposition 4.2) and cross-checked against an independent brute force over sets of \(q\)-cyclotomic cosets. Over prime powers \(q\) \textless{} 128 and the ranges of \(N\) listed in the supplementary information, 409,075 exact checks of Lemma 5.1, Theorems A, \(B\) and \(C\), formula (6.3) and Theorem 11.1(i) found no discrepancy; they include even \(q\), repeated prime powers, three and four distinct primes, mixed 2-adic classes and supports shared by several blocks. For the instances from \cite{LZ22}, generator degrees, ord(\(h\)), dual containment and exact \(d\)(\(D\)) were computed directly (§11.3). The code is provided as supplementary information.
 
 \subsection{Open directions}
 
@@ -949,7 +949,7 @@ Open directions include a structural theory of \(w\)(\(N\),\(q\)) for even \(N\)
 
 \section{Conclusion}
 
-For gcd(\(N\),\(q\)) = 1 we studied the reciprocal-free restriction \(w\)(\(N\),\(q\)) of the classical minimal degree \(w\)₀(\(N\),\(q\)). Admissibility for odd moduli is governed by the 2-adic classes \(t_p\) (Lemma 5.1); for odd \(N\), Theorem A locates the difference between \(w\) and \(w\)₀ precisely in the helper costs; Theorem B makes this explicit for \(N\) = \(p^a\) \(r^b\); and Theorem C gives arbitrarily large separation over pairs (\(N\),\(q\)) with \(q\) varying. In the semisimple cyclic QSC framework, \(w\) bounds the degree of every saturating factor, giving \(K\) + 2\(d\)(\(D\)) ≤ \(N\) + 2 − 2\(w\) and the decomposition (10.1); in Class 1 of \cite{A} the construction forces \(s\) ≥ 2\(w\), a property of that construction rather than a statement about code quality. The support-reduction theory is established for odd \(N\) only, and repeated-root constructions require a different notion of saturation cost.
+For gcd(\(N\),\(q\)) = 1 we studied the reciprocal-free restriction \(w\)(\(N\),\(q\)) of the classical minimal degree \(w\)₀(\(N\),\(q\)). Admissibility for odd moduli is governed by the 2-adic classes \(t_p\) (Lemma 5.1); for odd \(N\), Theorem A locates the difference between \(w\) and \(w\)₀ precisely in the helper costs; Theorem B makes this explicit for \(N\) = \(p^a\) \(r^b\); and Theorem C gives arbitrarily large separation over pairs (\(N\),\(q\)) with \(q\) varying. In the semisimple cyclic QSC framework, \(w\) bounds the degree of every saturating factor, giving \(K\) + 2\(d\)(\(D\)) ≤ \(N\) + 2 − 2\(w\) and the decomposition (10.1); in Class 1 of \cite{LZ22} the construction forces \(s\) ≥ 2\(w\), a property of that construction rather than a statement about code quality. The support-reduction theory is established for odd \(N\) only, and repeated-root constructions require a different notion of saturation cost.
 
 \backmatter
 \bmhead{Supplementary information}
@@ -966,5 +966,5 @@ The supplementary information (ESM\_1.pdf) contains the proof of Lemma 2.3, the 
 \bmhead{Ethics approval, consent to participate, consent for publication} Not applicable.
 \bmhead{Author contributions} [INSERT]
 
-\bibliography{03_References_JAMC}
+\bibliography{RFDQSC_references}
 \end{document}
