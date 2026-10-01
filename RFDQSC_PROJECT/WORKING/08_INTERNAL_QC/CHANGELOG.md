@@ -22,3 +22,6 @@
 | 05 | tools | Added `phase05_trace.py` | Trace of quoted values | 29/29 |
 | 05 | manuscript | No change | No discrepancy found | Phase 5 report |
 | 05 | VALUE_LEDGER | Rows V091–V093 | — | — |
+| 06 | VALUE_LEDGER | Statuses of V003–V016, V029–V057 updated from PENDING to verified/reproduced; V042 split into code half (reproduced) and source half (AD-004) | Closing Phase 2–5 evidence | Phase 2–5 outputs |
+| 06 | evidence | EVIDENCE_SHA256.txt added | Reproducibility record | sha256sum |
+| 06 | manuscript | No change; computational-scope wording prepared for Phase 8/10 | V&V separation of verification and validation | Phase 6 report |

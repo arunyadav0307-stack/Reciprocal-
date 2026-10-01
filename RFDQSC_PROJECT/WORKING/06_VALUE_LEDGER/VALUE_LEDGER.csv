@@ -1,20 +1,20 @@
 id,category,location,item,manuscript_value,authority_for_value,status,independently_recomputed_value,phase_added,phase_last_updated,notes
 V001,definition,Intro 1.2; Def 4.1,"w0(N,q)=min{deg h: h|x^N-1, ord h=N}",definition,manuscript,DEFINITION,,00,00,classical quantity
 V002,definition,Intro 1.3; Def 4.1,"w(N,q)=min{deg h: h|x^N-1, ord h=N, gcd(h,h*)=1}; =inf if none",definition,manuscript,DEFINITION,,00,00,
-V003,theorem,Lemma 5.1,m odd>=3 admissible iff NOT(all t_p equal one positive integer),statement,manuscript,"PROOF_AUDIT_PENDING(Ph2); finite check claimed (99,981)",,00,00,claimed 'known in substance'
-V004,theorem,"Thm A (6.2),(6.3)",w = min over partitions of P of sum of helper-block costs c(A); w0 = min over partitions sum o(n_A),statement,manuscript,"PROOF_AUDIT_PENDING(Ph2); finite check claimed (39,968 each)",,00,00,odd N only
-V005,theorem,Thm B table,"w(N,q) four-case formula for N=p^a r^b; w0=min(L,o_p+o_r)",statement,manuscript,"PROOF_AUDIT_PENDING(Ph2); finite check claimed (195,405)",,00,00,
-V006,theorem,Thm C(i),"t_p!=t_r both>=1 => w(pr,q)=lcm(o(p),o(r))=ord_pr(q)",statement,manuscript,"PROOF_AUDIT_PENDING(Ph2); finite check claimed (30,079)",,00,00,
-V007,theorem,Thm C(ii) first part,"p=3 mod 4,p>=7; r=5 mod 8; gcd((p-1)/2,(r-1)/4)=1; q prim.root mod p,r => w=(p-1)(r-1)/2, w0=p+r-2",statement,manuscript,PROOF_AUDIT_PENDING(Ph2); 594 instances claimed,,00,00,
-V008,theorem,Thm C(ii) second part,"w/w0 >= (p_k-1)/4 along family => unbounded over pairs (N,q)",statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,fixed-q NOT claimed
-V009,theorem,Prop 9.1,"ord(h)=N in cyclic QSC framework => deg h >= w(N,q)",statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,"gcd(N,q)=1"
-V010,theorem,Cor 9.2 (9.1),K+2d(D) <= N+2-2s <= N+2-2w,statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,d(D) classical distance; Singleton on D
-V011,theorem,Prop 10.1 (10.1),"Delta=2(s-w)+2(B+1-d(D)), both summands >=0",statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,identity re-derived by inspection in Ph0: algebraically consistent
-V012,theorem,Thm 11.1,Class 1 of [A]: ord_2n(q)=o; w=w0=o; s>=2w; Delta>=2w,statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,
-V013,equation,(2.1),f|x^e-1 iff ord(f)|e,statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,
-V014,equation,(2.2),a_l+a_r < ord(h) tolerance condition (FTW),statement,manuscript,LITERATURE_CHECK_PENDING(Ph1/Ph9),,00,00,must be verified against Fujiwara-Tonchev-Wong 2013 statement
-V015,equation,(2.3),K=2k_C-N=N-2 deg g_C,statement,manuscript,LITERATURE_CHECK_PENDING(Ph1/Ph9),,00,00,
-V016,equation,(5.1),v2(o(p^a))=v2(o(p))=t_p,statement,manuscript,PROOF_AUDIT_PENDING(Ph2),,00,00,
+V003,theorem,Lemma 5.1,m odd>=3 admissible iff NOT(all t_p equal one positive integer),statement,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED; REPRODUCED_BY_RUN,derived (Ph2); definition-level (Ph2/Ph3); authors' script reproduced (Ph3/Ph4),00,06,claimed 'known in substance'
+V004,theorem,"Thm A (6.2),(6.3)",w = min over partitions of P of sum of helper-block costs c(A); w0 = min over partitions sum o(n_A),statement,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED; REPRODUCED_BY_RUN,derived (Ph2); definition-level (Ph2/Ph3); authors' script reproduced (Ph3/Ph4),00,06,odd N only
+V005,theorem,Thm B table,"w(N,q) four-case formula for N=p^a r^b; w0=min(L,o_p+o_r)",statement,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED; REPRODUCED_BY_RUN,derived (Ph2); definition-level (Ph2/Ph3); authors' script reproduced (Ph3/Ph4),00,06,
+V006,theorem,Thm C(i),"t_p!=t_r both>=1 => w(pr,q)=lcm(o(p),o(r))=ord_pr(q)",statement,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED; REPRODUCED_BY_RUN,derived (Ph2); definition-level (Ph2/Ph3); authors' script reproduced (Ph3/Ph4),00,06,
+V007,theorem,Thm C(ii) first part,"p=3 mod 4,p>=7; r=5 mod 8; gcd((p-1)/2,(r-1)/4)=1; q prim.root mod p,r => w=(p-1)(r-1)/2, w0=p+r-2",statement,manuscript,VERIFIED_BY_DERIVATION; SPOT_CHECKED; REPRODUCED_BY_RUN,derived (Ph2); definition-level (Ph2/Ph3); authors' script reproduced (Ph3/Ph4),00,06,
+V008,theorem,Thm C(ii) second part,"w/w0 >= (p_k-1)/4 along family => unbounded over pairs (N,q)",statement,manuscript,VERIFIED_BY_DERIVATION,derived (Ph2),00,06,fixed-q NOT claimed
+V009,theorem,Prop 9.1,"ord(h)=N in cyclic QSC framework => deg h >= w(N,q)",statement,manuscript,VERIFIED_BY_DERIVATION,derived (Ph2),00,06,"gcd(N,q)=1"
+V010,theorem,Cor 9.2 (9.1),K+2d(D) <= N+2-2s <= N+2-2w,statement,manuscript,VERIFIED_BY_DERIVATION,derived (Ph2),00,06,d(D) classical distance; Singleton on D
+V011,theorem,Prop 10.1 (10.1),"Delta=2(s-w)+2(B+1-d(D)), both summands >=0",statement,manuscript,VERIFIED_BY_DERIVATION,derived (Ph2),00,06,identity re-derived by inspection in Ph0: algebraically consistent
+V012,theorem,Thm 11.1,Class 1 of [A]: ord_2n(q)=o; w=w0=o; s>=2w; Delta>=2w,statement,manuscript,VERIFIED_BY_DERIVATION (conditional on A's hypotheses); SPOT_CHECKED,derived (Ph2); N=2n enumeration (Ph3),00,06,
+V013,equation,(2.1),f|x^e-1 iff ord(f)|e,statement,manuscript,VERIFIED_BY_DERIVATION,derived (Ph2),00,06,
+V014,equation,(2.2),a_l+a_r < ord(h) tolerance condition (FTW),statement,manuscript,"VERIFIED_EXTERNAL (binary: FTW; q-ary: XYY16, LM18 via secondary source)",,00,06,must be verified against Fujiwara-Tonchev-Wong 2013 statement; see Phase 1
+V015,equation,(2.3),K=2k_C-N=N-2 deg g_C,statement,manuscript,"VERIFIED_EXTERNAL (binary: FTW; q-ary: XYY16, LM18 via secondary source)",,00,06,see Phase 1
+V016,equation,(5.1),v2(o(p^a))=v2(o(p))=t_p,statement,manuscript,VERIFIED_BY_DERIVATION,derived (Ph2),00,06,
 V017,example,Intro 1.3; 7.4(i),"w(143,3)=w0(143,3)",8,manuscript,RECOMPUTED_PH0,8,00,00,definition-level coset search
 V018,example,7.4(i),ord_143(3),15,manuscript,ARITHMETIC_CHECKED_PH0,15,00,00,"lcm(5,3)"
 V019,example,Intro 1.3; 4.5; 7.4(ii),"w(55,3)",20,manuscript,RECOMPUTED_PH0,20,00,00,
@@ -27,35 +27,35 @@ V025,example,7.4(iii),"w0(35,3)",10,manuscript,RECOMPUTED_PH0,10,00,00,
 V026,example,4.5,"w(5,3)=inf; w0(5,3)=4",inf; 4,manuscript,RECOMPUTED_PH0,inf; 4,00,00,
 V027,example,4.3 remark,"w(2,q)=inf",inf,manuscript,RECOMPUTED_PH0,inf (q=3),00,00,
 V028,table1,Table 1 Ex1,"(q,N)=(3,26): w0=w",3,manuscript,RECOMPUTED_PH0,3,00,00,w recomputed at definition level
-V029,table1,Table 1 Ex1,"B, s, K","B=6, s=6, K=2",manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_calib.py,,00,00,requires generator polynomials from [A]
-V030,table1,Table 1 Ex1,d(D) printed in [A] / exact,3 / 4,manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_calib.py+g3_dist.py,,00,00,[A] values must be checked against the cited paper (Ph1/Ph9)
+V029,table1,Table 1 Ex1,"B, s, K","B=6, s=6, K=2",manuscript,REPRODUCED_BY_RUN,"B,s,K reproduced by g3_calib.py",00,06,requires generator polynomials from [A]
+V030,table1,Table 1 Ex1,d(D) printed in [A] / exact,3 / 4,manuscript,REPRODUCED_BY_RUN (exact d(D)); printed [A] values UNVERIFIED_AD-004,"exact d(D)=4,6,4 reproduced",00,06,[A] values must be checked against the cited paper (Ph1/Ph9)
 V031,table1,Table 1 Ex1,Delta; 2(s-w); 2(B+1-d(D)),12; 6; 6,manuscript,ARITHMETIC_CHECKED_PH0,Delta=12; 6; 6,00,00,internal arithmetic consistent
 V032,table1,Table 1 Ex2,"(q,N)=(37,82): w0=w",5,manuscript,RECOMPUTED_PH0,5,00,00,w recomputed at definition level
-V033,table1,Table 1 Ex2,"B, s, K","B=10, s=10, K=42",manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_calib.py,,00,00,requires generator polynomials from [A]
-V034,table1,Table 1 Ex2,d(D) printed in [A] / exact,4 / 6,manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_calib.py+g3_dist.py,,00,00,[A] values must be checked against the cited paper (Ph1/Ph9)
+V033,table1,Table 1 Ex2,"B, s, K","B=10, s=10, K=42",manuscript,REPRODUCED_BY_RUN,"B,s,K reproduced by g3_calib.py",00,06,requires generator polynomials from [A]
+V034,table1,Table 1 Ex2,d(D) printed in [A] / exact,4 / 6,manuscript,REPRODUCED_BY_RUN (exact d(D)); printed [A] values UNVERIFIED_AD-004,"exact d(D)=4,6,4 reproduced",00,06,[A] values must be checked against the cited paper (Ph1/Ph9)
 V035,table1,Table 1 Ex2,Delta; 2(s-w); 2(B+1-d(D)),20; 10; 10,manuscript,ARITHMETIC_CHECKED_PH0,Delta=20; 10; 10,00,00,internal arithmetic consistent
 V036,table1,Table 1 Ex3,"(q,N)=(3,80): w0=w",4,manuscript,RECOMPUTED_PH0,4,00,00,w recomputed at definition level
-V037,table1,Table 1 Ex3,"B, s, K","B=8, s=8, K=48",manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_calib.py,,00,00,requires generator polynomials from [A]
-V038,table1,Table 1 Ex3,d(D) printed in [A] / exact,3 / 4,manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_calib.py+g3_dist.py,,00,00,[A] values must be checked against the cited paper (Ph1/Ph9)
+V037,table1,Table 1 Ex3,"B, s, K","B=8, s=8, K=48",manuscript,REPRODUCED_BY_RUN,"B,s,K reproduced by g3_calib.py",00,06,requires generator polynomials from [A]
+V038,table1,Table 1 Ex3,d(D) printed in [A] / exact,3 / 4,manuscript,REPRODUCED_BY_RUN (exact d(D)); printed [A] values UNVERIFIED_AD-004,"exact d(D)=4,6,4 reproduced",00,06,[A] values must be checked against the cited paper (Ph1/Ph9)
 V039,table1,Table 1 Ex3,Delta; 2(s-w); 2(B+1-d(D)),18; 8; 10,manuscript,ARITHMETIC_CHECKED_PH0,Delta=18; 8; 10,00,00,internal arithmetic consistent
 V040,table1,11.3 text,"N+2-2w = 22, 74, 74","22, 74, 74",manuscript,ARITHMETIC_CHECKED_PH0,"22, 74, 74",00,00,
 V041,table1,11.3 text,"K+2d(D) = 10, 54, 56","10, 54, 56",manuscript,ARITHMETIC_CHECKED_PH0,"10, 54, 56",00,00,
-V042,claim,11.3 text,"Example 3 of [A] prints m0=x-1 inside g1,g3 (self-reciprocal); values computed without m0",statement,manuscript,LITERATURE_CHECK_PENDING(Ph1/Ph9),,00,00,affects Table 1 Ex.3; must be checked against [A]
-V043,class2,ESM_1 S2; 11.4,"(q,m)=(3,2) N=80 ord_N(q)=w0=w=4; tuples 75; saturated 75; ord(h)<N 0; s-range 8-24",75/75,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_class.py,,00,00,reconstructed index rule
-V044,class2,ESM_1 S2; 11.4,"(q,m)=(5,2) N=312 ord_N(q)=w0=w=4; tuples 1490; saturated 1482; ord(h)<N 8; s-range 6-66",1490/1482,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_class.py,,00,00,reconstructed index rule
-V045,class2,ESM_1 S2; 11.4,"(q,m)=(7,2) N=800 ord_N(q)=w0=w=4; tuples 10269; saturated 10263; ord(h)<N 6; s-range 8-124",10269/10263,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_class.py,,00,00,reconstructed index rule
-V046,class2,ESM_1 S2; 11.4,"(q,m)=(3,3) N=728 ord_N(q)=w0=w=6; tuples 19908; saturated 19896; ord(h)<N 12; s-range 12-144",19908/19896,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph5/6): g3_class.py,,00,00,reconstructed index rule
+V042,claim,11.3 text,"Example 3 of [A] prints m0=x-1 inside g1,g3 (self-reciprocal); values computed without m0",statement,manuscript,CODE_HALF_REPRODUCED; SOURCE_HALF_UNVERIFIED_AD-004,"with m0 in g1,g3: dual containment False (g3_calib.py)",00,06,affects Table 1 Ex.3; must be checked against [A]
+V043,class2,ESM_1 S2; 11.4,"(q,m)=(3,2) N=80 ord_N(q)=w0=w=4; tuples 75; saturated 75; ord(h)<N 0; s-range 8-24",75/75,manuscript(ESM_1),"REPRODUCED_BY_RUN (reconstructed rule, AD-003)",g3_class.py output identical,00,06,reconstructed index rule
+V044,class2,ESM_1 S2; 11.4,"(q,m)=(5,2) N=312 ord_N(q)=w0=w=4; tuples 1490; saturated 1482; ord(h)<N 8; s-range 6-66",1490/1482,manuscript(ESM_1),"REPRODUCED_BY_RUN (reconstructed rule, AD-003)",g3_class.py output identical,00,06,reconstructed index rule
+V045,class2,ESM_1 S2; 11.4,"(q,m)=(7,2) N=800 ord_N(q)=w0=w=4; tuples 10269; saturated 10263; ord(h)<N 6; s-range 8-124",10269/10263,manuscript(ESM_1),"REPRODUCED_BY_RUN (reconstructed rule, AD-003)",g3_class.py output identical,00,06,reconstructed index rule
+V046,class2,ESM_1 S2; 11.4,"(q,m)=(3,3) N=728 ord_N(q)=w0=w=6; tuples 19908; saturated 19896; ord(h)<N 12; s-range 12-144",19908/19896,manuscript(ESM_1),"REPRODUCED_BY_RUN (reconstructed rule, AD-003)",g3_class.py output identical,00,06,reconstructed index rule
 V047,class2,11.4; abstract-level,"31,716 of 31,742 tuples saturated","31,716/31,742",manuscript,ARITHMETIC_CHECKED_PH0,31716/31742,00,00,sum of ESM_1 rows
-V048,class2,11.4,"min s=6 for (q,m)=(5,2) below 2w=8",6 < 8,manuscript,SCRIPT_REPRODUCTION_PENDING(Ph5/6),,00,00,
-V049,verification_count,ESM_1 S3,"DP vs independent coset brute force: 15 values of q, N<200",1999,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V050,verification_count,ESM_1 S3,Lemma 5.1: prime powers q<128; odd m<5000,99981,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V051,verification_count,ESM_1 S3,Theorem A: prime powers q<128; odd N<2000,39968,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V052,verification_count,ESM_1 S3,Formula (6.3) w0: as Thm A,39968,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V053,verification_count,ESM_1 S3,Theorem B: prime powers q<128; odd two-prime N<20000,195405,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V054,verification_count,ESM_1 S3,Theorem C(i): prime powers q<128; odd primes p<r<400,30079,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V055,verification_count,ESM_1 S3,"Theorem C(ii): explicit triples p,r<400",594,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V056,verification_count,ESM_1 S3,Theorem 11.1(i) + factor-degree structure: odd q<128; primes n<400,1081,manuscript(ESM_1),SCRIPT_REPRODUCTION_PENDING(Ph6): g4_audit.py,,00,00,
-V057,verification_count,Abstract; ESM_1 S3; cover letter,"total checks 409,075; failures 0","409,075",manuscript,ARITHMETIC_CHECKED_PH0; REPRODUCTION_PENDING,409075 = sum of rows,00,00,sum of rows equals headline
+V048,class2,11.4,"min s=6 for (q,m)=(5,2) below 2w=8",6 < 8,manuscript,"REPRODUCED_BY_RUN (reconstructed rule, AD-003)",g3_class.py output identical,00,06,
+V049,verification_count,ESM_1 S3,"DP vs independent coset brute force: 15 values of q, N<200",1999,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V050,verification_count,ESM_1 S3,Lemma 5.1: prime powers q<128; odd m<5000,99981,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V051,verification_count,ESM_1 S3,Theorem A: prime powers q<128; odd N<2000,39968,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V052,verification_count,ESM_1 S3,Formula (6.3) w0: as Thm A,39968,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V053,verification_count,ESM_1 S3,Theorem B: prime powers q<128; odd two-prime N<20000,195405,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V054,verification_count,ESM_1 S3,Theorem C(i): prime powers q<128; odd primes p<r<400,30079,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V055,verification_count,ESM_1 S3,"Theorem C(ii): explicit triples p,r<400",594,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V056,verification_count,ESM_1 S3,Theorem 11.1(i) + factor-degree structure: odd q<128; primes n<400,1081,manuscript(ESM_1),REPRODUCED_BY_RUN,g4_audit.py run1/run2 identical,00,06,
+V057,verification_count,Abstract; ESM_1 S3; cover letter,"total checks 409,075; failures 0","409,075",manuscript,REPRODUCED_BY_RUN,"eight rows reproduced; sum 409,075; 0 failures (2 runs)",00,06,sum of rows equals headline
 V058,verification_count,12.3; ESM_1 S3,"first enumerator reported 7 spurious failures ((23,225) example)",7,manuscript,"INTERNAL-WORKFLOW TRACE (remove from paper, Ph8/10)",,00,00,
 V059,meta,Abstract,245 words (math counted as one word),245,10_Metadata/checklist,NOT_RECOUNTED_PH0,,00,00,recount at Ph9
 V060,meta,Metadata,28 pages (sn-jnl); 25 references; 0 figures; 1 numbered table,28; 25; 0; 1,10_Metadata,BASELINE_PDF_PAGES=28 (checked); BIB_ENTRIES=25 (checked),28; 25,00,00,
